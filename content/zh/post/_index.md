@@ -1,0 +1,14 @@
+---
+title: 新闻
+
+# View.
+#   1 = List
+#   2 = Compact
+#   3 = Card
+view: compact
+
+# Optional header image (relative to `static/media/` folder).
+header:
+  caption: ""
+  image: ""
+---
