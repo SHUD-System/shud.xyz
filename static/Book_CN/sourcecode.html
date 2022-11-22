@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 源码和程序设计 | SHUD水文模型</title>
+  <meta name="description" content="SHUD Book" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 源码和程序设计 | SHUD水文模型" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="SHUD Book" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 源码和程序设计 | SHUD水文模型" />
+  
+  <meta name="twitter:description" content="SHUD Book" />
+  
+
+<meta name="author" content="Lele Shu (shulele@lzb.ac.cn)" />
+
+
+<meta name="date" content="2022-07-29" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="application.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SHUD Book</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#index">前言<span></span></a></li>
+<li class="chapter" data-level="1" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i><b>1</b> 绪论<span></span></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="overview.html"><a href="overview.html#站在巨人的肩上"><i class="fa fa-check"></i><b>1.1</b> 站在巨人的肩上<span></span></a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="overview.html"><a href="overview.html#pihm模型简史"><i class="fa fa-check"></i><b>1.1.1</b> PIHM模型简史<span></span></a></li>
+<li class="chapter" data-level="1.1.2" data-path="overview.html"><a href="overview.html#重要时间线"><i class="fa fa-check"></i><b>1.1.2</b> 重要时间线<span></span></a></li>
+<li class="chapter" data-level="1.1.3" data-path="overview.html"><a href="overview.html#shud与pihm的区别"><i class="fa fa-check"></i><b>1.1.3</b> SHUD与PIHM的区别<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="overview.html"><a href="overview.html#shud模型的特点"><i class="fa fa-check"></i><b>1.2</b> SHUD模型的特点<span></span></a></li>
+<li class="chapter" data-level="1.3" data-path="overview.html"><a href="overview.html#参考文献"><i class="fa fa-check"></i><b>1.3</b> 参考文献<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="theory.html"><a href="theory.html"><i class="fa fa-check"></i><b>2</b> 理论与公式<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="theory.html"><a href="theory.html#建模思路"><i class="fa fa-check"></i><b>2.1</b> 建模思路<span></span></a></li>
+<li class="chapter" data-level="2.2" data-path="theory.html"><a href="theory.html#流域水循环"><i class="fa fa-check"></i><b>2.2</b> 流域水循环<span></span></a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="theory.html"><a href="theory.html#水量平衡"><i class="fa fa-check"></i><b>2.2.1</b> 水量平衡<span></span></a></li>
+<li class="chapter" data-level="2.2.2" data-path="theory.html"><a href="theory.html#边界条件"><i class="fa fa-check"></i><b>2.2.2</b> 边界条件<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="theory.html"><a href="theory.html#气象"><i class="fa fa-check"></i><b>2.3</b> 气象<span></span></a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="theory.html"><a href="theory.html#降雨"><i class="fa fa-check"></i><b>2.3.1</b> 降雨<span></span></a></li>
+<li class="chapter" data-level="2.3.2" data-path="theory.html"><a href="theory.html#蒸散发"><i class="fa fa-check"></i><b>2.3.2</b> 蒸散发<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="theory.html"><a href="theory.html#入渗及地下水补给"><i class="fa fa-check"></i><b>2.4</b> 入渗及地下水补给<span></span></a></li>
+<li class="chapter" data-level="2.5" data-path="theory.html"><a href="theory.html#地表产流"><i class="fa fa-check"></i><b>2.5</b> 地表产流<span></span></a></li>
+<li class="chapter" data-level="2.6" data-path="theory.html"><a href="theory.html#基流"><i class="fa fa-check"></i><b>2.6</b> 基流<span></span></a></li>
+<li class="chapter" data-level="2.7" data-path="theory.html"><a href="theory.html#河道"><i class="fa fa-check"></i><b>2.7</b> 河道<span></span></a></li>
+<li class="chapter" data-level="2.8" data-path="theory.html"><a href="theory.html#湖泊"><i class="fa fa-check"></i><b>2.8</b> 湖泊<span></span></a></li>
+<li class="chapter" data-level="2.9" data-path="theory.html"><a href="theory.html#人类活动影响"><i class="fa fa-check"></i><b>2.9</b> 人类活动影响<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="modeling.html"><a href="modeling.html"><i class="fa fa-check"></i><b>3</b> SHUD模型模拟<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="modeling.html"><a href="modeling.html#install"><i class="fa fa-check"></i><b>3.1</b> 安装 SHUD and rSHUD<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="modeling.html"><a href="modeling.html#sundialscvode"><i class="fa fa-check"></i><b>3.1.1</b> SUNDIALS/CVODE<span></span></a></li>
+<li class="chapter" data-level="3.1.2" data-path="modeling.html"><a href="modeling.html#编译shud"><i class="fa fa-check"></i><b>3.1.2</b> 编译SHUD<span></span></a></li>
+<li class="chapter" data-level="3.1.3" data-path="modeling.html"><a href="modeling.html#rshud"><i class="fa fa-check"></i><b>3.1.3</b> rSHUD<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="modeling.html"><a href="modeling.html#inputfiles"><i class="fa fa-check"></i><b>3.2</b> 数据准备<span></span></a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="modeling.html"><a href="modeling.html#原始数据"><i class="fa fa-check"></i><b>3.2.1</b> 原始数据<span></span></a></li>
+<li class="chapter" data-level="3.2.2" data-path="modeling.html"><a href="modeling.html#模型输入文件"><i class="fa fa-check"></i><b>3.2.2</b> 模型输入文件<span></span></a></li>
+<li class="chapter" data-level="3.2.3" data-path="modeling.html"><a href="modeling.html#空间数据"><i class="fa fa-check"></i><b>3.2.3</b> 空间数据<span></span></a></li>
+<li class="chapter" data-level="3.2.4" data-path="modeling.html"><a href="modeling.html#水力学参数"><i class="fa fa-check"></i><b>3.2.4</b> 水力学参数<span></span></a></li>
+<li class="chapter" data-level="3.2.5" data-path="modeling.html"><a href="modeling.html#模型配置文件"><i class="fa fa-check"></i><b>3.2.5</b> 模型配置文件<span></span></a></li>
+<li class="chapter" data-level="3.2.6" data-path="modeling.html"><a href="modeling.html#时间序列数据"><i class="fa fa-check"></i><b>3.2.6</b> 时间序列数据<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="modeling.html"><a href="modeling.html#outputfiles"><i class="fa fa-check"></i><b>3.3</b> 输出文件<span></span></a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="modeling.html"><a href="modeling.html#文件名格式"><i class="fa fa-check"></i><b>3.3.1</b> 文件名格式<span></span></a></li>
+<li class="chapter" data-level="3.3.2" data-path="modeling.html"><a href="modeling.html#文本格式输出文件.csv"><i class="fa fa-check"></i><b>3.3.2</b> 文本格式输出文件（.csv）<span></span></a></li>
+<li class="chapter" data-level="3.3.3" data-path="modeling.html"><a href="modeling.html#二进制输出文件.dat"><i class="fa fa-check"></i><b>3.3.3</b> 二进制输出文件（.dat）<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="autoshud.html"><a href="autoshud.html"><i class="fa fa-check"></i><b>4</b> 快速、可重复和自动化水文模拟<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="autoshud.html"><a href="autoshud.html#shud模拟的基本步骤"><i class="fa fa-check"></i><b>4.1</b> SHUD模拟的基本步骤。<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="autoshud.html"><a href="autoshud.html#地形关键变量"><i class="fa fa-check"></i><b>4.1.1</b> 地形关键变量<span></span></a></li>
+<li class="chapter" data-level="4.1.2" data-path="autoshud.html"><a href="autoshud.html#a-priori-data-sources"><i class="fa fa-check"></i><b>4.1.2</b> A-Priori Data Sources<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="autoshud.html"><a href="autoshud.html#workflow-of-shud-modeling-system"><i class="fa fa-check"></i><b>4.2</b> Workflow of SHUD Modeling System<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="calibration.html"><a href="calibration.html"><i class="fa fa-check"></i><b>5</b> 模型校准<span></span></a></li>
+<li class="chapter" data-level="6" data-path="application.html"><a href="application.html"><i class="fa fa-check"></i><b>6</b> 应用案例<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="application.html"><a href="application.html#v形流域"><i class="fa fa-check"></i><b>6.1</b> V形流域<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="application.html"><a href="application.html#shen等2010-中的结果"><i class="fa fa-check"></i><b>6.1.1</b> Shen等(2010) 中的结果<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="application.html"><a href="application.html#vauclin水槽箱试验"><i class="fa fa-check"></i><b>6.2</b> Vauclin水槽箱试验<span></span></a></li>
+<li class="chapter" data-level="6.3" data-path="application.html"><a href="application.html#美国加州cache河流域"><i class="fa fa-check"></i><b>6.3</b> 美国加州Cache河流域<span></span></a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="application.html"><a href="application.html#cache-creek-watershed"><i class="fa fa-check"></i><b>6.3.1</b> Cache Creek Watershed<span></span></a></li>
+<li class="chapter" data-level="6.3.2" data-path="application.html"><a href="application.html#shud-simulation-and-calibration"><i class="fa fa-check"></i><b>6.3.2</b> SHUD simulation and calibration<span></span></a></li>
+<li class="chapter" data-level="6.3.3" data-path="application.html"><a href="application.html#results"><i class="fa fa-check"></i><b>6.3.3</b> Results<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="application.html"><a href="application.html#宁夏岩画村山洪"><i class="fa fa-check"></i><b>6.4</b> 宁夏岩画村山洪<span></span></a></li>
+<li class="chapter" data-level="6.5" data-path="application.html"><a href="application.html#休斯顿城市内涝"><i class="fa fa-check"></i><b>6.5</b> 休斯顿城市内涝<span></span></a></li>
+<li class="chapter" data-level="6.6" data-path="application.html"><a href="application.html#南苏丹尼罗河上游"><i class="fa fa-check"></i><b>6.6</b> 南苏丹尼罗河上游<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="sourcecode.html"><a href="sourcecode.html"><i class="fa fa-check"></i><b>7</b> 源码和程序设计<span></span></a></li>
+<li class="divider"></li>
+<li><a href="mailto:<Lele Shu>shulele@lzb.ac.cn" target="blank">Contact us</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">SHUD水文模型</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sourcecode" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> 源码和程序设计<a href="sourcecode.html#sourcecode" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The source code of SHUD and SHUD-tool are avaliable via Github: <a href="https://github.com/SHUD-System/SHUD" class="uri">https://github.com/SHUD-System/SHUD</a> and <a href="https://github.com/SHUD-System/rSHUD" class="uri">https://github.com/SHUD-System/rSHUD</a>.</p>
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div class="csl-entry">
+Abtew, W., and A. M. Melesse. 2012. <em>Evaporation and Evapotranspiration: Measurements and Estimations</em>. Springer Netherlands. <a href="https://books.google.com/books?id=C84zLgEACAAJ">https://books.google.com/books?id=C84zLgEACAAJ</a>.
+</div>
+<div class="csl-entry">
+Bao, Chen. 2016. <span>“<span>Understanding Hydrological And Geochemical Controls On Solute Concentrations At Large Scale</span>.”</span> PhD thesis, Pennsylvania State University.
+</div>
+<div class="csl-entry">
+Bao, Chen, Li Li, Yuning Shi, and Christopher Duffy. 2017. <span>“<span class="nocase">Understanding watershed hydrogeochemistry: 1. Development of RT-Flux-PIHM</span>.”</span> <em>Water Resources Research</em> 53 (3): 2328–45. <a href="https://doi.org/10.1002/2016WR018934">https://doi.org/10.1002/2016WR018934</a>.
+</div>
+<div class="csl-entry">
+Bhatt, Gopal. 2012. <span>“<span class="nocase">A distributed hydrologic modeling system: Framework for discovery and management of water resources</span>.”</span> PhD thesis, Pennsylvania State University.
+</div>
+<div class="csl-entry">
+Bhatt, Gopal, Mukesh Kumar, and Christopher J. Duffy. 2014. <span>“<span class="nocase">A tightly coupled GIS and distributed hydrologic modeling framework</span>.”</span> <em>Environmental Modelling and Software</em> 62: 70–84. <a href="https://doi.org/10.1016/j.envsoft.2014.08.003">https://doi.org/10.1016/j.envsoft.2014.08.003</a>.
+</div>
+<div class="csl-entry">
+Brandes, David, Christopher J. Duffy, and Joseph P. Cusumano. 1998. <span>“<span class="nocase">Stability and damping in a dynamical model of hillslope hydrology</span>.”</span> <em>Water Resources Research</em> 34 (12): 3303–13. <a href="https://doi.org/10.1029/98WR02532">https://doi.org/10.1029/98WR02532</a>.
+</div>
+<div class="csl-entry">
+Duffy, Christopher J. 1996. <span>“<span class="nocase">A two-state integral-balance model for soil moisture and groundwater dynamics in complex terrain</span>.”</span> <em>Water Resources Research</em> 32 (8): 2421–34. <a href="https://doi.org/10.1029/96WR01049">https://doi.org/10.1029/96WR01049</a>.
+</div>
+<div class="csl-entry">
+Kumar, M, C J Duffy, and P M Reed. 2004. <span>“<span class="nocase">Enhancing the performance of feature selection algorithms for classifying hyperspectral imagery</span>.”</span> In <em>Geoscience and Remote Sensing Symposium, 2004. IGARSS ’04. Proceedings. 2004 IEEE International</em>, 5:3264–3267 vol.5. C. <a href="https://doi.org/10.1109/IGARSS.2004.1370398">https://doi.org/10.1109/IGARSS.2004.1370398</a>.
+</div>
+<div class="csl-entry">
+Kumar, Mukesh. 2009. <span>“<span class="nocase">Toward a hydrologic modeling system</span>.”</span> Ph.D, Pennsylvania State University.
+</div>
+<div class="csl-entry">
+Kumar, Mukesh, Gopal Bhatt, and Christopher J. Duffy. 2009. <span>“<span class="nocase">An efficient domain decomposition framework for accurate representation of geodata in distributed hydrologic models</span>.”</span> <em>International Journal of Geographical Information Science</em> 23 (12): 1569–96. <a href="https://doi.org/10.1080/13658810802344143">https://doi.org/10.1080/13658810802344143</a>.
+</div>
+<div class="csl-entry">
+Kumar, Mukesh, Christopher J. Duffy, and Karen M Salvage. 2009. <span>“<span class="nocase">A Second-Order Accurate, Finite Volume-Based, Integrated Hydrologic Modeling (FIHM) Framework for Simulation of Surface and Subsurface Flow</span>.”</span> <em>Vadose Zone Journal</em> 8 (4): 873–90. <a href="https://doi.org/10.2136/vzj2009.0014">https://doi.org/10.2136/vzj2009.0014</a>.
+</div>
+<div class="csl-entry">
+Leonard, Lorne, and Christopher J. Duffy. 2013. <span>“<span class="nocase">Essential Terrestrial Variable data workflows for distributed water resources modeling</span>.”</span> <em>Environmental Modelling <span>&amp;</span> Software</em> 50 (December): 85–96. <a href="https://doi.org/10.1016/j.envsoft.2013.09.003">https://doi.org/10.1016/j.envsoft.2013.09.003</a>.
+</div>
+<div class="csl-entry">
+Li, Shuangcai. 2008. <span>“<span>INTEGRATED MODELING OF MULTI-SCALE HYDRODYNAMICS, SEDIMENT AND POLLUTANT TRANSPORT</span>.”</span> PhD thesis.
+</div>
+<div class="csl-entry">
+Li, Shuangcai, and Christopher J. Duffy. 2011. <span>“<span class="nocase">Fully coupled approach to modeling shallow water flow, sediment transport, and bed evolution in rivers</span>.”</span> <em>Water Resources Research</em> 47 (3): 1–20. <a href="https://doi.org/10.1029/2010WR009751">https://doi.org/10.1029/2010WR009751</a>.
+</div>
+<div class="csl-entry">
+Qu, Yizhong. 2004. <span>“<span class="nocase">An integrated hydrologic model for multi-process simulation using semi-discrete finite volume approach</span>.”</span> PhD thesis. <a href="http://gradworks.umi.com/31/72/3172997.html">http://gradworks.umi.com/31/72/3172997.html</a>.
+</div>
+<div class="csl-entry">
+Qu, Yizhong, and Christopher J. Duffy. 2007. <span>“<span class="nocase">A semidiscrete finite volume formulation for multiprocess watershed simulation</span>.”</span> <em>Water Resources Research</em> 43 (8): 1–18. <a href="https://doi.org/10.1029/2006WR005752">https://doi.org/10.1029/2006WR005752</a>.
+</div>
+<div class="csl-entry">
+Shi, Yuning, Douglas C. Baldwin, Kenneth J. Davis, Xuan Yu, Christopher J. Duffy, and Henry Lin. 2015. <span>“<span class="nocase">Simulating high-resolution soil moisture patterns in the Shale Hills watershed using a land surface hydrologic model</span>.”</span> <em>Hydrological Processes</em> 29 (21): 4624–37. <a href="https://doi.org/10.1002/hyp.10593">https://doi.org/10.1002/hyp.10593</a>.
+</div>
+<div class="csl-entry">
+Shi, Yuning, Kenneth J. Davis, Fuqing Zhang, Christopher J. Duffy, and Xuan Yu. 2014. <span>“<span class="nocase">Parameter estimation of a physically based land surface hydrologic model using the ensemble Kalman filter: A synthetic experiment</span>.”</span> <em>Water Resources Research</em> 50 (1): 706–24. <a href="https://doi.org/10.1002/2013WR014070">https://doi.org/10.1002/2013WR014070</a>.
+</div>
+<div class="csl-entry">
+———. 2015. <span>“<span class="nocase">Parameter estimation of a physically-based land surface hydrologic model using an ensemble Kalman filter: A multivariate real-data experiment</span>.”</span> <em>Advances in Water Resources</em> 83: 421–27. <a href="https://doi.org/10.1016/j.advwatres.2015.06.009">https://doi.org/10.1016/j.advwatres.2015.06.009</a>.
+</div>
+<div class="csl-entry">
+Shu, Lele, Paul A Ullrich, and Christopher J Duffy. 2020. <span>“<span class="nocase">Simulator for Hydrologic Unstructured Domains (SHUD v1.0): numerical modeling of watershed hydrology with the finite volume method</span>.”</span> <em>Geoscientific Model Development</em> 13 (6): 2743–62. <a href="https://doi.org/10.5194/gmd-13-2743-2020">https://doi.org/10.5194/gmd-13-2743-2020</a>.
+</div>
+<div class="csl-entry">
+Vauclin, M., D. Khanji, and G. Vachaud. 1979. <span>“<span class="nocase">Experimental and numerical study of a transient, two-dimensional unsaturated-saturated water table recharge problem</span>.”</span> <em>Water Resources Research</em> 15 (5): 1089–1101. <a href="https://doi.org/10.1029/WR015i005p01089">https://doi.org/10.1029/WR015i005p01089</a>.
+</div>
+<div class="csl-entry">
+Yu, Xuan, Christopher Duffy, Doug C. Baldwin, and Henry Lin. 2014. <span>“<span class="nocase">The role of macropores and multi-resolution soil survey datasets for distributed surface-subsurface flow modeling</span>.”</span> <em>Journal of Hydrology</em> 516: 97–106. <a href="https://doi.org/10.1016/j.jhydrol.2014.02.055">https://doi.org/10.1016/j.jhydrol.2014.02.055</a>.
+</div>
+<div class="csl-entry">
+Yu, Xuan, Anna Lamačová, Christopher Duffy, Pavel Krám, and Jakub Hruška. 2015. <span>“<span class="nocase">Hydrological model uncertainty due to spatial evapotranspiration estimation methods</span>.”</span> <em>Computers <span>&amp;</span> Geosciences</em> 90: 90–101. <a href="https://doi.org/10.1016/j.cageo.2015.05.006">https://doi.org/10.1016/j.cageo.2015.05.006</a>.
+</div>
+<div class="csl-entry">
+Zhang, Yu, Rudy Slingerland, and Christopher Duffy. 2016. <span>“<span class="nocase">Fully-coupled hydrologic processes for modeling landscape evolution</span>.”</span> <em>Environmental Modelling <span>&amp;</span> Software</em> 82: 89–107. <a href="https://doi.org/10.1016/j.envsoft.2016.04.014">https://doi.org/10.1016/j.envsoft.2016.04.014</a>.
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="application.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["SHUD_Book_CN.pdf", "SHUD_Book_CN.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
