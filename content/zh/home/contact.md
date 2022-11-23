@@ -48,6 +48,10 @@ content:
       name: DM Me
       link: 'https://twitter.com/leleshu'
 
+    - icon: weixin
+      icon_pack: fab
+      name: Join Wechat Group
+      external_link: 'https://www.shud.xyz/media/wexin_acc.png'
 design:
   columns: '2'
 ---
