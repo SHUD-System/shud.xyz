@@ -8,7 +8,7 @@ en:
   # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
   contentDir: content/en
   staticDir: static
-  title: SHUD
+  title: SHUD Group
   params:
     description: SHUD Group
   menu:
@@ -43,7 +43,7 @@ zh:
   languageCode: zh-CN
   contentDir: content/zh
   staticDir: static
-  title: SHUD
+  title: SHUD研究组
   params:
     description: SHUD模型研究组
   menu:

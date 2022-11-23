@@ -6,10 +6,10 @@
 # Appearance
 
 appearance:
-  theme_day: minimal
-  theme_night:
-  font: native
-  font_size: M
+  theme_day: Ocean
+  theme_night: Ocean
+  font: Classic
+  font_size: m
 
 # SEO
 
@@ -35,7 +35,7 @@ header:
     align: r
     show_logo: true
     show_language: true
-    show_day_night: true
+    show_day_night: false
     show_search: true
     highlight_active_link: true
 
@@ -96,7 +96,7 @@ features:
       index_name: ''
       show_logo: false
   map:
-    provider: 'mapnik'
+    provider: ''
     api_key: ''
     zoom: 15
 

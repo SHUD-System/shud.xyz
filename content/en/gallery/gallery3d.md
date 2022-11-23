@@ -50,8 +50,8 @@ subtitle = "interactive 3D visualization"
   # color = "navy"
 
   # Background gradient.
-  # gradient_start = "DeepSkyBlue"
-  # gradient_end = "SkyBlue"
+   gradient_start = "DeepSkyBlue"
+   gradient_end = "SkyBlue"
 
   # Background image.
   # image = "background.jpg"  # Name of image in `static/media/`.
@@ -63,7 +63,6 @@ subtitle = "interactive 3D visualization"
 [advanced]
  # Custom CSS.
  css_style = ""
-
  # CSS class.
- css_class = ""
+ css_class = "fullscreen"
 +++
