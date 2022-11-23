@@ -43,15 +43,10 @@ content:
   #  - 'Wednesday 09:00 to 10:00'
   #appointment_url: 'https://calendly.com'
   contact_links:
-    - icon: twitter
-      icon_pack: fab
-      name: DM Me
-      link: 'https://twitter.com/leleshu'
-
     - icon: weixin
       icon_pack: fab
-      name: Join Wechat Group
-      external_link: 'https://www.shud.xyz/media/wexin_acc.png'
+      name: 微信公众号
+      link: 'https://www.shud.xyz/media/wexin_acc.png'
 design:
   columns: '2'
 ---
