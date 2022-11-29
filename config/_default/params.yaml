@@ -16,9 +16,9 @@ appearance:
 marketing:
   seo:
     site_type: Project
-    local_business_type: ''
+    local_business_type: 'Academic'
     org_name: 'SHUD research group'
-    description: ''
+    description: 'Academic research group'
     twitter: 'leleshu'
   analytics:
     google_analytics: 'UA-153411227-1'
