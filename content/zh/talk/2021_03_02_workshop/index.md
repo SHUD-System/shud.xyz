@@ -1,23 +1,22 @@
----
-# Page title
-title: SHUD模型专题研讨会 （2021-03-02, 兰州）
++++
+title = "SHUD模型专题研讨会 （2021-03-02, 兰州）"
+date = 2021-03-01T00:15:00-16:00
+draft = true
 
-summary:
-# Title for the menu link if you wish to use a shorter link title, otherwise remove this option.
-linktitle: 日程安排
+# Tags and categories
+# For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
+categories = []
+tags = ["poster", "讲座", "SHUD", "rSHUD", "流域", "水文模型"]
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+[image]
+  # Caption (optional)
+  caption = ""
 
-# Page summary for search engines.
-summary: 2021-03-02, 兰州
-
-# Date page published
-date: 2021-03-01
-
-# Academic page type (do not modify).
-# type: book
-# Position of this page in the menu. Remove this option to sort alphabetically.
-weight: 001
----
-
+  # Focal point (optional)
+  # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
+  focal_point = ""
++++
 
 
 

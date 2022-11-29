@@ -25,7 +25,7 @@ subtitle = "交互性三维展示"
 
   # Filter posts by a taxonomy term.
   [content.filters]
-    tag = ""
+    tag = "图库"
     category = ""
     publication_type = ""
     exclude_featured = false

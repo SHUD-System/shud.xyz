@@ -5,7 +5,7 @@ draft = true
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = ["poster", "讲座", "SHUD"]
+tags = ["poster", "讲座", "SHUD", "rSHUD", "流域", "水文模型"]
 categories = []
 
 # Featured image
@@ -25,5 +25,3 @@ categories = []
 **时间:** 2022年09月23 - 09月24
 
 **报告题目:**  快速、可重复、开放的全球水文模拟云平台 （Quick, Reproducible, and Open Global Hydrological Data Cloud）
-
-

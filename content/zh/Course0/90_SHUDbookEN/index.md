@@ -4,6 +4,9 @@ summary: A book about the SHUD modeling system. We are trying to despict the the
 tags:
 - Course
 - SHUD
+- 水文模型
+- 教程
+- 书籍
 date: "2020-11-27T00:00:00Z"
 # Optional external URL for project (replaces project detail page).
 external_link: /Book_EN/

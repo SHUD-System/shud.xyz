@@ -5,9 +5,8 @@ draft = true
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = ["poster", "讲座", "SHUD"]
 categories = []
-
+tags = ["poster", "讲座", "SHUD", "rSHUD", "流域", "水文模型"]
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 [image]

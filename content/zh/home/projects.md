@@ -28,10 +28,10 @@ content:
   filter_button:
   - name: All
     tag: '*'
-  - name: Deep Learning
-    tag: Deep Learning
-  - name: Other
-    tag: Demo
+  - name: 水文模型
+    tag: 水文模型
+  - name: 水资源
+    tag: 水资源
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
