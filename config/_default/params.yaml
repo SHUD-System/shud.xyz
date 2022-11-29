@@ -15,17 +15,17 @@ appearance:
 
 marketing:
   seo:
-    site_type: Project
+    site_type: ResearchOrganization
     local_business_type: 'Academic'
     org_name: 'SHUD research group'
-    description: 'Academic research group'
+    description: 'Academic research group, Simulator of Hydrologic Unstructured Domains'
     twitter: 'leleshu'
   analytics:
     google_analytics: 'UA-153411227-1'
-    baidu_tongji: '0d5c9827a1c1e70e5bde035449ffded3'
+    baidu_tongji: '02eaeeb22ebc1b673b5317dd3fc030c4'
   verification:
     google: ''
-    baidu: ''
+    baidu: 'code-caLY3Fu6xB'
 
 # Site header
 
