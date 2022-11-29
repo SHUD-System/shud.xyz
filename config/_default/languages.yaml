@@ -28,15 +28,15 @@ en:
       - name: Publications
         url: 'publication'
         weight: 40
-      - name: Gallery
-        url: 'gallery'
-        weight: 50
       - name: Course
         url: 'course/'
         weight: 70
       - name: Join Us
         url: 'opp'
         weight: 90
+      - name: Gallery
+        url: 'https://shudapp.netlify.app'
+        weight: 999
 
 # Uncomment the lines below to configure your website in a second language.
 zh:
@@ -63,12 +63,15 @@ zh:
       - name: 论文
         url: 'publication/'
         weight: 50
-      - name: 图库
-        url: 'gallery/'
-        weight: 60
+      - name: 新闻
+        url: 'post/'
+        weight: 55
       - name: 书籍/课程
         url: 'course/'
         weight: 70
       - name: 加入我们
         url: 'opp/'
         weight: 90
+      - name: 图库
+        url: 'https://shudapp.netlify.app'
+        weight: 999
