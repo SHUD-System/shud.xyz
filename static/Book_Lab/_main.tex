@@ -1,0 +1,1142 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={SHUD研究组实验室手册},
+  pdfauthor={舒乐乐和他的学生们、同事们},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{SHUD研究组实验室手册}
+\author{舒乐乐和他的学生们、同事们}
+\date{2022-12-24}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{ux4e3aux4ec0ux4e48ux8981ux9605ux8bfbux8fd9ux672cux4e66}{%
+\chapter*{为什么要阅读这本书}\label{ux4e3aux4ec0ux4e48ux8981ux9605ux8bfbux8fd9ux672cux4e66}}
+\addcontentsline{toc}{chapter}{为什么要阅读这本书}
+
+无论你是本研究组的学生（本硕博），还是客座研究生，还是科研助理，甚至博士后，你都应该以这本书作为了解本研究组以及你未来同学同事的入口。
+
+写这个本是为了公开重要信息，明晰权责，减少误解，确保沟通，保证各方的合理预期并达成预期。
+
+\textbf{总结}：这本书将告诉你：明确自己应该做什么，知道别人能为你做什么，减少不切实际的要求。
+
+\hypertarget{ux672cux4e66ux5185ux5bb9}{%
+\section*{本书内容}\label{ux672cux4e66ux5185ux5bb9}}
+\addcontentsline{toc}{section}{本书内容}
+
+本书分为以下章节：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  研究组介绍
+\item
+  导师制度：Advisor和Mentor
+\item
+  工作待遇：包括工资、工作条件、衣食住行等等。
+\item
+  科研资源：工作环境、计算资源、学习资源等等
+\item
+  生活信息：本地吃喝玩乐信息
+\item
+  科学研究的基本范式
+\item
+  工作技能
+\end{enumerate}
+
+\textbf{祝生活如你所愿\textasciitilde\textasciitilde\textasciitilde{}}
+
+\hypertarget{intro}{%
+\chapter{研究组介绍}\label{intro}}
+
+\hypertarget{ux57faux672cux7ec4ux7ec7ux7ed3ux6784}{%
+\section{基本组织结构}\label{ux57faux672cux7ec4ux7ec7ux7ed3ux6784}}
+
+\hypertarget{sec:resinst}{%
+\subsection{团队研究方向}\label{sec:resinst}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  流域水文模型
+\item
+  洪水预报
+\item
+  无观测流域问题
+\item
+  ``大气-陆面-水文''耦合模拟
+\item
+  数据挖掘与深度学习
+\item
+  黄河流域水文与水质
+\item
+  寒区水文学，旱区水文学
+\end{enumerate}
+
+\hypertarget{ux5355ux4f4dux4ecbux7ecd}{%
+\subsection{单位介绍}\label{ux5355ux4f4dux4ecbux7ecd}}
+
+中国科学院西北生态环境资源研究院(简称中科院西北院，\href{http://www.nieer.cas.cn}{www.nieer.cas.cn})是我国专门从事高寒干旱地区生态环境、自然资源和重大工程研究的国家级研究机构，其主要研究领域（如冰川、冻土、沙漠、高原生态、盐湖、油气地质和资源环境信息等）均处于国内引领地位。本院目前拥有2个国家重点实验室，6个中科院重点实验室，1个国家数据中心，20个甘肃、青海省级重点实验室/工程中心，6个国家级野外观测研究实验站，19个中科院和研究所级野外观测研究实验站。
+
+\hypertarget{ux79d1ux7814ux884cux4e3aux51c6ux5219}{%
+\section{科研行为准则}\label{ux79d1ux7814ux884cux4e3aux51c6ux5219}}
+
+\hypertarget{ux8eabux4efdux89d2ux8272}{%
+\section{身份角色}\label{ux8eabux4efdux89d2ux8272}}
+
+\hypertarget{ux56e2ux961fux8d1fux8d23ux4eba}{%
+\subsection{团队负责人}\label{ux56e2ux961fux8d1fux8d23ux4eba}}
+
+\hypertarget{ux56e2ux961fux9aa8ux5e72}{%
+\subsection{团队骨干}\label{ux56e2ux961fux9aa8ux5e72}}
+
+\hypertarget{ux79d1ux7814ux52a9ux7406}{%
+\subsection{科研助理}\label{ux79d1ux7814ux52a9ux7406}}
+
+\hypertarget{ux535aux58eb}{%
+\subsection{博士}\label{ux535aux58eb}}
+
+\hypertarget{ux7855ux58eb}{%
+\subsection{硕士}\label{ux7855ux58eb}}
+
+\hypertarget{ux5ba2ux5ea7ux8054ux57f9ux5b66ux751f}{%
+\subsection{客座/联培学生}\label{ux5ba2ux5ea7ux8054ux57f9ux5b66ux751f}}
+
+\hypertarget{ux672cux79d1ux751f}{%
+\subsection{本科生}\label{ux672cux79d1ux751f}}
+
+\hypertarget{ux4e2aux4ebaux4ecbux7ecd}{%
+\section{个人介绍}\label{ux4e2aux4ebaux4ecbux7ecd}}
+
+\hypertarget{ux8212ux4e50ux4e50}{%
+\subsection{舒乐乐}\label{ux8212ux4e50ux4e50}}
+
+舒乐乐，水资源工程博士，现中国科学院西北生态环境资源研究院副研究员。中国科学院率先行动``百人计划''获得者；SHUD水文模型\url{https://www.shud.xyz}作者；2017年获得美国宾州州立大学(Pennsylvania State University)水资源工程专业博士学位，2017-2020于加州大学戴维斯分校(UC Davis)从事研究工作，2020年回国加入中国科学院。
+
+\hypertarget{advisor}{%
+\chapter{导师制度}\label{advisor}}
+
+\hypertarget{ux5b66ux672fux5bfcux5e08adacemic-advisor}{%
+\section{学术导师(Adacemic Advisor)}\label{ux5b66ux672fux5bfcux5e08adacemic-advisor}}
+
+\begin{quote}
+\textbf{你的学术导师，不是你的朋友。}
+\end{quote}
+
+学术导师的主要职能有两条：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  提供必要的科研环境，包括科研软硬件条件、学习的环境、经费支持等。
+\item
+  引导你的科研方向，并尽力指导你完成科研目标。
+\end{enumerate}
+
+\hypertarget{ux751fux6d3bux5bfcux5e08mentor}{%
+\section{生活导师(Mentor)}\label{ux751fux6d3bux5bfcux5e08mentor}}
+
+\begin{quote}
+\textbf{你的生活导师并不是你的保姆}
+\end{quote}
+
+哪些事情你应当寻求生活导师的帮助？
+
+\begin{itemize}
+\tightlist
+\item
+  科研资源信息（在寻求帮助之前，先看一遍本实验室手册）
+\item
+  科研生活的困惑
+\item
+  职业规划
+\item
+  师生、同学关系
+\item
+  重要的且需要与有经验的研究者沟通的疑惑。
+\end{itemize}
+
+\hypertarget{ux5b66ux751fux57f9ux517bux8ba1ux5212}{%
+\section{学生培养计划}\label{ux5b66ux751fux57f9ux517bux8ba1ux5212}}
+
+\hypertarget{ux7814ux7a76ux65b9ux5411}{%
+\subsection{研究方向}\label{ux7814ux7a76ux65b9ux5411}}
+
+本研究组总体科研方向请参看：\ref{sec:resinst}节。
+
+\textbf{本组各成员的研究方向都应当是显著不同的。}
+
+学生的研究方向主要有两个因素确定：
+1. 学生个人兴趣；
+2. 本组项目状况。
+
+对于``\emph{科研方向选择}''的几条建议：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  选择和放弃之前，一定要充分了解它。
+\item
+  难易是相对的。例如：有的领域没人做，A觉得是因为难而无人做，B觉得无人做才容易出结果。有的领域已经有很成熟的分析/模拟流程，A觉得好上手容易做，B觉得已经做烂的事情，再怎么深入也只能是步人后尘，难以独树一帜。
+\item
+  热情是好事，但必须脚踏实地一步一步走出来。
+\item
+  空话、大话很容易说，但是科研要求你知道你所研究方向的几乎细节。你要做到每个细节都计算过、了解过、思考过。
+\end{enumerate}
+
+\hypertarget{ux65f6ux95f4ux8868}{%
+\subsection{时间表}\label{ux65f6ux95f4ux8868}}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1333}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1333}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5000}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+时间点
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+学业时间
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+任务
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+任务目标
+\end{minipage} \\
+\midrule()
+\endhead
+-12个月 & 入学前一年 & 文献阅读；参与项目；补课；学软件 & 熟悉科研环境和流程 \\
+-6个月 & 入学前半年 & 文献阅读；参与项目；补课；学软件 & 掌握软件 \\
+0-6月 & 入学 & 文献阅读；完成必修课；参与项目 & 重复了解研究方向 \\
+7-12月 & 入学1年 & 文献阅读；完成必修课；参与项目 & 确认研究方向 \\
+13-18月 & 入学1.5年 & 研究综述；试验设计 & 形成综述文章 \\
+19-24月 & 入学2年 & 开展研究、试验、分析；撰写论文 & 完成试验，发表论文 \\
+25-30月 & 入学2.5年 & 总结试验，撰写论文；开展改进试验 & 毕业论文 \\
+31-36月 & 临近毕业 & 完成毕业论文、送审、答辩 & 学位:-) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{ux8bfeux7a0bux63a8ux8350}{%
+\subsection{课程推荐}\label{ux8bfeux7a0bux63a8ux8350}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{地理信息系统导论}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    掌握有关空间栅格/矢量数据的区别、格式和读写方法；
+  \item
+    熟练掌握空间数据处理、数据分析、数据投影；
+  \item
+    熟练掌握水文有关的空间数据；
+  \item
+    能够利用DEM生成流域边界和河网，了解D8等算法。
+  \end{itemize}
+\item
+  \textbf{水文学导论}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    深入理解流域水循环；
+  \item
+    掌握降雨、蒸散发、入渗、产流、汇流和地下水为物理过程；
+  \item
+    了解水文统计和水文模型；
+  \item
+    掌握水文分析的基本方法和流程。
+  \end{itemize}
+\item
+  \textbf{地下水力学}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    掌握基本的地下水的基本概念，如土壤孔隙度、含水量、水力学传导度、承压/非承压地下水、Duipuit Assumption；
+  \item
+    掌握地下水力学的重要公式，贝努力方程、达西定律、理查兹方程、van Genuchten方程；
+  \item
+    能够熟练建立/推导承压和非承压地下水的控制方程。
+  \end{itemize}
+\item
+  \textbf{地学中的数值方法（有限差分、有限元）}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    掌握数值方法的基本原理；
+  \item
+    掌握从泰勒展开式到一阶、二阶精度有限差分方法的推导/证明过程；
+  \item
+    明确理解数值方法的稳定性、收敛性、一致性的含义和影响；
+  \item
+    掌握CFL条件的计算和证明方法；
+  \item
+    能够编程数值方法求解简单的对流扩散方程。
+  \end{itemize}
+\item
+  \textbf{气象与气候学}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    了解基本的气象要素的含义和观测方法；
+  \item
+    理解水和能量在气候/气象过程中的运动规律；
+  \item
+    熟练掌握气象和气候学的基础控制方程。
+  \end{itemize}
+\item
+  \textbf{R/Python}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    基本操作(安装、扩展包安装)
+  \item
+    能够使用R/Python读取各种类型数据(shapefile, GeoTiff，HDF, NetCDF等)；
+  \item
+    熟练掌握数据分析功能(基本统计、数据挖掘、空间数据处理/分析、简单爬虫)；
+  \item
+    熟练掌握做图功能（ggplot, rgl等）。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux5fc5ux8bfbux4e66ux7c4d}{%
+\subsection{必读书籍}\label{ux5fc5ux8bfbux4e66ux7c4d}}
+
+\begin{itemize}
+\tightlist
+\item
+  Beven, K., 2012. Rainfall-Runoff Modelling: The Primer: Second Edition, John Wiley \& Sons, Ltd, Chichester, UK. \url{https://doi.org/10.1002/9781119951001}
+\item
+  Sorooshian, S., Hsu, K.-L., Coppola, E., Tomassetti, B., Verdecchia, M., Visconti, G. (Eds.), 2008. Hydrological Modelling and the Water Cycle, Water Science and Technology Library. Springer Berlin Heidelberg, Berlin, Heidelberg. \url{https://doi.org/10.1007/978-3-540-77843-1}
+\item
+  威尔·布鲁萨 著，王忠静，梁友，耿国婷 译. 2017. 水文学导论. 气象出版社. 北京
+\item
+  徐宗学, 2009. 水文模型. 科学出版社, 北京.
+\item
+  贾仰文, 王浩, 倪广恒, 2005. 分布式流域水文模型原理与实践. 中国水利水电出版社, 北京.
+\item
+  Kang-tsung Chang 著，陈健飞 等 译. 2019. 地理信息系统导论. 科学出版社. 北京.
+\item
+  McDonnell, J.J., 2019. Navigating an Academic Career, Special Publications. Wiley. \url{https://doi.org/10.1002/9781119642206}
+\end{itemize}
+
+\hypertarget{allowance}{%
+\chapter{工作待遇}\label{allowance}}
+
+\hypertarget{ux5de5ux8d44}{%
+\section{工资}\label{ux5de5ux8d44}}
+
+本研究组内每个成员的工资收入由身份决定。
+
+\begin{itemize}
+\tightlist
+\item
+  硕士生和博士生工资按照研究生处的规定执行，当前(2022年)为
+  硕士研究生每人每年29600元，博士研究生每人每年49000元；具体可以与中科院西北研究院研究生处沟通。
+\item
+  博士后工资主要按照中科院西北研究院的规定，额外津贴与本组PI商量觉决定。
+\end{itemize}
+
+\hypertarget{ux4f4fux5bbf}{%
+\section{住宿}\label{ux4f4fux5bbf}}
+
+研究生住宿由西北研究院研究生处安排住宿。
+合作研究者、项目聘用和客座研究生住宿由本组PI协助解决。
+
+\hypertarget{res}{%
+\chapter{科研资源}\label{res}}
+
+\hypertarget{ux5de5ux4f5cux73afux5883}{%
+\section{工作环境}\label{ux5de5ux4f5cux73afux5883}}
+
+\textbf{单}位：中国科学院西北生态环境资源研究院
+
+\textbf{地址}：甘肃兰州城关区东岗西路320号
+
+\textbf{办公室}：一号科研楼
+
+\hypertarget{ux7f51ux7edcux5b58ux50a8}{%
+\section{网络存储}\label{ux7f51ux7edcux5b58ux50a8}}
+
+\hypertarget{ux57faux672cux8d44ux6e90}{%
+\subsection{基本资源}\label{ux57faux672cux8d44ux6e90}}
+
+本组建设有100TB的网络存储空间，供本组成员和合作者使用。
+
+Synology Drive是依托本组的NAS网络存储建设的，可以远程以网络磁盘的方式访问，也可以使用sftp, Synology Drive， rsync等方式访问。
+
+\hypertarget{ux8d26ux53f7ux5f00ux901aux6ce8ux9500}{%
+\subsection{账号开通/注销}\label{ux8d26ux53f7ux5f00ux901aux6ce8ux9500}}
+
+\begin{itemize}
+\item
+  \textbf{账号开通}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    在加入本组后，向PI报告你的邮箱；由PI给你开通账号，并告知用户名和密码。
+  \item
+    账号的权限等级由个人身份决定，不同权限对NAS的读写权限略有不同。
+  \item
+    账号开通后，你会收到一封邮件，邮件包含了NAS服务的访问地址。请在收到邮件后登录NAS页面，并修改秘密。
+  \end{itemize}
+\item
+  \textbf{账号注销}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    成员离开本组后，账号会继续保留至少一年。
+  \item
+    你可以在一年内，备份个人网盘内的数据。一年后，你的账号将被删除，无法再访问NAS系统。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{nasux6587ux4ef6ux7ed3ux6784}{%
+\subsection{NAS文件结构}\label{nasux6587ux4ef6ux7ed3ux6784}}
+
+当前的NAS文件结构与读写权限见下图：
+
+\begin{figure}
+\centering
+\includegraphics{Fig/nas_structure.png}
+\caption{NAS上的文件结构与权限}
+\end{figure}
+
+更具体的信息见下表：
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1613}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1613}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1613}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1613}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3548}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+文件夹
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+学生权限
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+合作者权限
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+容量
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{注意事项}
+\end{minipage} \\
+\midrule()
+\endhead
+homes & 无 & 无 & 无限 & 所有用户文件都存放于此，普通用户无法访问 \\
+home & 读写 & 读写 & 10TB & 用户个人主目录，其他用户无法访问 \\
+SpatialData & 只读 & 只读 & 10TB & 仅特定用户有权更新 \\
+ForcingData & 只读 & 只读 & 10TB & 仅特定用户有权更新 \\
+SHUDgroup & 读写 & 读写 & 10TB & 组内成员间自动同步。勿随意存放文件 \\
+Shared & 读写 & 读写 & 10TB & 共享资源 \\
+Download & 读写 & 读写 & 无限 & 文件临时存放。所有人可写，勿长期存放重要文件 \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{ux8bbfux95eenas}{%
+\subsection{访问NAS}\label{ux8bbfux95eenas}}
+
+\begin{itemize}
+\tightlist
+\item
+  NAS\_IP\_Address: NAS的IP请从PI处获取。
+\item
+  用户名：username{[}默认为姓名全拼{]}
+\item
+  密码: {[}随机密码，请查看邮件{]}
+\item
+  NAS访问地址： \url{https://shudxyz.direct.quickconnect.to:5318}
+\end{itemize}
+
+\hypertarget{nas-ux4f5cux4e3aux7f51ux7edcux78c1ux76d8}{%
+\subsection{NAS 作为网络磁盘}\label{nas-ux4f5cux4e3aux7f51ux7edcux78c1ux76d8}}
+
+\begin{itemize}
+\tightlist
+\item
+  Mac OS
+
+  \begin{itemize}
+  \tightlist
+  \item
+    打开Finder（访达），然后使用键盘CMD+k，访问网络地址。
+  \item
+    在打开的窗口中输入：\texttt{afp://{[}NAS\_IP\_Address{]}}。然后点击连接（Connect）
+  \item
+    然后提示框要求输入用户名和密码。
+  \item
+    选择你需要加载的磁盘。
+  \end{itemize}
+\item
+  Windows
+\end{itemize}
+
+\hypertarget{synology}{%
+\subsection{云盘Synology Drive}\label{synology}}
+
+这应该是进入本组第一个学会的软件。软件的安装使用都非常简单，但是你需要学会的是重新思考\textbf{如何组织自己的文件？如何高效的定位自己的文件？}
+
+加入本组的工作全部在Synology Drive上进行备份。 文件备份在NAS云端，任何地点任何电脑上都可以查看/编辑你云盘里面的文件，不会出现\emph{``电脑坏了，文件丢失''}，\emph{``文件染病毒打不开''}，\emph{``电脑忘记带了，没法交作业''}的情况。
+
+\hypertarget{ux8d85ux7b97}{%
+\section{超算}\label{ux8d85ux7b97}}
+
+\hypertarget{ux56feux4e66ux501fux9605}{%
+\section{图书借阅}\label{ux56feux4e66ux501fux9605}}
+
+\hypertarget{ux6587ux732eux4e0bux8f7d}{%
+\section{文献下载}\label{ux6587ux732eux4e0bux8f7d}}
+
+\hypertarget{ux6570ux636e}{%
+\section{数据}\label{ux6570ux636e}}
+
+绝大部分我们使用的数据已经可以从网上公开渠道获取，利用搜索引擎即可找到下载入口。 很多数据存放于各大数据中心，我们列举一部分常用的数据中心。
+
+\begin{itemize}
+\tightlist
+\item
+  国家冰川冻土沙漠数据中心 \url{http://www.ncdc.ac.cn}
+\item
+  国家青藏高原科学数据中心 \url{http://www.tpdc.ac.cn}
+\item
+  资源环境科学与数据中心 \url{https://www.resdc.cn}
+\item
+  NASA Earth Observation Data \url{https://www.earthdata.nasa.gov}
+\item
+  USGS EarthExplorer \url{https://earthexplorer.usgs.gov}
+\item
+  World Climate Research Programme, CMIP6 data \url{https://esgf-node.llnl.gov/projects/cmip6/}
+\item
+  World Soil Information \url{https://www.isric.org}
+\item
+  USDA Web Soil Survey \url{https://websoilsurvey.sc.egov.usda.gov/App/HomePage.htm}
+\item
+  FAO Soil Portal \url{https://www.fao.org/soils-portal/data-hub/soil-maps-and-databases/en/}
+\item
+  MERIT Hydro: global hydrography datasets \url{http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_Hydro/}
+\item
+  MERIT-Basins \url{https://www.reachhydro.org/home/params/merit-basins}
+\item
+  National Hydrography Dataset (NHD) \url{https://www.usgs.gov/national-hydrography/national-hydrography-dataset}
+\end{itemize}
+
+\hypertarget{ux670dux52a1ux5668}{%
+\section{服务器}\label{ux670dux52a1ux5668}}
+
+\hypertarget{windows-serverux670dux52a1ux5668}{%
+\subsection{Windows Server服务器}\label{windows-serverux670dux52a1ux5668}}
+
+服务器硬件配置
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule()
+类别 & 配件 & 参数 & 备注 \\
+\midrule()
+\endhead
+平台 & 浪潮雷神SA5212 H5 & 12盘位2U机架式服务器 & \\
+CPU & 至强Xeon 金牌 6133 & 每CPU 20核40线程，2.5GHz & 双CPU \\
+内存 & 16GB x12 & DDR4 2666Mhz， 16 GBx12 & 6通道内存，12条 \\
+硬盘 & U.2 NVME & 2TB & \\
+网卡 & & 10Gbps 光口 & 两路光纤 \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{ux64cdux4f5cux7cfbux7edfux4e0eux8f6fux4ef6}{%
+\subsubsection{操作系统与软件}\label{ux64cdux4f5cux7cfbux7edfux4e0eux8f6fux4ef6}}
+
+\begin{itemize}
+\tightlist
+\item
+  操作系统：Windows Server 2016， 支持远程GUI登录。
+\item
+  Office: Microsoft Office 365
+\item
+  文本编辑器：Notepad++, vim.
+\item
+  GIS软件：ArcGIS, QGIS
+\item
+  编程：Visual Studio Code
+\item
+  R: R, Rstudio
+\item
+  Octave
+\end{itemize}
+
+\hypertarget{ux7528ux6237ux7ba1ux7406}{%
+\subsubsection{用户管理}\label{ux7528ux6237ux7ba1ux7406}}
+
+\begin{itemize}
+\tightlist
+\item
+  userx： 公用管理员
+\item
+  zhangsan： 一般用户
+\end{itemize}
+
+\hypertarget{ubuntuux670dux52a1ux5668}{%
+\subsection{Ubuntu服务器}\label{ubuntuux670dux52a1ux5668}}
+
+服务器硬件配置
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule()
+类别 & 配件 & 参数 & 备注 \\
+\midrule()
+\endhead
+平台 & 浪潮雷神SA5212 H5 & 12盘位2U机架式服务器 & \\
+CPU & 至强Xeon 金牌 6133 & 每CPU 20核40线程，2.5GHz & 双CPU \\
+内存 & 16GB x12 & DDR4 2666Mhz， 16 GBx12 & 6通道内存，12条 \\
+硬盘 & U.2 NVME & 2TB & \\
+网卡 & & 10Gbps 光口 & 两路光纤 \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{ux64cdux4f5cux7cfbux7edfux4e0eux8f6fux4ef6-1}{%
+\subsubsection{操作系统与软件}\label{ux64cdux4f5cux7cfbux7edfux4e0eux8f6fux4ef6-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  操作系统：Ubuntu 20.04， 支持远程GUI登录。
+\item
+  GIS软件：QGIS
+\item
+  R: R, Rstudio
+\end{itemize}
+
+\hypertarget{ux7528ux6237ux7ba1ux7406-1}{%
+\subsubsection{用户管理}\label{ux7528ux6237ux7ba1ux7406-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  userx: 公用sudo账号
+\item
+  zhangsan：普通用户
+\end{itemize}
+
+\hypertarget{ux9ad8ux6027ux80fdux8ba1ux7b97ux96c6ux7fa4}{%
+\subsection{高性能计算集群}\label{ux9ad8ux6027ux80fdux8ba1ux7b97ux96c6ux7fa4}}
+
+服务器硬件配置
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1562}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1562}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3438}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3438}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+大类
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+平台
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+参数
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+备注
+\end{minipage} \\
+\midrule()
+\endhead
+平台 & 高性能计算集群 & 8计算节点，1登录节点，1存储/胖节点 & 56G IB网络,10G 以太网 \\
+计算节点 & 超微八节点高密计算平台 & & \\
+登录节点 & 浪潮SA5212 H5，2U & 2x金牌6133，192GB，2T U.2 NVME & \\
+胖节点 & 超聚变2288 V6 & 2x金牌6318Y，128，2TB U.2 NVME & \\
+存储 & 超聚变2288 V6 & 12X16TB, RAID 6 & 140TB可用 \\
+IB交换机 & SX6025 & 36x56Gbps & InfiniBand \\
+以太交换机 & IBM & 48x10Gbps，4x40Gbps & 全光口 \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{ux64cdux4f5cux7cfbux7edfux4e0eux8f6fux4ef6-2}{%
+\subsubsection{操作系统与软件}\label{ux64cdux4f5cux7cfbux7edfux4e0eux8f6fux4ef6-2}}
+
+\hypertarget{ux7528ux6237ux7ba1ux7406-2}{%
+\subsubsection{用户管理}\label{ux7528ux6237ux7ba1ux7406-2}}
+
+\hypertarget{ux4f5cux4e1aux7ba1ux7406slurm}{%
+\subsubsection{作业管理Slurm}\label{ux4f5cux4e1aux7ba1ux7406slurm}}
+
+\hypertarget{life}{%
+\chapter{生活信息}\label{life}}
+
+吃喝玩乐、衣食住行
+
+\hypertarget{ux9644ux4ef6ux7f8eux98df}{%
+\section{附件美食}\label{ux9644ux4ef6ux7f8eux98df}}
+
+\begin{itemize}
+\tightlist
+\item
+  磨沟岩牛肉面
+\item
+  渭源路一条街
+\item
+  航天和美粤菜馆
+\item
+  航天海怡清真美食
+\end{itemize}
+
+\hypertarget{ux8d2dux7269ux4e2dux5fc3}{%
+\section{购物中心}\label{ux8d2dux7269ux4e2dux5fc3}}
+
+\begin{itemize}
+\tightlist
+\item
+  万达
+\item
+  兰州中心
+\item
+  国芳百盛
+\item
+  王府井
+\end{itemize}
+
+\hypertarget{ux516cux56edux666fux70b9}{%
+\section{公园/景点}\label{ux516cux56edux666fux70b9}}
+
+\begin{itemize}
+\tightlist
+\item
+  黄河边
+\item
+  滩尖子黄河湿地公园
+\item
+  甘肃省博物馆
+\item
+  兰山公园
+\item
+  白塔山公园
+\item
+  小西湖公园
+\end{itemize}
+
+\hypertarget{rules}{%
+\chapter{规则}\label{rules}}
+
+\hypertarget{ux6109ux5febux79d1ux7814ux7684ux4e00ux4e9bux5efaux8bae}{%
+\section{愉快科研的一些建议}\label{ux6109ux5febux79d1ux7814ux7684ux4e00ux4e9bux5efaux8bae}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{有疑问请尽早问} ------
+  我们对任何问题都持开放态度，也不会因为你问了问题而挑剔你，但是如果有问题不问，靠个人猜测，往往会引起很多误解。
+  在我们组里没有``傻问题''。
+\item
+  \textbf{对学术不端零容忍} ------ 学术诚信是立身之本，如果做不到这一点，请换一个职业。
+\item
+  \textbf{保持好奇} ------ 对学术中出现的每个问题都要有好奇心。虽然不一定深入研究，但是必须有所思考。
+\item
+  \textbf{尊重和褒奖他人科研成果} ------
+  使用任何他人的数据、观点、方法、逻辑证明，都要给别人足够的学术肯定（Academic Credit），形式包括但不限于合理作者署名、论文致谢、广而告之等；强烈不建议使用金钱等方式答谢。肯定他人学术贡献，并不会使你的研究成果变得暗淡失色。
+\item
+  \textbf{持开放心态} ------
+  对他人的观点持开放态度，学习的态度。若要否定别人的数据、逻辑或观点，要拿出比对方更坚实的证明过程。
+\item
+  \textbf{工作和生活分开} ------
+  为了更长久战斗在科研领域，要能够同时享受科研工作和个人生活。
+\item
+  \textbf{尊重他人的私人空间} --
+  若无紧急事态，不要打扰组员的周末、假日和晚上的个人时光。
+\item
+  \textbf{科研工作需要自由空间} ------
+  每个人都有不同的工作模式。工作的时间、地点、方式都存在个人倾向，选择个人最合适的方式。 但同时，在团队合作与单位管理规定之间做出适当的、合理的妥协。
+\end{enumerate}
+
+\hypertarget{ux5b66ux672fux5bfcux5e08ux7684ux884cux4e3aux51c6ux5219}{%
+\section{学术导师的行为准则}\label{ux5b66ux672fux5bfcux5e08ux7684ux884cux4e3aux51c6ux5219}}
+
+导师与学生天生不平等，任何可能带有不平等而导致学生无法拒绝或不好意思拒绝的请求，导师都应该回避。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{不歧视学生} ------
+  导师不因任何原因（包含但不限于性别、籍贯、疾病、相貌、专业、兴趣、家境等）而对学生有歧视语言或行动。尊重学生人格，尊重学生的个人自由。
+\item
+  \textbf{不收学生礼物} ------
+  学生毕业以前，不接受任何学生的礼物，包含但不限于水果、鲜花、特产、贺卡等。不接受学生或其家人请吃饭。
+  唯一可接受礼物为书籍，但\textbf{必须自带发票，导师按照价格报销给学生}。
+\item
+  \textbf{不要求学生做私事} ------
+  包含但不限于带孩子、取送快递、打扫个人办公室等。恳请学生也不要主动提出此类意愿。
+\item
+  \textbf{不干涉学生个人生活} ------ 导师只负责学习和科研相关内容；学生拥有安排个人生活、保护隐私的权利。
+\end{enumerate}
+
+\hypertarget{ux7ed9ux5b66ux751fux7684ux5efaux8bae}{%
+\section{给学生的建议}\label{ux7ed9ux5b66ux751fux7684ux5efaux8bae}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{安全是第一要务} ------ 确保个人安全。事关安全的事情，尽早向导师汇报，或者寻求帮助。对导师、同事、同学的可疑或不合理行为保持警惕。
+\item
+  \textbf{进导师办公室，永远敞开门} ------ 为了学生好，也为了导师好。
+\item
+  \textbf{明白学习与工作的关系} ------ \textbf{学生在学习上享有充分的自主权}。无论是论文的选题，方法，还是实现目标的工具、证明逻辑、书写办法等事关学生个人科学研究的内容，导师只能指导学生，无法替代学生，更不应该替学生做决定；学生需要在其中珍惜和把握自主权。
+  \textbf{科研工作（即学生获得工资的缘由）由具体科研项目决定}。因此学生需要规划合理时间，按照项目设计的工具、方法和思路来完成项目所规定之任务。
+  工作成果可作为学生的论文成果，但也可能与学生自主选择的科研方向不同。学生在论文方向的选择上，可以选择与工作一致的方向，也可以选择不同方向，但必须预料到两种选择所导致时间和精力的冲突。
+\end{enumerate}
+
+\hypertarget{ResNormal}{%
+\chapter{研究的范式}\label{ResNormal}}
+
+\hypertarget{ux79d1ux5b66ux95eeux9898}{%
+\section{科学问题}\label{ux79d1ux5b66ux95eeux9898}}
+
+具体什么是科学问题，难有准确定义，但是我们可以从一些侧面了解什么是科学问题。
+
+科学问题的一些诠释：
+
+\begin{itemize}
+\tightlist
+\item
+  一个你能通过科学实验方能解决的问题；
+\item
+  一个讨论过、研究过，但尚未形成定论的问题；
+\item
+  一个可能被你的科学设计而解决的问题。
+\end{itemize}
+
+\hypertarget{ux79d1ux5b66ux95eeux9898ux7684ux6848ux4f8b}{%
+\subsection{科学问题的案例}\label{ux79d1ux5b66ux95eeux9898ux7684ux6848ux4f8b}}
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule()
+案例 & 详细解释 \\
+\midrule()
+\endhead
+& \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\url{https://www.scribbr.com/research-process/research-question-examples/}
+\end{quote}
+
+\hypertarget{ux7814ux7a76ux533a}{%
+\section{研究区}\label{ux7814ux7a76ux533a}}
+
+\hypertarget{ux8d44ux6599ux6536ux96c6ux548cux5904ux7406}{%
+\subsection{资料收集和处理}\label{ux8d44ux6599ux6536ux96c6ux548cux5904ux7406}}
+
+\hypertarget{ux57faux672cux8d44ux6599}{%
+\subsubsection{基本资料}\label{ux57faux672cux8d44ux6599}}
+
+\begin{itemize}
+\tightlist
+\item
+  社会经济发展：GDP，主要经济支柱
+\item
+  人口：人口分布以及人口时间变化，重要时间节点
+\item
+  行政归属
+\end{itemize}
+
+\hypertarget{ux5730ux7406ux6570ux636e}{%
+\subsubsection{地理数据：}\label{ux5730ux7406ux6570ux636e}}
+
+\begin{itemize}
+\tightlist
+\item
+  高程：DEM，地形图
+\item
+  土地利用：不同分类体系下的土地利用；不同时期的土地利用
+\item
+  土壤质地：沙粉黏比例，土壤容重、有机质含量、土壤层厚度
+\item
+  地质背景
+\item
+  降雨分布
+\item
+  温度分布
+\item
+  行政边界：各级行政区划
+\item
+  城市/居民点
+\item
+  道路：各级公路铁路
+\end{itemize}
+
+\textbf{以上数据应当形成标准图件。}
+
+\hypertarget{ux6c14ux8c61ux518dux5206ux6790ux8d44ux6599}{%
+\subsubsection{气象再分析资料}\label{ux6c14ux8c61ux518dux5206ux6790ux8d44ux6599}}
+
+\begin{itemize}
+\tightlist
+\item
+  GLDAS
+\item
+  CMFD
+\item
+  PRISM
+\end{itemize}
+
+\hypertarget{skill}{%
+\chapter{工作技能}\label{skill}}
+
+\hypertarget{researchtool}{%
+\section{科研工具}\label{researchtool}}
+
+推荐使用的科研软件请先查看下面这张图。绝大部分为免费软件，个别是收费软件。
+\includegraphics{Fig/tools.png}
+
+\hypertarget{qgis}{%
+\subsection{QGIS}\label{qgis}}
+
+QGIS是开源、免费的空间数据软件，工作非常高效。
+
+下载地址：\url{https://www.qgis.org/en/site/forusers/download.html}
+
+\hypertarget{xmind}{%
+\subsection{XMind}\label{xmind}}
+
+思维导图软件。
+
+下载地址：\url{https://xmind.cn/download/}
+
+\hypertarget{mendeley-desktop}{%
+\subsection{Mendeley Desktop}\label{mendeley-desktop}}
+
+文献管理软件
+
+下载地址：\url{https://www.mendeley.com/download-reference-manager}
+
+\hypertarget{ux8fdcux7a0bux684cux9762}{%
+\section{远程桌面}\label{ux8fdcux7a0bux684cux9762}}
+
+\hypertarget{windowsux8fdcux7a0bux684cux9762rdp}{%
+\subsection{Windows远程桌面RDP}\label{windowsux8fdcux7a0bux684cux9762rdp}}
+
+\hypertarget{vncux8fdcux7a0bux8bbfux95eeubuntu}{%
+\subsection{VNC远程访问Ubuntu}\label{vncux8fdcux7a0bux8bbfux95eeubuntu}}
+
+\hypertarget{vncux8fdcux7a0bux8bbfux95eemac}{%
+\subsection{VNC远程访问Mac}\label{vncux8fdcux7a0bux8bbfux95eemac}}
+
+\hypertarget{ssh}{%
+\section{ssh远程登录}\label{ssh}}
+
+ssh是默认的远程服务器访问软件，小巧、安全、快速。
+命令一般执行方式如下：
+
+\begin{verbatim}
+ssh [username@remotehost]
+\end{verbatim}
+
+第一次登录要求在本地保存登陆指纹,输入y确认。然后屏幕提示输入远程的登录密码。
+
+其他登录参数：
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{-p 22} - 采用22端口登录
+\item
+  \textbf{-Y} - 启用远程GUI
+\item
+  \textbf{-i {[}file{]}} - 使用指定的登录密钥
+\end{itemize}
+
+\hypertarget{ux514dux5bc6ux7801ux767bux5f55}{%
+\subsection{免密码登录}\label{ux514dux5bc6ux7801ux767bux5f55}}
+
+执行ssh-keygen，可在客户端生成用户密码，生成的用户密码可于免密码的SSH登录。
+
+\begin{verbatim}
+ssh-keygen
+\end{verbatim}
+
+然后执行查看命令，查看密码申请状况。
+
+\begin{verbatim}
+ls ~/.ssh/
+cat ~/.ssh/id_rsa
+\end{verbatim}
+
+将本地生成的密钥拷贝到远程服务器上,此处需要输入登陆远程服务器的密码。
+
+\begin{verbatim}
+ssh-copy-id [username@remotehost]
+\end{verbatim}
+
+成功之后，可以SSH免密方式登陆远程服务器。
+
+\begin{verbatim}
+ssh -i ~/.ssh/id_rsa [username@remotehost]
+\end{verbatim}
+
+\hypertarget{linux}{%
+\section{Linux操作系统}\label{linux}}
+
+\hypertarget{linux-user}{%
+\subsection{用户名管理}\label{linux-user}}
+
+新建用户\texttt{userx}
+
+\begin{verbatim}
+sudo useradd -s /bin/bash -d /home/userx/ -m -G sudo userx
+\end{verbatim}
+
+登录指定用户\texttt{userx}
+
+\begin{verbatim}
+su - userx
+\end{verbatim}
+
+\hypertarget{slurm}{%
+\section{超算任务管理Slurm}\label{slurm}}
+
+\hypertarget{r}{%
+\section{R语言}\label{r}}
+
+R是高效且灵活的编程语言，可以高效的完成数据读写、统计分析、空间数据处理处理、并行计算等任务。
+本研究组的rSHUD(\url{https://github.com/shud-System/rshud}), AutoSHUD(\url{https://github.com/shud-System/autoshud})和全球数据云平台(\url{https://www.shuddata.com})都由R语言实现。
+
+具体的R语言教程请参考《\href{https://www.shud.xyz/bookr/}{R在地球科学中的应用}》\url{https://www.shud.xyz/bookr/}。
+
+\hypertarget{python}{%
+\section{Python工作环境}\label{python}}
+
+\hypertarget{Ack}{%
+\chapter{致谢}\label{Ack}}
+
+本书一边摸索，一边完善，都是我和组内成员一起努力的成果。
+
+\textbf{感谢我的导师，给了我探索的自由。}
+
+\textbf{感谢我的学生，给了我继续探索的动力。}
+
+\textbf{现有成员}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+姓名
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+角色
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+研究方向
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+入组时间
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+背景
+\end{minipage} \\
+\midrule()
+\endhead
+卜婷玮 & 硕士生 & 未定 & 2021.09 & 西南交通大学;环境工程 \\
+赵晨 & 硕士生 & 未定 & 2022.10 & 兰州理工大学保送;土木工程 \\
+邱心叶 & 硕士生(联培) & 晚第四纪干旱区生态水文过程 & 2022.10 & 兰州大学; 导师：李国强 \\
+\bottomrule()
+\end{longtable}
+
+\textbf{曾经成员}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule()
+姓名 & 角色 & 研究方向 & 入组时间 & 离开时间 \\
+\midrule()
+\endhead
+郭家乐 & 研究助理(本科) & 全球流域分级算法 & 2021.10 & 2022.06 \\
+甘亚斌 & 硕士生(联培) & 未定 & 2021.01 & 2021.03 \\
+\bottomrule()
+\end{longtable}
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}
