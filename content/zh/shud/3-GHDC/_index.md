@@ -19,7 +19,7 @@ weight: 30
 
 ---
 
-![](ghdc_CN/Figure/logo_cn.png)
+![](/ghdc_CN/Figure/logo_cn.png)
 
 ## 数据平台介绍
 
@@ -27,7 +27,7 @@ weight: 30
 
 GHDC中文说明书：[https://shud.xyz/cn/ghdc_cn](https://shud.xyz/cn/ghdc_cn)
 
-![GHDC的工作流程](ghdc_CN/Figure/GHDC_flow.png)
+![GHDC的工作流程](/ghdc_CN/Figure/GHDC_flow.png)
 
 
 ### 版权和权益
@@ -48,8 +48,8 @@ GHDC并不生成数据，仅提供提供数据处理服务。数据版权和权�
 | 气象再分析资料 | CLDAS |  中国 0.125度 | **版权私有** |  |
 | | | | | |
 
-![ASTER Global DEM](ghdc_CN/Figure/Aster_GDEM.png)
-![GLDAS, FLDAS, NLDAS, NCA-LDAS覆盖范围](ghdc_CN/Figure/ldas-domain.jpg)
+![ASTER Global DEM](/ghdc_CN/Figure/Aster_GDEM.png)
+![GLDAS, FLDAS, NLDAS, NCA-LDAS覆盖范围](/ghdc_CN/Figure/ldas-domain.jpg)
 
 ## 如何获取数据
 
@@ -89,11 +89,11 @@ GHDC并不生成数据，仅提供提供数据处理服务。数据版权和权�
 ## 微信群
 
 公众号二维码
-![公众号](ghdc_CN/Figure/gzh_search.png)
+![公众号](/ghdc_CN/Figure/gzh_search.png)
 
 
 
 使用微信扫描二维码添加管理员，可以加入微信群。
 
-![拉群微信](ghdc_CN/Figure/shudxyz.jpeg)
+![拉群微信](/ghdc_CN/Figure/shudxyz.jpeg)
 
