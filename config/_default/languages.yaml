@@ -55,7 +55,7 @@ zh:
         url: '#home'
         weight: 1
       - name: SHUD模型
-        url: 'https://shud.xyz/book_cn'
+        url: 'shud/'
         weight: 10
       - name: 项目
         url: 'project'

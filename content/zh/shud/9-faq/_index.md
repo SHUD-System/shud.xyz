@@ -20,7 +20,7 @@ weight: 999
 
 
 
-## 关于SHUD模型
+## 1. 关于SHUD模型
 ### 为什么使用非结构域，而不使用规则网格?
 
   水文计算中非结构网格有以下几个优点：
@@ -84,7 +84,7 @@ SHUD模型作为物理性水文模型，理论上可适用于任何流域和区�
 部分应用案例可从链接 [https://www.shud.xyz/applications/](https://www.shud.xyz/applications/)查看.
 
 
-## 模型安装与运行
+## 2. 模型安装与运行
 
 ### 那里下载SHUD模型源码？
 SHUD模型源码可以从github（[https://github.com/SHUD-System/SHUD](https://github.com/SHUD-System/SHUD)），SHUD网站（[shud.xyz](https://www.shud.xyz)），以及作者处（[shulele@lzb.ac.cn](mailto:shulele@lzb.ac.cn)）获取
@@ -128,7 +128,7 @@ make shud_omp
 
 此问题没有绝对答案。计算单元大小高度依赖研究的问题和研究区域特征。 分辨率可跨越$ \sim 1 cm^2$ 到 $ \sim 10 km^2$，根据研究的需求决定。
 
-## rSHUD工具箱
+## 3. rSHUD工具箱
 
 ### 如何安装rSHUD?
 首先你需要有R环境——先安装R，再推荐使用Rstudio。

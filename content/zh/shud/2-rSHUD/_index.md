@@ -18,6 +18,7 @@ type: book
 weight: 20
 
 ---
+
 rSHUD源代码完全公开，可通过GitHub获取最新代码：[https://github.com/SHUD-System/rSHUD](https://github.com/SHUD-System/rSHUD)
 
 ## rSHUD功能：

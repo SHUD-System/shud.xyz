@@ -21,10 +21,11 @@ weight: 10
 
 ![](/media/shud_show.png)
 
-SHUD模型采用有限体积法求解流域水文学常微分方程，获得空间上水的储量和流量。SHUD是多尺度、多过程、数值方法、地表-地下全耦合、分布式水文模型。
+SHUD模型采用有限体积法求解流域水文学常微分方程，获得空间上水的储量和流量。SHUD是多尺度、多过程、数值方法、地表-地下全耦合、分布式水文模型。 
+
 SHUD模型在继承Duffy（1996）所提出的Two-state integral-balance(TSIB)认知模型，并吸收PIHM(Penn State Integrated Hydrologic Model)模型应用经验的基础上，全新开发的数值水文模型。在团队导师Christopher Duffy和Paul Ullrich建议下，将此原创水文模型命名为SHUD (the Simulator for Hydrologic Unstructured Domains），突出模型非结构化特征在水文模拟中的优势。
 
-
+SHUD模型说明书见：[https://www.shud.xyz/book_cn/](https://www.shud.xyz/book_cn/)
 
 ##	SHUD模型的基本结构
 SHUD模型利用非结构三角网格表达模拟区域的水平方向空间异质性。模型同时支持规则三角形和Delaunay不规则三角形（Triangular Irregulate Network），但因为流域空间的不规则特点，Delaunay不规则三角形更便于表达。空间上每个三角形单元视为最小坡面计算单元，单元内水文参数具有一致性。
