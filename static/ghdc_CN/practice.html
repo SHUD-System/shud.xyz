@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 练习 | 全球水文模拟云平台</title>
+  <meta name="description" content="GHDC User Guide" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 练习 | 全球水文模拟云平台" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="GHDC User Guide" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 练习 | 全球水文模拟云平台" />
+  
+  <meta name="twitter:description" content="GHDC User Guide" />
+  
+
+<meta name="author" content="Lele Shu (shulele@lzb.ac.cn)" />
+
+
+<meta name="date" content="2023-04-02" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="model.html"/>
+<link rel="next" href="app.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">GHDC User Guide</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#index" id="toc-index">前言</a></li>
+<li><a href="overview.html#overview" id="toc-overview"><span class="toc-section-number">1</span> 绪论</a></li>
+<li><a href="method.html#method" id="toc-method"><span class="toc-section-number">2</span> 方法论</a>
+<ul>
+<li><a href="method.html#theory-data" id="toc-theory-data"><span class="toc-section-number">2.1</span> 数据仓库</a>
+<ul>
+<li><a href="method.html#原始数据源" id="toc-原始数据源"><span class="toc-section-number">2.1.1</span> 原始数据源</a></li>
+</ul></li>
+</ul></li>
+<li><a href="struct.html#struct" id="toc-struct"><span class="toc-section-number">3</span> 设计结构</a></li>
+<li><a href="model.html#model" id="toc-model"><span class="toc-section-number">4</span> 模型库</a>
+<ul>
+<li><a href="model.html#model-shud" id="toc-model-shud"><span class="toc-section-number">4.1</span> SHUD</a></li>
+<li><a href="model.html#model-topmodel" id="toc-model-topmodel"><span class="toc-section-number">4.2</span> TopModel</a></li>
+</ul></li>
+<li><a href="practice.html#practice" id="toc-practice"><span class="toc-section-number">5</span> 练习</a>
+<ul>
+<li><a href="practice.html#如何获取数据" id="toc-如何获取数据"><span class="toc-section-number">5.1</span> 如何获取数据</a></li>
+</ul></li>
+<li><a href="app.html#app" id="toc-app"><span class="toc-section-number">6</span> 应用案例</a>
+<ul>
+<li><a href="app.html#黑河上游中国" id="toc-黑河上游中国"><span class="toc-section-number">6.1</span> 黑河上游，中国</a></li>
+<li><a href="app.html#gummara-watershed-埃塞俄比亚" id="toc-gummara-watershed-埃塞俄比亚"><span class="toc-section-number">6.2</span> Gummara Watershed， 埃塞俄比亚</a></li>
+<li><a href="app.html#conestoga-watershed美国" id="toc-conestoga-watershed美国"><span class="toc-section-number">6.3</span> Conestoga Watershed，美国</a></li>
+</ul></li>
+<li><a href="faq.html#faq" id="toc-faq"><span class="toc-section-number">7</span> 常见问题</a></li>
+<li><a href="dev.html#dev" id="toc-dev"><span class="toc-section-number">8</span> 开发指南</a></li>
+<li><a href="ref.html#ref" id="toc-ref"><span class="toc-section-number">9</span> 参考文献</a></li>
+<li><a href="ack.html#ack" id="toc-ack">致谢</a></li>
+<li class="divider"></li>
+<li><a href="mailto:<Lele Shu>shulele@lzb.ac.cn" target="blank">Contact us</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">全球水文模拟云平台</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="practice" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> 练习<a href="practice.html#practice" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="如何获取数据" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> 如何获取数据<a href="practice.html#如何获取数据" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>提供流域边界，文件格式为ESRI Shapefile。请将Shapefile包含的四个基本子文件(.shp, .shx, .dbf, .shx)打包为.zip文件，并上传。 注意：打包压缩时，请勿使用文件夹；直接选择文件进行打包。</li>
+<li>提供模拟所需要的参数，包含项目名称、模拟年份、最小单元数，最大单元面积，含水层厚度等。</li>
+<li>填写邮箱地址，并提交任务。 请查看您的邮箱，GHDC会发送一封邮件；请点击邮箱内的确认链接。点击确认链接之后，GHDC才会启动数据处理任务。</li>
+<li>GHDC数据处理完成后，会向您的邮箱再发送一封邮件，包含数据下载链接。</li>
+<li>请通过数据下载链接下载处理好的数据。</li>
+<li>模拟愉快~~~</li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="model.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="app.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

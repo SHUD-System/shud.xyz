@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>SHUD水文模型</title>
+  <meta name="description" content="SHUD Book" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="SHUD水文模型" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="SHUD Book" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="SHUD水文模型" />
+  
+  <meta name="twitter:description" content="SHUD Book" />
+  
+
+<meta name="author" content="Lele Shu (shulele@lzb.ac.cn)" />
+
+
+<meta name="date" content="2023-03-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="overview.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SHUD Book</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#index" id="toc-index">前言</a></li>
+<li><a href="overview.html#overview" id="toc-overview"><span class="toc-section-number">1</span> 绪论</a>
+<ul>
+<li><a href="overview.html#站在巨人的肩上" id="toc-站在巨人的肩上"><span class="toc-section-number">1.1</span> 站在巨人的肩上</a>
+<ul>
+<li><a href="overview.html#pihm模型简史" id="toc-pihm模型简史"><span class="toc-section-number">1.1.1</span> PIHM模型简史</a></li>
+<li><a href="overview.html#重要时间线" id="toc-重要时间线"><span class="toc-section-number">1.1.2</span> 重要时间线</a></li>
+<li><a href="overview.html#shud与pihm的区别" id="toc-shud与pihm的区别"><span class="toc-section-number">1.1.3</span> SHUD与PIHM的区别</a></li>
+</ul></li>
+<li><a href="overview.html#shud模型的特点" id="toc-shud模型的特点"><span class="toc-section-number">1.2</span> SHUD模型的特点</a></li>
+<li><a href="overview.html#参考文献" id="toc-参考文献"><span class="toc-section-number">1.3</span> 参考文献</a></li>
+</ul></li>
+<li><a href="theory.html#theory" id="toc-theory"><span class="toc-section-number">2</span> 理论与公式</a>
+<ul>
+<li><a href="theory.html#建模思路" id="toc-建模思路"><span class="toc-section-number">2.1</span> 建模思路</a></li>
+<li><a href="theory.html#流域水循环" id="toc-流域水循环"><span class="toc-section-number">2.2</span> 流域水循环</a>
+<ul>
+<li><a href="theory.html#水量平衡" id="toc-水量平衡"><span class="toc-section-number">2.2.1</span> 水量平衡</a></li>
+<li><a href="theory.html#边界条件" id="toc-边界条件"><span class="toc-section-number">2.2.2</span> 边界条件</a></li>
+</ul></li>
+<li><a href="theory.html#气象" id="toc-气象"><span class="toc-section-number">2.3</span> 气象</a>
+<ul>
+<li><a href="theory.html#降雨" id="toc-降雨"><span class="toc-section-number">2.3.1</span> 降雨</a></li>
+<li><a href="theory.html#蒸散发" id="toc-蒸散发"><span class="toc-section-number">2.3.2</span> 蒸散发</a></li>
+</ul></li>
+<li><a href="theory.html#入渗及地下水补给" id="toc-入渗及地下水补给"><span class="toc-section-number">2.4</span> 入渗及地下水补给</a></li>
+<li><a href="theory.html#地表产流" id="toc-地表产流"><span class="toc-section-number">2.5</span> 地表产流</a></li>
+<li><a href="theory.html#基流" id="toc-基流"><span class="toc-section-number">2.6</span> 基流</a></li>
+<li><a href="theory.html#河道" id="toc-河道"><span class="toc-section-number">2.7</span> 河道</a></li>
+<li><a href="theory.html#湖泊" id="toc-湖泊"><span class="toc-section-number">2.8</span> 湖泊</a></li>
+<li><a href="theory.html#人类活动影响" id="toc-人类活动影响"><span class="toc-section-number">2.9</span> 人类活动影响</a></li>
+</ul></li>
+<li><a href="modeling.html#modeling" id="toc-modeling"><span class="toc-section-number">3</span> SHUD模型模拟</a>
+<ul>
+<li><a href="modeling.html#install" id="toc-install"><span class="toc-section-number">3.1</span> 安装 SHUD and rSHUD</a>
+<ul>
+<li><a href="modeling.html#sundialscvode" id="toc-sundialscvode"><span class="toc-section-number">3.1.1</span> SUNDIALS/CVODE</a></li>
+<li><a href="modeling.html#编译shud" id="toc-编译shud"><span class="toc-section-number">3.1.2</span> 编译SHUD</a></li>
+<li><a href="modeling.html#rshud" id="toc-rshud"><span class="toc-section-number">3.1.3</span> rSHUD</a></li>
+</ul></li>
+<li><a href="modeling.html#inputfiles" id="toc-inputfiles"><span class="toc-section-number">3.2</span> 数据准备</a>
+<ul>
+<li><a href="modeling.html#原始数据" id="toc-原始数据"><span class="toc-section-number">3.2.1</span> 原始数据</a></li>
+<li><a href="modeling.html#模型输入文件" id="toc-模型输入文件"><span class="toc-section-number">3.2.2</span> 模型输入文件</a></li>
+<li><a href="modeling.html#空间数据" id="toc-空间数据"><span class="toc-section-number">3.2.3</span> 空间数据</a></li>
+<li><a href="modeling.html#水力学参数" id="toc-水力学参数"><span class="toc-section-number">3.2.4</span> 水力学参数</a></li>
+<li><a href="modeling.html#模型配置文件" id="toc-模型配置文件"><span class="toc-section-number">3.2.5</span> 模型配置文件</a></li>
+<li><a href="modeling.html#时间序列数据" id="toc-时间序列数据"><span class="toc-section-number">3.2.6</span> 时间序列数据</a></li>
+</ul></li>
+<li><a href="modeling.html#outputfiles" id="toc-outputfiles"><span class="toc-section-number">3.3</span> 输出文件</a>
+<ul>
+<li><a href="modeling.html#文件名格式" id="toc-文件名格式"><span class="toc-section-number">3.3.1</span> 文件名格式</a></li>
+<li><a href="modeling.html#文本格式输出文件.csv" id="toc-文本格式输出文件.csv"><span class="toc-section-number">3.3.2</span> 文本格式输出文件（.csv）</a></li>
+<li><a href="modeling.html#二进制输出文件.dat" id="toc-二进制输出文件.dat"><span class="toc-section-number">3.3.3</span> 二进制输出文件（.dat）</a></li>
+</ul></li>
+</ul></li>
+<li><a href="autoshud.html#autoshud" id="toc-autoshud"><span class="toc-section-number">4</span> 快速、可重复和自动化水文模拟</a>
+<ul>
+<li><a href="autoshud.html#shud模拟的基本步骤" id="toc-shud模拟的基本步骤"><span class="toc-section-number">4.1</span> SHUD模拟的基本步骤。</a>
+<ul>
+<li><a href="autoshud.html#地形关键变量" id="toc-地形关键变量"><span class="toc-section-number">4.1.1</span> 地形关键变量</a></li>
+<li><a href="autoshud.html#a-priori-data-sources" id="toc-a-priori-data-sources"><span class="toc-section-number">4.1.2</span> A-Priori Data Sources</a></li>
+</ul></li>
+<li><a href="autoshud.html#workflow-of-shud-modeling-system" id="toc-workflow-of-shud-modeling-system"><span class="toc-section-number">4.2</span> Workflow of SHUD Modeling System</a></li>
+</ul></li>
+<li><a href="calibration.html#calibration" id="toc-calibration"><span class="toc-section-number">5</span> 模型校准</a></li>
+<li><a href="application.html#application" id="toc-application"><span class="toc-section-number">6</span> 应用案例</a>
+<ul>
+<li><a href="application.html#v形流域" id="toc-v形流域"><span class="toc-section-number">6.1</span> V形流域</a>
+<ul>
+<li><a href="application.html#shen等2010-中的结果" id="toc-shen等2010-中的结果"><span class="toc-section-number">6.1.1</span> Shen等(2010) 中的结果</a></li>
+</ul></li>
+<li><a href="application.html#vauclin水槽箱试验" id="toc-vauclin水槽箱试验"><span class="toc-section-number">6.2</span> Vauclin水槽箱试验</a></li>
+<li><a href="application.html#美国加州cache河流域" id="toc-美国加州cache河流域"><span class="toc-section-number">6.3</span> 美国加州Cache河流域</a>
+<ul>
+<li><a href="application.html#cache-creek-watershed" id="toc-cache-creek-watershed"><span class="toc-section-number">6.3.1</span> Cache Creek Watershed</a></li>
+<li><a href="application.html#shud-simulation-and-calibration" id="toc-shud-simulation-and-calibration"><span class="toc-section-number">6.3.2</span> SHUD simulation and calibration</a></li>
+<li><a href="application.html#results" id="toc-results"><span class="toc-section-number">6.3.3</span> Results</a></li>
+</ul></li>
+<li><a href="application.html#宁夏岩画村山洪" id="toc-宁夏岩画村山洪"><span class="toc-section-number">6.4</span> 宁夏岩画村山洪</a></li>
+<li><a href="application.html#休斯顿城市内涝" id="toc-休斯顿城市内涝"><span class="toc-section-number">6.5</span> 休斯顿城市内涝</a></li>
+<li><a href="application.html#南苏丹尼罗河上游" id="toc-南苏丹尼罗河上游"><span class="toc-section-number">6.6</span> 南苏丹尼罗河上游</a></li>
+</ul></li>
+<li><a href="sourcecode.html#sourcecode" id="toc-sourcecode"><span class="toc-section-number">7</span> 源码和程序设计</a></li>
+<li class="divider"></li>
+<li><a href="mailto:<Lele Shu>shulele@lzb.ac.cn" target="blank">Contact us</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">SHUD水文模型</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">SHUD水文模型</h1>
+<h2 class="subtitle"><em>理论、方法和案例</em></h2>
+<p class="author"><em>Lele Shu (<a href="mailto:shulele@lzb.ac.cn" class="email">shulele@lzb.ac.cn</a>)</em></p>
+<p class="date"><em>2023-03-31</em></p>
+</div>
+<div id="index" class="section level1 unnumbered hasAnchor">
+<h1>前言<a href="index.html#index" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>这是一本有关SHUD模型的说明书，包含和模型的基本理论、构建、应用案例和程序设计。本书不仅仅向模型用户介绍SHUD模型本身，更想为水文和地球工作中展示以水为媒的自然过程。</p>
+<div class="figure">
+<img src="Fig/modelcover.png" alt="" />
+<p class="caption">SHUD模型</p>
+</div>
+<hr />
+<blockquote>
+<p>“云气西行，云云然冬夏不辍；水泉东流，日夜不休；上不竭，下不满；小为大，重为轻；圜道也。”</p>
+<p>——<strong>吕不韦 《吕氏春秋》, 公元前239年(?)</strong></p>
+</blockquote>
+<blockquote>
+<p>“<em>上善若水</em>，<em>水善利万物</em>而不争”</p>
+<p>——<strong>老子《道德家》，公元前四世纪</strong></p>
+</blockquote>
+<blockquote>
+<p>科学技术是人工的演化。理论物理学家的理论验证需要等待宇宙现象的发生。科学家穷其一生也无法验证某些理论——因为自然现象的发生概率非常低。所以，人工实验就可以大幅度提高这种现象的发生概率。</p>
+<p>——<strong>陈平，2019</strong></p>
+</blockquote>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="overview.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["SHUD_Book_CN.pdf", "SHUD_Book_CN.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

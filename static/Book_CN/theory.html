@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 理论与公式 | SHUD水文模型</title>
+  <meta name="description" content="SHUD Book" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 理论与公式 | SHUD水文模型" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="SHUD Book" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 理论与公式 | SHUD水文模型" />
+  
+  <meta name="twitter:description" content="SHUD Book" />
+  
+
+<meta name="author" content="Lele Shu (shulele@lzb.ac.cn)" />
+
+
+<meta name="date" content="2023-03-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="overview.html"/>
+<link rel="next" href="modeling.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SHUD Book</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#index" id="toc-index">前言</a></li>
+<li><a href="overview.html#overview" id="toc-overview"><span class="toc-section-number">1</span> 绪论</a>
+<ul>
+<li><a href="overview.html#站在巨人的肩上" id="toc-站在巨人的肩上"><span class="toc-section-number">1.1</span> 站在巨人的肩上</a>
+<ul>
+<li><a href="overview.html#pihm模型简史" id="toc-pihm模型简史"><span class="toc-section-number">1.1.1</span> PIHM模型简史</a></li>
+<li><a href="overview.html#重要时间线" id="toc-重要时间线"><span class="toc-section-number">1.1.2</span> 重要时间线</a></li>
+<li><a href="overview.html#shud与pihm的区别" id="toc-shud与pihm的区别"><span class="toc-section-number">1.1.3</span> SHUD与PIHM的区别</a></li>
+</ul></li>
+<li><a href="overview.html#shud模型的特点" id="toc-shud模型的特点"><span class="toc-section-number">1.2</span> SHUD模型的特点</a></li>
+<li><a href="overview.html#参考文献" id="toc-参考文献"><span class="toc-section-number">1.3</span> 参考文献</a></li>
+</ul></li>
+<li><a href="theory.html#theory" id="toc-theory"><span class="toc-section-number">2</span> 理论与公式</a>
+<ul>
+<li><a href="theory.html#建模思路" id="toc-建模思路"><span class="toc-section-number">2.1</span> 建模思路</a></li>
+<li><a href="theory.html#流域水循环" id="toc-流域水循环"><span class="toc-section-number">2.2</span> 流域水循环</a>
+<ul>
+<li><a href="theory.html#水量平衡" id="toc-水量平衡"><span class="toc-section-number">2.2.1</span> 水量平衡</a></li>
+<li><a href="theory.html#边界条件" id="toc-边界条件"><span class="toc-section-number">2.2.2</span> 边界条件</a></li>
+</ul></li>
+<li><a href="theory.html#气象" id="toc-气象"><span class="toc-section-number">2.3</span> 气象</a>
+<ul>
+<li><a href="theory.html#降雨" id="toc-降雨"><span class="toc-section-number">2.3.1</span> 降雨</a></li>
+<li><a href="theory.html#蒸散发" id="toc-蒸散发"><span class="toc-section-number">2.3.2</span> 蒸散发</a></li>
+</ul></li>
+<li><a href="theory.html#入渗及地下水补给" id="toc-入渗及地下水补给"><span class="toc-section-number">2.4</span> 入渗及地下水补给</a></li>
+<li><a href="theory.html#地表产流" id="toc-地表产流"><span class="toc-section-number">2.5</span> 地表产流</a></li>
+<li><a href="theory.html#基流" id="toc-基流"><span class="toc-section-number">2.6</span> 基流</a></li>
+<li><a href="theory.html#河道" id="toc-河道"><span class="toc-section-number">2.7</span> 河道</a></li>
+<li><a href="theory.html#湖泊" id="toc-湖泊"><span class="toc-section-number">2.8</span> 湖泊</a></li>
+<li><a href="theory.html#人类活动影响" id="toc-人类活动影响"><span class="toc-section-number">2.9</span> 人类活动影响</a></li>
+</ul></li>
+<li><a href="modeling.html#modeling" id="toc-modeling"><span class="toc-section-number">3</span> SHUD模型模拟</a>
+<ul>
+<li><a href="modeling.html#install" id="toc-install"><span class="toc-section-number">3.1</span> 安装 SHUD and rSHUD</a>
+<ul>
+<li><a href="modeling.html#sundialscvode" id="toc-sundialscvode"><span class="toc-section-number">3.1.1</span> SUNDIALS/CVODE</a></li>
+<li><a href="modeling.html#编译shud" id="toc-编译shud"><span class="toc-section-number">3.1.2</span> 编译SHUD</a></li>
+<li><a href="modeling.html#rshud" id="toc-rshud"><span class="toc-section-number">3.1.3</span> rSHUD</a></li>
+</ul></li>
+<li><a href="modeling.html#inputfiles" id="toc-inputfiles"><span class="toc-section-number">3.2</span> 数据准备</a>
+<ul>
+<li><a href="modeling.html#原始数据" id="toc-原始数据"><span class="toc-section-number">3.2.1</span> 原始数据</a></li>
+<li><a href="modeling.html#模型输入文件" id="toc-模型输入文件"><span class="toc-section-number">3.2.2</span> 模型输入文件</a></li>
+<li><a href="modeling.html#空间数据" id="toc-空间数据"><span class="toc-section-number">3.2.3</span> 空间数据</a></li>
+<li><a href="modeling.html#水力学参数" id="toc-水力学参数"><span class="toc-section-number">3.2.4</span> 水力学参数</a></li>
+<li><a href="modeling.html#模型配置文件" id="toc-模型配置文件"><span class="toc-section-number">3.2.5</span> 模型配置文件</a></li>
+<li><a href="modeling.html#时间序列数据" id="toc-时间序列数据"><span class="toc-section-number">3.2.6</span> 时间序列数据</a></li>
+</ul></li>
+<li><a href="modeling.html#outputfiles" id="toc-outputfiles"><span class="toc-section-number">3.3</span> 输出文件</a>
+<ul>
+<li><a href="modeling.html#文件名格式" id="toc-文件名格式"><span class="toc-section-number">3.3.1</span> 文件名格式</a></li>
+<li><a href="modeling.html#文本格式输出文件.csv" id="toc-文本格式输出文件.csv"><span class="toc-section-number">3.3.2</span> 文本格式输出文件（.csv）</a></li>
+<li><a href="modeling.html#二进制输出文件.dat" id="toc-二进制输出文件.dat"><span class="toc-section-number">3.3.3</span> 二进制输出文件（.dat）</a></li>
+</ul></li>
+</ul></li>
+<li><a href="autoshud.html#autoshud" id="toc-autoshud"><span class="toc-section-number">4</span> 快速、可重复和自动化水文模拟</a>
+<ul>
+<li><a href="autoshud.html#shud模拟的基本步骤" id="toc-shud模拟的基本步骤"><span class="toc-section-number">4.1</span> SHUD模拟的基本步骤。</a>
+<ul>
+<li><a href="autoshud.html#地形关键变量" id="toc-地形关键变量"><span class="toc-section-number">4.1.1</span> 地形关键变量</a></li>
+<li><a href="autoshud.html#a-priori-data-sources" id="toc-a-priori-data-sources"><span class="toc-section-number">4.1.2</span> A-Priori Data Sources</a></li>
+</ul></li>
+<li><a href="autoshud.html#workflow-of-shud-modeling-system" id="toc-workflow-of-shud-modeling-system"><span class="toc-section-number">4.2</span> Workflow of SHUD Modeling System</a></li>
+</ul></li>
+<li><a href="calibration.html#calibration" id="toc-calibration"><span class="toc-section-number">5</span> 模型校准</a></li>
+<li><a href="application.html#application" id="toc-application"><span class="toc-section-number">6</span> 应用案例</a>
+<ul>
+<li><a href="application.html#v形流域" id="toc-v形流域"><span class="toc-section-number">6.1</span> V形流域</a>
+<ul>
+<li><a href="application.html#shen等2010-中的结果" id="toc-shen等2010-中的结果"><span class="toc-section-number">6.1.1</span> Shen等(2010) 中的结果</a></li>
+</ul></li>
+<li><a href="application.html#vauclin水槽箱试验" id="toc-vauclin水槽箱试验"><span class="toc-section-number">6.2</span> Vauclin水槽箱试验</a></li>
+<li><a href="application.html#美国加州cache河流域" id="toc-美国加州cache河流域"><span class="toc-section-number">6.3</span> 美国加州Cache河流域</a>
+<ul>
+<li><a href="application.html#cache-creek-watershed" id="toc-cache-creek-watershed"><span class="toc-section-number">6.3.1</span> Cache Creek Watershed</a></li>
+<li><a href="application.html#shud-simulation-and-calibration" id="toc-shud-simulation-and-calibration"><span class="toc-section-number">6.3.2</span> SHUD simulation and calibration</a></li>
+<li><a href="application.html#results" id="toc-results"><span class="toc-section-number">6.3.3</span> Results</a></li>
+</ul></li>
+<li><a href="application.html#宁夏岩画村山洪" id="toc-宁夏岩画村山洪"><span class="toc-section-number">6.4</span> 宁夏岩画村山洪</a></li>
+<li><a href="application.html#休斯顿城市内涝" id="toc-休斯顿城市内涝"><span class="toc-section-number">6.5</span> 休斯顿城市内涝</a></li>
+<li><a href="application.html#南苏丹尼罗河上游" id="toc-南苏丹尼罗河上游"><span class="toc-section-number">6.6</span> 南苏丹尼罗河上游</a></li>
+</ul></li>
+<li><a href="sourcecode.html#sourcecode" id="toc-sourcecode"><span class="toc-section-number">7</span> 源码和程序设计</a></li>
+<li class="divider"></li>
+<li><a href="mailto:<Lele Shu>shulele@lzb.ac.cn" target="blank">Contact us</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">SHUD水文模型</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="theory" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> 理论与公式<a href="theory.html#theory" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="建模思路" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> 建模思路<a href="theory.html#建模思路" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="流域水循环" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> 流域水循环<a href="theory.html#流域水循环" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="水量平衡" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> 水量平衡<a href="theory.html#水量平衡" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="边界条件" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> 边界条件<a href="theory.html#边界条件" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="气象" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> 气象<a href="theory.html#气象" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="降雨" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> 降雨<a href="theory.html#降雨" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="蒸散发" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> 蒸散发<a href="theory.html#蒸散发" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="风廓线-wind-profile" class="section level4 hasAnchor" number="2.3.2.1">
+<h4><span class="header-section-number">2.3.2.1</span> 风廓线 (Wind profile)<a href="theory.html#风廓线-wind-profile" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Equation 2.3 in <span class="citation">(<a href="#ref-abtew2012evaporation" role="doc-biblioref">Abtew and Melesse 2012</a>)</span></p>
+<p><span class="math display">\[\begin{equation}
+\boldsymbol{u}_{x}=\boldsymbol{u}_{m} \frac{\ln \frac{z_{x}-d}{z_{0}}}{\ln \frac{z_{m}-d}{z_{0}}}
+\end{equation}\]</span></p>
+<ul>
+<li><span class="math inline">\(u_x\)</span> - 目标高度的风速 [<span class="math inline">\(m s^{-1}\)</span>]</li>
+<li><span class="math inline">\(u_m\)</span> - 测量高度的风速 [<span class="math inline">\(m s^{-1}\)</span>]</li>
+<li><span class="math inline">\(z_x\)</span> - 目标高度 [<span class="math inline">\(m\)</span>]</li>
+<li><span class="math inline">\(z_m\)</span> - 测量高度 [<span class="math inline">\(m\)</span>]</li>
+<li><span class="math inline">\(d\)</span> - 零平面 [<span class="math inline">\(m\)</span>]</li>
+<li><span class="math inline">\(z0\)</span> - 粗糙度(Roughness height) [<span class="math inline">\(m\)</span>]</li>
+</ul>
+<p>FAO56</p>
+<ol style="list-style-type: decimal">
+<li><p>植被覆盖的</p></li>
+<li><p>开放水面和裸露土地的潜在蒸发(PET of bare soil and open water)
+<span class="math display">\[\begin{equation}
+\lambda E_{a}=c_{2} \frac{e_{a}-e_{d}}{r_{a}}
+\end{equation}\]</span></p></li>
+</ol>
+<p><span class="math inline">\(E_a\)</span> 是同温蒸发率(Isothermal evaporation rate)。</p>
+<p><span class="math display">\[\begin{equation}
+\mathrm{E}_{\mathrm{o}}=\frac{\Delta\left(\mathrm{R}_{\mathrm{n}}-\mathrm{G}\right) / \lambda+\gamma \mathrm{E}_{\mathrm{a}}}{\Delta+\gamma}
+\end{equation}\]</span></p>
+</div>
+</div>
+</div>
+<div id="入渗及地下水补给" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> 入渗及地下水补给<a href="theory.html#入渗及地下水补给" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="地表产流" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> 地表产流<a href="theory.html#地表产流" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="基流" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> 基流<a href="theory.html#基流" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="河道" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> 河道<a href="theory.html#河道" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="湖泊" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> 湖泊<a href="theory.html#湖泊" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="人类活动影响" class="section level2 hasAnchor" number="2.9">
+<h2><span class="header-section-number">2.9</span> 人类活动影响<a href="theory.html#人类活动影响" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-abtew2012evaporation" class="csl-entry">
+Abtew, W., and A. M. Melesse. 2012. <em>Evaporation and Evapotranspiration: Measurements and Estimations</em>. Springer Netherlands. <a href="https://books.google.com/books?id=C84zLgEACAAJ">https://books.google.com/books?id=C84zLgEACAAJ</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="overview.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="modeling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["SHUD_Book_CN.pdf", "SHUD_Book_CN.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
