@@ -3,7 +3,7 @@
 title: 全球水文数据云(GHDC)
 
 # Title for the menu link if you wish to use a shorter link title, otherwise remove this option.
-linktitle: 3. GHDC
+linktitle: 3. 全球水文数据云(GHDC)
 
 # Page summary for search engines.
 summary: 全球水文数据云

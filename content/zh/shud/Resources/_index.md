@@ -25,12 +25,14 @@ weight: 900
 - **网站**: [https://www.shud.xyz](https://www.shud.xyz)
 - **用户手册**: [https://www.shud.xyz/Book_CN<i class="fas fa-external-link-alt"></i>](/Book_CN)
 - **用户手册(英文)**: [https://www.shud.xyz/Book_EN<i class="fas fa-external-link-alt"></i>](/Book_EN)
-- **支持工具集**: rSHUD in R (https://github.com/SHUD-System/rSHUD)
+- **支持工具集**: rSHUD in R [https://github.com/SHUD-System/rSHUD](https://github.com/SHUD-System/rSHUD)
+- **全球水文数据云**: GHDC [https://shuddata.com](https://shuddata.com)
 
 ## 软件基本信息
 
-- **模型编程语言**: C++
-- **模型工具编程语言**: R、python(开发中)
+- **SHUD模型编程语言**: C++
+- **rSHUD模型工具编程语言**: R、python(开发中)
 - **运行平台**: Mac OS, Linux and Windows
 - **数学库**:  SUNDIALS/CVODE V5.0+
 - **并行计算**: OpenMP
+
