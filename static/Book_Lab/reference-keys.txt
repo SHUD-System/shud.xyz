@@ -74,5 +74,6 @@ linux
 linux-user
 linux常用的命令
 r
+rstudio-server
 python
 Ack
