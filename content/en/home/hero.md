@@ -41,7 +41,7 @@ advanced:
 The Simulator for Hydrologic Unstructured Domains (**SHUD** - pronounced **“SHOULD”**) is a multi-process, multi-scale integrated hydrological model using the semi-discrete Finite Volume Method.
 
 
-**Spatial strucutre**: Unstructed mesh domain --- irregulated triangular network. Three vertical layers: land surface, unstructured and saturated layers.
+**Spatial structure**: Unstructured mesh domain --- irregulated triangular network. Three vertical layers: land surface, unstructured and saturated layers.
 
 **Time-step**: Adaptive time-step based on the spatial resolution and slow-fast hydrological processes. The normal time-step ranges from 1 ~ 60 seconds.
 
