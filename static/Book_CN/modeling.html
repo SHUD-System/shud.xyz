@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 SHUD模型模拟 | SHUD水文模型</title>
+  <title>Chapter 3 SHUD模型软件与数据 | SHUD水文模型 (ver 2.0)</title>
   <meta name="description" content="SHUD Book" />
-  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 SHUD模型模拟 | SHUD水文模型" />
+  <meta property="og:title" content="Chapter 3 SHUD模型软件与数据 | SHUD水文模型 (ver 2.0)" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="SHUD Book" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 SHUD模型模拟 | SHUD水文模型" />
+  <meta name="twitter:title" content="Chapter 3 SHUD模型软件与数据 | SHUD水文模型 (ver 2.0)" />
   
   <meta name="twitter:description" content="SHUD Book" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Lele Shu (shulele@lzb.ac.cn)" />
 
 
-<meta name="date" content="2023-03-31" />
+<meta name="date" content="2023-05-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="theory.html"/>
-<link rel="next" href="autoshud.html"/>
+<link rel="next" href="calibration.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -94,90 +94,101 @@ div.csl-indent {
 <li><a href="./">SHUD Book</a></li>
 
 <li class="divider"></li>
-<li><a href="index.html#index" id="toc-index">前言</a></li>
-<li><a href="overview.html#overview" id="toc-overview"><span class="toc-section-number">1</span> 绪论</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>前言</a></li>
+<li class="chapter" data-level="1" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i><b>1</b> 绪论</a>
 <ul>
-<li><a href="overview.html#站在巨人的肩上" id="toc-站在巨人的肩上"><span class="toc-section-number">1.1</span> 站在巨人的肩上</a>
+<li class="chapter" data-level="1.1" data-path="overview.html"><a href="overview.html#水文模型"><i class="fa fa-check"></i><b>1.1</b> 水文模型</a></li>
+<li class="chapter" data-level="1.2" data-path="overview.html"><a href="overview.html#数值方法水文模型"><i class="fa fa-check"></i><b>1.2</b> 数值方法水文模型</a>
 <ul>
-<li><a href="overview.html#pihm模型简史" id="toc-pihm模型简史"><span class="toc-section-number">1.1.1</span> PIHM模型简史</a></li>
-<li><a href="overview.html#重要时间线" id="toc-重要时间线"><span class="toc-section-number">1.1.2</span> 重要时间线</a></li>
-<li><a href="overview.html#shud与pihm的区别" id="toc-shud与pihm的区别"><span class="toc-section-number">1.1.3</span> SHUD与PIHM的区别</a></li>
+<li class="chapter" data-level="1.2.1" data-path="overview.html"><a href="overview.html#数学模型"><i class="fa fa-check"></i><b>1.2.1</b> 数学模型</a></li>
+<li class="chapter" data-level="1.2.2" data-path="overview.html"><a href="overview.html#数值方法求解"><i class="fa fa-check"></i><b>1.2.2</b> 数值方法求解</a></li>
 </ul></li>
-<li><a href="overview.html#shud模型的特点" id="toc-shud模型的特点"><span class="toc-section-number">1.2</span> SHUD模型的特点</a></li>
-<li><a href="overview.html#参考文献" id="toc-参考文献"><span class="toc-section-number">1.3</span> 参考文献</a></li>
-</ul></li>
-<li><a href="theory.html#theory" id="toc-theory"><span class="toc-section-number">2</span> 理论与公式</a>
+<li class="chapter" data-level="1.3" data-path="overview.html"><a href="overview.html#shud模型"><i class="fa fa-check"></i><b>1.3</b> SHUD模型</a>
 <ul>
-<li><a href="theory.html#建模思路" id="toc-建模思路"><span class="toc-section-number">2.1</span> 建模思路</a></li>
-<li><a href="theory.html#流域水循环" id="toc-流域水循环"><span class="toc-section-number">2.2</span> 流域水循环</a>
+<li class="chapter" data-level="1.3.1" data-path="overview.html"><a href="overview.html#站在巨人的肩上"><i class="fa fa-check"></i><b>1.3.1</b> 站在巨人的肩上</a></li>
+<li class="chapter" data-level="1.3.2" data-path="overview.html"><a href="overview.html#pihm模型简史"><i class="fa fa-check"></i><b>1.3.2</b> PIHM模型简史</a></li>
+<li class="chapter" data-level="1.3.3" data-path="overview.html"><a href="overview.html#重要时间线"><i class="fa fa-check"></i><b>1.3.3</b> 重要时间线</a></li>
+<li class="chapter" data-level="1.3.4" data-path="overview.html"><a href="overview.html#shud与pihm的区别"><i class="fa fa-check"></i><b>1.3.4</b> SHUD与PIHM的区别</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="overview.html"><a href="overview.html#shud模型的特点"><i class="fa fa-check"></i><b>1.4</b> SHUD模型的特点</a></li>
+<li class="chapter" data-level="1.5" data-path="overview.html"><a href="overview.html#参考文献"><i class="fa fa-check"></i><b>1.5</b> 参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="theory.html"><a href="theory.html"><i class="fa fa-check"></i><b>2</b> 理论与公式</a>
 <ul>
-<li><a href="theory.html#水量平衡" id="toc-水量平衡"><span class="toc-section-number">2.2.1</span> 水量平衡</a></li>
-<li><a href="theory.html#边界条件" id="toc-边界条件"><span class="toc-section-number">2.2.2</span> 边界条件</a></li>
-</ul></li>
-<li><a href="theory.html#气象" id="toc-气象"><span class="toc-section-number">2.3</span> 气象</a>
+<li class="chapter" data-level="2.1" data-path="theory.html"><a href="theory.html#流域水循环"><i class="fa fa-check"></i><b>2.1</b> 流域水循环</a></li>
+<li class="chapter" data-level="2.2" data-path="theory.html"><a href="theory.html#建模思路"><i class="fa fa-check"></i><b>2.2</b> 建模思路</a>
 <ul>
-<li><a href="theory.html#降雨" id="toc-降雨"><span class="toc-section-number">2.3.1</span> 降雨</a></li>
-<li><a href="theory.html#蒸散发" id="toc-蒸散发"><span class="toc-section-number">2.3.2</span> 蒸散发</a></li>
+<li class="chapter" data-level="2.2.1" data-path="theory.html"><a href="theory.html#水量平衡"><i class="fa fa-check"></i><b>2.2.1</b> 水量平衡</a></li>
+<li class="chapter" data-level="2.2.2" data-path="theory.html"><a href="theory.html#边界条件"><i class="fa fa-check"></i><b>2.2.2</b> 边界条件</a></li>
 </ul></li>
-<li><a href="theory.html#入渗及地下水补给" id="toc-入渗及地下水补给"><span class="toc-section-number">2.4</span> 入渗及地下水补给</a></li>
-<li><a href="theory.html#地表产流" id="toc-地表产流"><span class="toc-section-number">2.5</span> 地表产流</a></li>
-<li><a href="theory.html#基流" id="toc-基流"><span class="toc-section-number">2.6</span> 基流</a></li>
-<li><a href="theory.html#河道" id="toc-河道"><span class="toc-section-number">2.7</span> 河道</a></li>
-<li><a href="theory.html#湖泊" id="toc-湖泊"><span class="toc-section-number">2.8</span> 湖泊</a></li>
-<li><a href="theory.html#人类活动影响" id="toc-人类活动影响"><span class="toc-section-number">2.9</span> 人类活动影响</a></li>
-</ul></li>
-<li><a href="modeling.html#modeling" id="toc-modeling"><span class="toc-section-number">3</span> SHUD模型模拟</a>
+<li class="chapter" data-level="2.3" data-path="theory.html"><a href="theory.html#气象驱动"><i class="fa fa-check"></i><b>2.3</b> 气象驱动</a>
 <ul>
-<li><a href="modeling.html#install" id="toc-install"><span class="toc-section-number">3.1</span> 安装 SHUD and rSHUD</a>
+<li class="chapter" data-level="2.3.1" data-path="theory.html"><a href="theory.html#降雨"><i class="fa fa-check"></i><b>2.3.1</b> 降雨</a></li>
+<li class="chapter" data-level="2.3.2" data-path="theory.html"><a href="theory.html#蒸散发"><i class="fa fa-check"></i><b>2.3.2</b> 蒸散发</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="theory.html"><a href="theory.html#地表过程-surface"><i class="fa fa-check"></i><b>2.4</b> 地表过程 (Surface)</a>
 <ul>
-<li><a href="modeling.html#sundialscvode" id="toc-sundialscvode"><span class="toc-section-number">3.1.1</span> SUNDIALS/CVODE</a></li>
-<li><a href="modeling.html#编译shud" id="toc-编译shud"><span class="toc-section-number">3.1.2</span> 编译SHUD</a></li>
-<li><a href="modeling.html#rshud" id="toc-rshud"><span class="toc-section-number">3.1.3</span> rSHUD</a></li>
+<li class="chapter" data-level="2.4.1" data-path="theory.html"><a href="theory.html#地表径流-surface-runoff"><i class="fa fa-check"></i><b>2.4.1</b> 地表径流 (Surface Runoff)</a></li>
+<li class="chapter" data-level="2.4.2" data-path="theory.html"><a href="theory.html#入渗与出渗-infiltration-exfiltration"><i class="fa fa-check"></i><b>2.4.2</b> 入渗与出渗 (Infiltration &amp; Exfiltration)</a></li>
 </ul></li>
-<li><a href="modeling.html#inputfiles" id="toc-inputfiles"><span class="toc-section-number">3.2</span> 数据准备</a>
+<li class="chapter" data-level="2.5" data-path="theory.html"><a href="theory.html#地下过程-subsurface"><i class="fa fa-check"></i><b>2.5</b> 地下过程 (Subsurface)</a>
 <ul>
-<li><a href="modeling.html#原始数据" id="toc-原始数据"><span class="toc-section-number">3.2.1</span> 原始数据</a></li>
-<li><a href="modeling.html#模型输入文件" id="toc-模型输入文件"><span class="toc-section-number">3.2.2</span> 模型输入文件</a></li>
-<li><a href="modeling.html#空间数据" id="toc-空间数据"><span class="toc-section-number">3.2.3</span> 空间数据</a></li>
-<li><a href="modeling.html#水力学参数" id="toc-水力学参数"><span class="toc-section-number">3.2.4</span> 水力学参数</a></li>
-<li><a href="modeling.html#模型配置文件" id="toc-模型配置文件"><span class="toc-section-number">3.2.5</span> 模型配置文件</a></li>
-<li><a href="modeling.html#时间序列数据" id="toc-时间序列数据"><span class="toc-section-number">3.2.6</span> 时间序列数据</a></li>
+<li class="chapter" data-level="2.5.1" data-path="theory.html"><a href="theory.html#未饱和土壤水"><i class="fa fa-check"></i><b>2.5.1</b> 未饱和土壤水</a></li>
+<li class="chapter" data-level="2.5.2" data-path="theory.html"><a href="theory.html#基流"><i class="fa fa-check"></i><b>2.5.2</b> 基流</a></li>
+<li class="chapter" data-level="2.5.3" data-path="theory.html"><a href="theory.html#入渗及地下水补给"><i class="fa fa-check"></i><b>2.5.3</b> 入渗及地下水补给</a></li>
 </ul></li>
-<li><a href="modeling.html#outputfiles" id="toc-outputfiles"><span class="toc-section-number">3.3</span> 输出文件</a>
+<li class="chapter" data-level="2.6" data-path="theory.html"><a href="theory.html#河流-river"><i class="fa fa-check"></i><b>2.6</b> 河流 (River)</a></li>
+<li class="chapter" data-level="2.7" data-path="theory.html"><a href="theory.html#湖泊与水库-lake-reserviors"><i class="fa fa-check"></i><b>2.7</b> 湖泊与水库 (Lake &amp; Reserviors)</a></li>
+<li class="chapter" data-level="2.8" data-path="theory.html"><a href="theory.html#人类活动影响"><i class="fa fa-check"></i><b>2.8</b> 人类活动影响</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="modeling.html"><a href="modeling.html"><i class="fa fa-check"></i><b>3</b> SHUD模型软件与数据</a>
 <ul>
-<li><a href="modeling.html#文件名格式" id="toc-文件名格式"><span class="toc-section-number">3.3.1</span> 文件名格式</a></li>
-<li><a href="modeling.html#文本格式输出文件.csv" id="toc-文本格式输出文件.csv"><span class="toc-section-number">3.3.2</span> 文本格式输出文件（.csv）</a></li>
-<li><a href="modeling.html#二进制输出文件.dat" id="toc-二进制输出文件.dat"><span class="toc-section-number">3.3.3</span> 二进制输出文件（.dat）</a></li>
-</ul></li>
-</ul></li>
-<li><a href="autoshud.html#autoshud" id="toc-autoshud"><span class="toc-section-number">4</span> 快速、可重复和自动化水文模拟</a>
+<li class="chapter" data-level="3.1" data-path="modeling.html"><a href="modeling.html#install"><i class="fa fa-check"></i><b>3.1</b> 安装 SHUD and rSHUD</a>
 <ul>
-<li><a href="autoshud.html#shud模拟的基本步骤" id="toc-shud模拟的基本步骤"><span class="toc-section-number">4.1</span> SHUD模拟的基本步骤。</a>
+<li class="chapter" data-level="3.1.1" data-path="modeling.html"><a href="modeling.html#sundialscvode"><i class="fa fa-check"></i><b>3.1.1</b> SUNDIALS/CVODE</a></li>
+<li class="chapter" data-level="3.1.2" data-path="modeling.html"><a href="modeling.html#编译shud"><i class="fa fa-check"></i><b>3.1.2</b> 编译SHUD</a></li>
+<li class="chapter" data-level="3.1.3" data-path="modeling.html"><a href="modeling.html#rshud"><i class="fa fa-check"></i><b>3.1.3</b> rSHUD</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="modeling.html"><a href="modeling.html#inputfiles"><i class="fa fa-check"></i><b>3.2</b> 模型输入数据</a>
 <ul>
-<li><a href="autoshud.html#地形关键变量" id="toc-地形关键变量"><span class="toc-section-number">4.1.1</span> 地形关键变量</a></li>
-<li><a href="autoshud.html#a-priori-data-sources" id="toc-a-priori-data-sources"><span class="toc-section-number">4.1.2</span> A-Priori Data Sources</a></li>
+<li class="chapter" data-level="3.2.1" data-path="modeling.html"><a href="modeling.html#原始数据"><i class="fa fa-check"></i><b>3.2.1</b> 原始数据</a></li>
+<li class="chapter" data-level="3.2.2" data-path="modeling.html"><a href="modeling.html#模型输入文件"><i class="fa fa-check"></i><b>3.2.2</b> 模型输入文件</a></li>
+<li class="chapter" data-level="3.2.3" data-path="modeling.html"><a href="modeling.html#空间数据"><i class="fa fa-check"></i><b>3.2.3</b> 空间数据</a></li>
+<li class="chapter" data-level="3.2.4" data-path="modeling.html"><a href="modeling.html#水力学参数"><i class="fa fa-check"></i><b>3.2.4</b> 水力学参数</a></li>
+<li class="chapter" data-level="3.2.5" data-path="modeling.html"><a href="modeling.html#模型配置文件"><i class="fa fa-check"></i><b>3.2.5</b> 模型配置文件</a></li>
+<li class="chapter" data-level="3.2.6" data-path="modeling.html"><a href="modeling.html#时间序列数据"><i class="fa fa-check"></i><b>3.2.6</b> 时间序列数据</a></li>
 </ul></li>
-<li><a href="autoshud.html#workflow-of-shud-modeling-system" id="toc-workflow-of-shud-modeling-system"><span class="toc-section-number">4.2</span> Workflow of SHUD Modeling System</a></li>
-</ul></li>
-<li><a href="calibration.html#calibration" id="toc-calibration"><span class="toc-section-number">5</span> 模型校准</a></li>
-<li><a href="application.html#application" id="toc-application"><span class="toc-section-number">6</span> 应用案例</a>
+<li class="chapter" data-level="3.3" data-path="modeling.html"><a href="modeling.html#outputfiles"><i class="fa fa-check"></i><b>3.3</b> 结果输出文件</a>
 <ul>
-<li><a href="application.html#v形流域" id="toc-v形流域"><span class="toc-section-number">6.1</span> V形流域</a>
+<li class="chapter" data-level="3.3.1" data-path="modeling.html"><a href="modeling.html#文件名格式"><i class="fa fa-check"></i><b>3.3.1</b> 文件名格式</a></li>
+<li class="chapter" data-level="3.3.2" data-path="modeling.html"><a href="modeling.html#文本格式输出文件.csv"><i class="fa fa-check"></i><b>3.3.2</b> 文本格式输出文件（.csv）</a></li>
+<li class="chapter" data-level="3.3.3" data-path="modeling.html"><a href="modeling.html#二进制输出文件.dat"><i class="fa fa-check"></i><b>3.3.3</b> 二进制输出文件（.dat）</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="calibration.html"><a href="calibration.html"><i class="fa fa-check"></i><b>4</b> 模型校准</a>
 <ul>
-<li><a href="application.html#shen等2010-中的结果" id="toc-shen等2010-中的结果"><span class="toc-section-number">6.1.1</span> Shen等(2010) 中的结果</a></li>
+<li class="chapter" data-level="4.1" data-path="calibration.html"><a href="calibration.html#参数敏感性"><i class="fa fa-check"></i><b>4.1</b> 参数敏感性</a></li>
+<li class="chapter" data-level="4.2" data-path="calibration.html"><a href="calibration.html#手动模型校准"><i class="fa fa-check"></i><b>4.2</b> 手动模型校准</a></li>
+<li class="chapter" data-level="4.3" data-path="calibration.html"><a href="calibration.html#cma-es自动化模型校准"><i class="fa fa-check"></i><b>4.3</b> CMA-ES自动化模型校准</a></li>
 </ul></li>
-<li><a href="application.html#vauclin水槽箱试验" id="toc-vauclin水槽箱试验"><span class="toc-section-number">6.2</span> Vauclin水槽箱试验</a></li>
-<li><a href="application.html#美国加州cache河流域" id="toc-美国加州cache河流域"><span class="toc-section-number">6.3</span> 美国加州Cache河流域</a>
+<li class="chapter" data-level="5" data-path="application.html"><a href="application.html"><i class="fa fa-check"></i><b>5</b> 应用案例</a>
 <ul>
-<li><a href="application.html#cache-creek-watershed" id="toc-cache-creek-watershed"><span class="toc-section-number">6.3.1</span> Cache Creek Watershed</a></li>
-<li><a href="application.html#shud-simulation-and-calibration" id="toc-shud-simulation-and-calibration"><span class="toc-section-number">6.3.2</span> SHUD simulation and calibration</a></li>
-<li><a href="application.html#results" id="toc-results"><span class="toc-section-number">6.3.3</span> Results</a></li>
+<li class="chapter" data-level="5.1" data-path="application.html"><a href="application.html#v形流域"><i class="fa fa-check"></i><b>5.1</b> V形流域</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="application.html"><a href="application.html#shen等2010-中的结果"><i class="fa fa-check"></i><b>5.1.1</b> Shen等(2010) 中的结果</a></li>
 </ul></li>
-<li><a href="application.html#宁夏岩画村山洪" id="toc-宁夏岩画村山洪"><span class="toc-section-number">6.4</span> 宁夏岩画村山洪</a></li>
-<li><a href="application.html#休斯顿城市内涝" id="toc-休斯顿城市内涝"><span class="toc-section-number">6.5</span> 休斯顿城市内涝</a></li>
-<li><a href="application.html#南苏丹尼罗河上游" id="toc-南苏丹尼罗河上游"><span class="toc-section-number">6.6</span> 南苏丹尼罗河上游</a></li>
+<li class="chapter" data-level="5.2" data-path="application.html"><a href="application.html#vauclin水槽箱试验"><i class="fa fa-check"></i><b>5.2</b> Vauclin水槽箱试验</a></li>
+<li class="chapter" data-level="5.3" data-path="application.html"><a href="application.html#美国加州cache河流域"><i class="fa fa-check"></i><b>5.3</b> 美国加州Cache河流域</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="application.html"><a href="application.html#cache-creek-watershed"><i class="fa fa-check"></i><b>5.3.1</b> Cache Creek Watershed</a></li>
+<li class="chapter" data-level="5.3.2" data-path="application.html"><a href="application.html#shud-模拟和校准"><i class="fa fa-check"></i><b>5.3.2</b> SHUD 模拟和校准</a></li>
+<li class="chapter" data-level="5.3.3" data-path="application.html"><a href="application.html#结果"><i class="fa fa-check"></i><b>5.3.3</b> 结果</a></li>
 </ul></li>
-<li><a href="sourcecode.html#sourcecode" id="toc-sourcecode"><span class="toc-section-number">7</span> 源码和程序设计</a></li>
+<li class="chapter" data-level="5.4" data-path="application.html"><a href="application.html#宁夏岩画村山洪"><i class="fa fa-check"></i><b>5.4</b> 宁夏岩画村山洪</a></li>
+<li class="chapter" data-level="5.5" data-path="application.html"><a href="application.html#休斯顿城市内涝"><i class="fa fa-check"></i><b>5.5</b> 休斯顿城市内涝</a></li>
+<li class="chapter" data-level="5.6" data-path="application.html"><a href="application.html#南苏丹尼罗河上游"><i class="fa fa-check"></i><b>5.6</b> 南苏丹尼罗河上游</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="sourcecode.html"><a href="sourcecode.html"><i class="fa fa-check"></i><b>6</b> 源码和程序设计</a></li>
 <li class="divider"></li>
 <li><a href="mailto:<Lele Shu>shulele@lzb.ac.cn" target="blank">Contact us</a></li>
 
@@ -190,7 +201,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">SHUD水文模型</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">SHUD水文模型 (ver 2.0)</a>
           </h1>
         </div>
 
@@ -199,7 +210,7 @@ div.csl-indent {
 
             <section class="normal" id="section-">
 <div id="modeling" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Chapter 3</span> SHUD模型模拟<a href="modeling.html#modeling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">Chapter 3</span> SHUD模型软件与数据<a href="modeling.html#modeling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 
 <div id="install" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> 安装 SHUD and rSHUD<a href="modeling.html#install" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -232,23 +243,23 @@ cd builddir/</code></pre>
 <li>运行ccmake配置安装环境。</li>
 </ol>
 <pre><code>ccmake ../sundials/cvode-5.0.0</code></pre>
-<div class="figure">
-<img src="Fig/ccmake/1.png" alt="" />
-<p class="caption">Screenshot of Step 1 in ccmake</p>
+<div class="float">
+<img src="Fig/ccmake/1.png" alt="Screenshot of Step 1 in ccmake" />
+<div class="figcaption">Screenshot of Step 1 in ccmake</div>
 </div>
 <p>首先出现的是空白配置页面。按c开始配置。</p>
-<div class="figure">
-<img src="Fig/ccmake/2.png" alt="" />
-<p class="caption">Screen short of Step 2 in ccmake</p>
+<div class="float">
+<img src="Fig/ccmake/2.png" alt="Screen short of Step 2 in ccmake" />
+<div class="figcaption">Screen short of Step 2 in ccmake</div>
 </div>
 <p>上图为默认的配置信息图片上的四处配置信息需要注意，值需要改为下面的值。OPENMP值需要您的系统支持OpenMP，因此在确认您的系统支持OpenMP的情况下打开。</p>
 <pre><code>BUILD_CVODE = ON
 CMAKE_INSTALL_PREFIX = ~/sundials
 EXAMPLES_INSTALL_PATH = ~/sundials/examples</code></pre>
 <p>以上值修改完成后，按c确认配置。</p>
-<div class="figure">
-<img src="Fig/ccmake/3.png" alt="" />
-<p class="caption">Screenshot of Step 3 in ccmake</p>
+<div class="float">
+<img src="Fig/ccmake/3.png" alt="Screenshot of Step 3 in ccmake" />
+<div class="figcaption">Screenshot of Step 3 in ccmake</div>
 </div>
 <p>ccmake开始自动配置安装参数。当配置完成后，按g生成配置文件并退出。</p>
 <ol style="list-style-type: decimal">
@@ -343,7 +354,7 @@ Library/Include paths:
 </div>
 </div>
 <div id="inputfiles" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> 数据准备<a href="modeling.html#inputfiles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">3.2</span> 模型输入数据<a href="modeling.html#inputfiles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>本节从原始数据要求到输入文件内涵，向用户详细介绍模型输入数据。</p>
 <div id="原始数据" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> 原始数据<a href="modeling.html#原始数据" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -692,9 +703,9 @@ Library/Include paths:
 </tr>
 </tbody>
 </table>
-<div class="figure">
-<img src="Fig/IO/Inputfiles.png" alt="" />
-<p class="caption">The screenshot of input files for SHUD</p>
+<div class="float">
+<img src="Fig/IO/Inputfiles.png" alt="The screenshot of input files for SHUD" />
+<div class="figcaption">The screenshot of input files for SHUD</div>
 </div>
 <p>在文件夹 <em>gis</em> 和 <em>fig</em> 中的文件与SHUD模拟无关，然后在数据分析和可视化中有很大作用，因此保留在输入文件当中。</p>
 </div>
@@ -881,9 +892,9 @@ Library/Include paths:
 </div>
 <div id="sp.att文件" class="section level4 hasAnchor" number="3.2.3.2">
 <h4><span class="header-section-number">3.2.3.2</span> .sp.att文件<a href="modeling.html#sp.att文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/sp.att.png" alt="" />
-<p class="caption">Example of .sp.att file</p>
+<div class="float">
+<img src="Fig/IO/sp.att.png" alt="Example of .sp.att file" />
+<div class="figcaption">Example of .sp.att file</div>
 </div>
 <ul>
 <li>表头</li>
@@ -984,9 +995,9 @@ Library/Include paths:
 </div>
 <div id="sp.riv文件" class="section level4 hasAnchor" number="3.2.3.3">
 <h4><span class="header-section-number">3.2.3.3</span> .sp.riv文件<a href="modeling.html#sp.riv文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/sp.riv.png" alt="" />
-<p class="caption">Example of .sp.riv file</p>
+<div class="float">
+<img src="Fig/IO/sp.riv.png" alt="Example of .sp.riv file" />
+<div class="figcaption">Example of .sp.riv file</div>
 </div>
 <ul>
 <li>表头</li>
@@ -1066,9 +1077,9 @@ Library/Include paths:
 </div>
 <div id="sp.rivseg文件" class="section level4 hasAnchor" number="3.2.3.4">
 <h4><span class="header-section-number">3.2.3.4</span> .sp.rivseg文件<a href="modeling.html#sp.rivseg文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/sp.rivchn.png" alt="" />
-<p class="caption">Example of .sp.rivseg file</p>
+<div class="float">
+<img src="Fig/IO/sp.rivchn.png" alt="Example of .sp.rivseg file" />
+<div class="figcaption">Example of .sp.rivseg file</div>
 </div>
 <ul>
 <li>表头</li>
@@ -1159,9 +1170,9 @@ Library/Include paths:
 <h3><span class="header-section-number">3.2.5</span> 模型配置文件<a href="modeling.html#模型配置文件" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="cfg.para文件" class="section level4 hasAnchor" number="3.2.5.1">
 <h4><span class="header-section-number">3.2.5.1</span> .cfg.para文件<a href="modeling.html#cfg.para文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/cfg.para.png" alt="" />
-<p class="caption">Example of .cfg.para file</p>
+<div class="float">
+<img src="Fig/IO/cfg.para.png" alt="Example of .cfg.para file" />
+<div class="figcaption">Example of .cfg.para file</div>
 </div>
 <ul>
 <li>Table</li>
@@ -1406,9 +1417,9 @@ Library/Include paths:
 </div>
 <div id="cfg.calib文件" class="section level4 hasAnchor" number="3.2.5.2">
 <h4><span class="header-section-number">3.2.5.2</span> .cfg.calib文件<a href="modeling.html#cfg.calib文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/cfg.calib.png" alt="" />
-<p class="caption">Example of .cfg.calib file</p>
+<div class="float">
+<img src="Fig/IO/cfg.calib.png" alt="Example of .cfg.calib file" />
+<div class="figcaption">Example of .cfg.calib file</div>
 </div>
 <ul>
 <li>Table</li>
@@ -1681,9 +1692,9 @@ Library/Include paths:
 </div>
 <div id="cfg.ic文件" class="section level4 hasAnchor" number="3.2.5.3">
 <h4><span class="header-section-number">3.2.5.3</span> .cfg.ic文件<a href="modeling.html#cfg.ic文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/cfg.ic.png" alt="" />
-<p class="caption">Example of .cfg.ic file</p>
+<div class="float">
+<img src="Fig/IO/cfg.ic.png" alt="Example of .cfg.ic file" />
+<div class="figcaption">Example of .cfg.ic file</div>
 </div>
 <ul>
 <li><p><strong>表1 (三角单元初始条件)</strong></p></li>
@@ -1829,18 +1840,18 @@ Library/Include paths:
 <h3><span class="header-section-number">3.2.6</span> 时间序列数据<a href="modeling.html#时间序列数据" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="tsd.forc文件" class="section level4 hasAnchor" number="3.2.6.1">
 <h4><span class="header-section-number">3.2.6.1</span> .tsd.forc文件<a href="modeling.html#tsd.forc文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/tsd.forc.png" alt="" />
-<p class="caption">Example of .tsd.forc file</p>
+<div class="float">
+<img src="Fig/IO/tsd.forc.png" alt="Example of .tsd.forc file" />
+<div class="figcaption">Example of .tsd.forc file</div>
 </div>
 <ul>
 <li>Line 1: <code>气象站点数量 | 开始日期 (YYYYMMDD)</code></li>
 <li>Line 2: 驱动数据文件所在文件夹</li>
 <li>Line 3~N: 时间序列数据文件名</li>
 </ul>
-<div class="figure">
-<img src="Fig/IO/tsd.csv.png" alt="" />
-<p class="caption">Example of .csv forcing file</p>
+<div class="float">
+<img src="Fig/IO/tsd.csv.png" alt="Example of .csv forcing file" />
+<div class="figcaption">Example of .csv forcing file</div>
 </div>
 <ul>
 <li>表头:</li>
@@ -1927,9 +1938,9 @@ Library/Include paths:
 </div>
 <div id="tsd.lai文件" class="section level4 hasAnchor" number="3.2.6.2">
 <h4><span class="header-section-number">3.2.6.2</span> .tsd.lai文件<a href="modeling.html#tsd.lai文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/tsd.lai.png" alt="" />
-<p class="caption">Example of .tsd.lai file</p>
+<div class="float">
+<img src="Fig/IO/tsd.lai.png" alt="Example of .tsd.lai file" />
+<div class="figcaption">Example of .tsd.lai file</div>
 </div>
 <ul>
 <li>表头:</li>
@@ -2004,9 +2015,9 @@ Library/Include paths:
 </div>
 <div id="tsd.rl文件" class="section level4 hasAnchor" number="3.2.6.3">
 <h4><span class="header-section-number">3.2.6.3</span> .tsd.rl文件<a href="modeling.html#tsd.rl文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/tsd.rl.png" alt="" />
-<p class="caption">Example of .tsd.rl file</p>
+<div class="float">
+<img src="Fig/IO/tsd.rl.png" alt="Example of .tsd.rl file" />
+<div class="figcaption">Example of .tsd.rl file</div>
 </div>
 <ul>
 <li>表头:</li>
@@ -2081,9 +2092,9 @@ Library/Include paths:
 </div>
 <div id="tsd.mf文件" class="section level4 hasAnchor" number="3.2.6.4">
 <h4><span class="header-section-number">3.2.6.4</span> .tsd.mf文件<a href="modeling.html#tsd.mf文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/tsd.mf.png" alt="" />
-<p class="caption">Example of .tsd.mf file</p>
+<div class="float">
+<img src="Fig/IO/tsd.mf.png" alt="Example of .tsd.mf file" />
+<div class="figcaption">Example of .tsd.mf file</div>
 </div>
 <ul>
 <li>表头:</li>
@@ -2158,9 +2169,9 @@ Library/Include paths:
 </div>
 <div id="tsd.obs文件" class="section level4 hasAnchor" number="3.2.6.5">
 <h4><span class="header-section-number">3.2.6.5</span> .tsd.obs文件<a href="modeling.html#tsd.obs文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/tsd.obs.png" alt="" />
-<p class="caption">Example of .tsd.obs file</p>
+<div class="float">
+<img src="Fig/IO/tsd.obs.png" alt="Example of .tsd.obs file" />
+<div class="figcaption">Example of .tsd.obs file</div>
 </div>
 <ul>
 <li>表头:</li>
@@ -2238,7 +2249,7 @@ Library/Include paths:
 </div>
 </div>
 <div id="outputfiles" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> 输出文件<a href="modeling.html#outputfiles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">3.3</span> 结果输出文件<a href="modeling.html#outputfiles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="文件名格式" class="section level3 hasAnchor" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> 文件名格式<a href="modeling.html#文件名格式" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>为了方便结果的分类和用户理解，作者规则化定义了输出文件的文件名；用户通过文件名即可读懂文件所包含的变量类型、所属单元和读写格式。输出文件的文件名格式：</p>
@@ -2658,9 +2669,9 @@ StartTime - 开始时间 （YYYYMMDD or YYYYMMDD.hhmmss）</p>
 </tr>
 </tbody>
 </table>
-<div class="figure">
-<img src="Fig/outputfile.png" alt="" />
-<p class="caption">v2.1版本输出文件的逻辑和内存结构</p>
+<div class="float">
+<img src="Fig/outputfile.png" alt="v2.1版本输出文件的逻辑和内存结构" />
+<div class="figcaption">v2.1版本输出文件的逻辑和内存结构</div>
 </div>
 <p><em>注：double为计算机的双精度数据格式，默认长度为8个比特位</em></p>
 <p>数据为<span class="math inline">\(m \times N_x\)</span>的二维矩阵。</p>
@@ -2878,7 +2889,7 @@ StartTime - 开始时间 （YYYYMMDD or YYYYMMDD.hhmmss）</p>
         </div>
       </div>
 <a href="theory.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="autoshud.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="calibration.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -2938,7 +2949,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
