@@ -23,7 +23,7 @@
 <meta name="author" content="舒乐乐和他的学生们、同事们、朋友们" />
 
 
-<meta name="date" content="2023-04-18" />
+<meta name="date" content="2023-05-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -236,36 +236,47 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">NAS共享网盘</td>
-<td align="center">shudxyz</td>
-<td align="center">210.77.67.122</td>
-<td align="center">10.0.1.122</td>
-<td align="center">无</td>
-</tr>
-<tr class="even">
 <td align="center">计算集群</td>
 <td align="center">shudHPC</td>
-<td align="center">210.72.80.22</td>
+<td align="center">210.77.77.22</td>
 <td align="center">10.0.1.100</td>
 <td align="center">无</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="center">Ubuntu远程桌面</td>
 <td align="center">uDesk</td>
-<td align="center">210.72.81.64</td>
-<td align="center">10.0.1.64</td>
-<td align="center">210.72.81.30:318xx</td>
+<td align="center">210.77.77.23</td>
+<td align="center">10.0.1.23</td>
+<td align="center">210.77.77.30:318xx</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="center">Windows远程桌面</td>
 <td align="center">Win-Desk</td>
-<td align="center">210.72.81.65</td>
-<td align="center">10.0.1.65</td>
-<td align="center">210.72.81.30:320xx</td>
+<td align="center">210.77.77.24</td>
+<td align="center">10.0.1.24</td>
+<td align="center">210.77.77.30:320xx</td>
+</tr>
+<tr class="even">
+<td align="center">路由器</td>
+<td align="center">H3C</td>
+<td align="center">210.77.77.25</td>
+<td align="center">10.0.1.1</td>
+<td align="center">无</td>
+</tr>
+<tr class="odd">
+<td align="center">NAS共享网盘</td>
+<td align="center">shudxyz</td>
+<td align="center">210.77.77.26</td>
+<td align="center">10.0.1.26</td>
+<td align="center">无</td>
 </tr>
 </tbody>
 </table>
 <p><strong>shudHPC与uDesk通过NIS共享同一套账户系统，因此，在shudHPC和uDesk上面的登录账户和用户主目录完全相同；uDesk上支持Linux图形桌面，方便用户进行可视化操作。</strong></p>
+<div class="float">
+<img src="Fig/ch5/machine.jpeg" alt="所有主机照片" />
+<div class="figcaption">所有主机照片</div>
+</div>
 <div id="nas网络存储" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> NAS网络存储<a href="servers.html#nas网络存储" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>本组使用群辉DS1821+建设了100TB的网络存储空间，供组内成员和合作者使用。</p>
@@ -289,9 +300,9 @@
 <div id="nas文件结构" class="section level3 hasAnchor" number="5.1.2">
 <h3><span class="header-section-number">5.1.2</span> NAS文件结构<a href="servers.html#nas文件结构" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>当前的NAS文件结构与读写权限见下图：</p>
-<div class="figure">
-<img src="Fig/ch5/nas_structure.png" alt="" />
-<p class="caption">NAS上的文件结构与权限</p>
+<div class="float">
+<img src="Fig/ch5/nas_structure.png" alt="NAS上的文件结构与权限" />
+<div class="figcaption">NAS上的文件结构与权限</div>
 </div>
 <p>更具体的信息见下表：</p>
 <table>
@@ -473,25 +484,25 @@
 <li>R：R, Rstudio</li>
 <li>计算：Octave</li>
 </ul>
-<div class="figure">
-<img src="Fig/ch5/host_win.png" alt="" />
-<p class="caption">Windows系统基本信息</p>
+<div class="float">
+<img src="Fig/ch5/host_win.png" alt="Windows系统基本信息" />
+<div class="figcaption">Windows系统基本信息</div>
 </div>
 </div>
 <div id="登录方式" class="section level3 hasAnchor" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> 登录方式<a href="servers.html#登录方式" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>软件：Microsoft Remote Desktop</li>
-<li>登录IP： 210.72.81.30</li>
+<li>登录IP： 210.77.77.25</li>
 <li>端口: 31810</li>
 </ul>
-<div class="figure">
-<img src="Fig/ch5/rdp-1.png" alt="" />
-<p class="caption">Microsoft Remote Desktop界面</p>
+<div class="float">
+<img src="Fig/ch5/rdp-1.png" alt="Microsoft Remote Desktop界面" />
+<div class="figcaption">Microsoft Remote Desktop界面</div>
 </div>
-<div class="figure">
-<img src="Fig/ch5/rdp-2.png" alt="" />
-<p class="caption">Microsoft Remote Desktop登录配置</p>
+<div class="float">
+<img src="Fig/ch5/rdp-2.png" alt="Microsoft Remote Desktop登录配置" />
+<div class="figcaption">Microsoft Remote Desktop登录配置</div>
 </div>
 </div>
 </div>
@@ -549,24 +560,24 @@
 <li>R: R, Rstudio</li>
 <li>Octave</li>
 </ul>
-<div class="figure">
-<img src="Fig/ch5/host_udesk.png" alt="" />
-<p class="caption">uDesk基本配置</p>
+<div class="float">
+<img src="Fig/ch5/host_udesk.png" alt="uDesk基本配置" />
+<div class="figcaption">uDesk基本配置</div>
 </div>
 </div>
 <div id="ssh登录" class="section level3 hasAnchor" number="5.3.2">
 <h3><span class="header-section-number">5.3.2</span> SSH登录<a href="servers.html#ssh登录" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>公网IP登录</strong></p>
 <ul>
-<li>登录IP： 210.72.81.64</li>
+<li>登录IP： 210.77.77.23</li>
 <li>软件：ssh (命令行);</li>
-<li>端口: 22, 23</li>
+<li>端口: 22</li>
 </ul>
 <p>示例：</p>
-<pre><code>ssh zhangsan@210.72.81.64</code></pre>
+<pre><code>ssh zhangsan@210.77.77.23</code></pre>
 <p><strong>路由器转发登录</strong></p>
 <ul>
-<li>登录IP： 210.72.81.30</li>
+<li>登录IP： 210.77.77.25</li>
 <li>软件：ssh (命令行);</li>
 <li>端口: 32022, 32023</li>
 </ul>
@@ -589,7 +600,7 @@
 </tbody>
 </table>
 <p>示例：</p>
-<pre><code>ssh -p 32022 zhangsan@210.72.81.30 </code></pre>
+<pre><code>ssh -p 32022 zhangsan@210.77.77.30 </code></pre>
 </div>
 <div id="vnc远程桌面" class="section level3 hasAnchor" number="5.3.3">
 <h3><span class="header-section-number">5.3.3</span> VNC远程桌面<a href="servers.html#vnc远程桌面" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -648,9 +659,9 @@ vncserver -geometry 2560x1440
 <li><p>然后使用<code>ss -ltn</code>当前vnc桌面的端口号码，默认第一个vnc桌面端口号为5901，第二个为5902，以此类推。或者通过命令<code>server -list</code>查看。 使用路由器端口转发，需要将590x的端口转换为320xx的端口，转换规则见前表。如果直接使用服务器公网IP，则直接使用590x端口。</p></li>
 <li><p>在客户端启动vnc工具，访问[serverIP]:[端口号]。
 如使用公网IP，且vnc服务端口为5904：</p>
-<pre><code>vnc://210.72.81.64:5904 </code></pre>
+<pre><code>vnc://210.77.77.23:5904 </code></pre>
 <p>如使用路由器IP，且vnc服务端口为5904，则转发端口为32004:</p>
-<pre><code>vnc://210.72.81.30:32004</code></pre></li>
+<pre><code>vnc://210.77.77.25:32004</code></pre></li>
 <li><p>完成远程桌面工作后，退出vncserver时，需要关闭响应的vnc服务器，请在远程服务器端输入：</p>
 <pre><code>vncserver -kill :4</code></pre></li>
 </ol>
@@ -660,9 +671,9 @@ vncserver -geometry 2560x1440
 <div id="shudhpc高性能计算集群" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">5.4</span> shudHPC高性能计算集群<a href="servers.html#shudhpc高性能计算集群" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>高性能计算机（High-performance computer，HPC）是由多台计算机构成的服务集群(cluster)。HPC主要由计算服务器、管理服务器和存储服务器组成，但只设有一个登录入口。用户登录到HPC后，只需将需要计算的相关任务提交至超算平台，平台计算任务调度系统将根据任务的需求和实际可用资源对任务进行排队和资源分配。</p>
-<div class="figure">
-<img src="Fig/slurm_arch.gif" alt="" />
-<p class="caption">slurm集群基本结构(来自：<a href="https://slurm.schedmd.com/overview.html" class="uri">https://slurm.schedmd.com/overview.html</a>)</p>
+<div class="float">
+<img src="Fig/slurm_arch.gif" alt="slurm集群基本结构(来自：https://slurm.schedmd.com/overview.html)" />
+<div class="figcaption">slurm集群基本结构(来自：<a href="https://slurm.schedmd.com/overview.html" class="uri">https://slurm.schedmd.com/overview.html</a>)</div>
 </div>
 <div id="服务器硬件配置" class="section level3 hasAnchor" number="5.4.1">
 <h3><span class="header-section-number">5.4.1</span> 服务器硬件配置<a href="servers.html#服务器硬件配置" class="anchor-section" aria-label="Anchor link to header"></a></h3>
