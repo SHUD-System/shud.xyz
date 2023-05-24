@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 SHUD模型软件与数据 | SHUD水文模型 (ver 2.0)</title>
   <meta name="description" content="SHUD Book" />
-  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 SHUD模型软件与数据 | SHUD水文模型 (ver 2.0)" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Lele Shu (shulele@lzb.ac.cn)" />
 
 
-<meta name="date" content="2023-05-11" />
+<meta name="date" content="2023-05-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="theory.html"/>
-<link rel="next" href="calibration.html"/>
+<link rel="next" href="autoshud.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -165,30 +165,45 @@ div.csl-indent {
 <li class="chapter" data-level="3.3.3" data-path="modeling.html"><a href="modeling.html#二进制输出文件.dat"><i class="fa fa-check"></i><b>3.3.3</b> 二进制输出文件（.dat）</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="calibration.html"><a href="calibration.html"><i class="fa fa-check"></i><b>4</b> 模型校准</a>
+<li class="chapter" data-level="4" data-path="autoshud.html"><a href="autoshud.html"><i class="fa fa-check"></i><b>4</b> 自动化建模</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="calibration.html"><a href="calibration.html#参数敏感性"><i class="fa fa-check"></i><b>4.1</b> 参数敏感性</a></li>
-<li class="chapter" data-level="4.2" data-path="calibration.html"><a href="calibration.html#手动模型校准"><i class="fa fa-check"></i><b>4.2</b> 手动模型校准</a></li>
-<li class="chapter" data-level="4.3" data-path="calibration.html"><a href="calibration.html#cma-es自动化模型校准"><i class="fa fa-check"></i><b>4.3</b> CMA-ES自动化模型校准</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="application.html"><a href="application.html"><i class="fa fa-check"></i><b>5</b> 应用案例</a>
+<li class="chapter" data-level="4.1" data-path="autoshud.html"><a href="autoshud.html#简介"><i class="fa fa-check"></i><b>4.1</b> 简介</a></li>
+<li class="chapter" data-level="4.2" data-path="autoshud.html"><a href="autoshud.html#建模思路-1"><i class="fa fa-check"></i><b>4.2</b> 建模思路</a></li>
+<li class="chapter" data-level="4.3" data-path="autoshud.html"><a href="autoshud.html#建模步骤"><i class="fa fa-check"></i><b>4.3</b> 建模步骤</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="application.html"><a href="application.html#v形流域"><i class="fa fa-check"></i><b>5.1</b> V形流域</a>
+<li class="chapter" data-level="4.3.1" data-path="autoshud.html"><a href="autoshud.html#建模参数"><i class="fa fa-check"></i><b>4.3.1</b> 建模参数</a></li>
+<li class="chapter" data-level="4.3.2" data-path="autoshud.html"><a href="autoshud.html#step1.-数据子集提取与数据规则化"><i class="fa fa-check"></i><b>4.3.2</b> Step1. 数据子集提取与数据规则化</a></li>
+<li class="chapter" data-level="4.3.3" data-path="autoshud.html"><a href="autoshud.html#step2.-水文参数和气象数据生成"><i class="fa fa-check"></i><b>4.3.3</b> Step2. 水文参数和气象数据生成</a></li>
+<li class="chapter" data-level="4.3.4" data-path="autoshud.html"><a href="autoshud.html#step3.-建模"><i class="fa fa-check"></i><b>4.3.4</b> Step3. 建模</a></li>
+<li class="chapter" data-level="4.3.5" data-path="autoshud.html"><a href="autoshud.html#step4.-模拟"><i class="fa fa-check"></i><b>4.3.5</b> Step4. 模拟</a></li>
+<li class="chapter" data-level="4.3.6" data-path="autoshud.html"><a href="autoshud.html#step5.-模拟结果后处理"><i class="fa fa-check"></i><b>4.3.6</b> Step5. 模拟结果后处理</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="autoshud.html"><a href="autoshud.html#可移植性"><i class="fa fa-check"></i><b>4.4</b> 可移植性</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="calibration.html"><a href="calibration.html"><i class="fa fa-check"></i><b>5</b> 模型校准</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="application.html"><a href="application.html#shen等2010-中的结果"><i class="fa fa-check"></i><b>5.1.1</b> Shen等(2010) 中的结果</a></li>
+<li class="chapter" data-level="5.1" data-path="calibration.html"><a href="calibration.html#参数敏感性"><i class="fa fa-check"></i><b>5.1</b> 参数敏感性</a></li>
+<li class="chapter" data-level="5.2" data-path="calibration.html"><a href="calibration.html#手动模型校准"><i class="fa fa-check"></i><b>5.2</b> 手动模型校准</a></li>
+<li class="chapter" data-level="5.3" data-path="calibration.html"><a href="calibration.html#cma-es自动化模型校准"><i class="fa fa-check"></i><b>5.3</b> CMA-ES自动化模型校准</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="application.html"><a href="application.html#vauclin水槽箱试验"><i class="fa fa-check"></i><b>5.2</b> Vauclin水槽箱试验</a></li>
-<li class="chapter" data-level="5.3" data-path="application.html"><a href="application.html#美国加州cache河流域"><i class="fa fa-check"></i><b>5.3</b> 美国加州Cache河流域</a>
+<li class="chapter" data-level="6" data-path="application.html"><a href="application.html"><i class="fa fa-check"></i><b>6</b> 应用案例</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="application.html"><a href="application.html#cache-creek-watershed"><i class="fa fa-check"></i><b>5.3.1</b> Cache Creek Watershed</a></li>
-<li class="chapter" data-level="5.3.2" data-path="application.html"><a href="application.html#shud-模拟和校准"><i class="fa fa-check"></i><b>5.3.2</b> SHUD 模拟和校准</a></li>
-<li class="chapter" data-level="5.3.3" data-path="application.html"><a href="application.html#结果"><i class="fa fa-check"></i><b>5.3.3</b> 结果</a></li>
+<li class="chapter" data-level="6.1" data-path="application.html"><a href="application.html#v形流域"><i class="fa fa-check"></i><b>6.1</b> V形流域</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="application.html"><a href="application.html#shen等2010-中的结果"><i class="fa fa-check"></i><b>6.1.1</b> Shen等(2010) 中的结果</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="application.html"><a href="application.html#宁夏岩画村山洪"><i class="fa fa-check"></i><b>5.4</b> 宁夏岩画村山洪</a></li>
-<li class="chapter" data-level="5.5" data-path="application.html"><a href="application.html#休斯顿城市内涝"><i class="fa fa-check"></i><b>5.5</b> 休斯顿城市内涝</a></li>
-<li class="chapter" data-level="5.6" data-path="application.html"><a href="application.html#南苏丹尼罗河上游"><i class="fa fa-check"></i><b>5.6</b> 南苏丹尼罗河上游</a></li>
+<li class="chapter" data-level="6.2" data-path="application.html"><a href="application.html#vauclin水槽箱试验"><i class="fa fa-check"></i><b>6.2</b> Vauclin水槽箱试验</a></li>
+<li class="chapter" data-level="6.3" data-path="application.html"><a href="application.html#美国加州cache河流域"><i class="fa fa-check"></i><b>6.3</b> 美国加州Cache河流域</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="application.html"><a href="application.html#cache-creek-watershed"><i class="fa fa-check"></i><b>6.3.1</b> Cache Creek Watershed</a></li>
+<li class="chapter" data-level="6.3.2" data-path="application.html"><a href="application.html#shud-模拟和校准"><i class="fa fa-check"></i><b>6.3.2</b> SHUD 模拟和校准</a></li>
+<li class="chapter" data-level="6.3.3" data-path="application.html"><a href="application.html#结果"><i class="fa fa-check"></i><b>6.3.3</b> 结果</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="sourcecode.html"><a href="sourcecode.html"><i class="fa fa-check"></i><b>6</b> 源码和程序设计</a></li>
+<li class="chapter" data-level="6.4" data-path="application.html"><a href="application.html#宁夏岩画村山洪"><i class="fa fa-check"></i><b>6.4</b> 宁夏岩画村山洪</a></li>
+<li class="chapter" data-level="6.5" data-path="application.html"><a href="application.html#休斯顿城市内涝"><i class="fa fa-check"></i><b>6.5</b> 休斯顿城市内涝</a></li>
+<li class="chapter" data-level="6.6" data-path="application.html"><a href="application.html#南苏丹尼罗河上游"><i class="fa fa-check"></i><b>6.6</b> 南苏丹尼罗河上游</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="sourcecode.html"><a href="sourcecode.html"><i class="fa fa-check"></i><b>7</b> 源码和程序设计</a></li>
 <li class="divider"></li>
 <li><a href="mailto:<Lele Shu>shulele@lzb.ac.cn" target="blank">Contact us</a></li>
 
@@ -243,23 +258,23 @@ cd builddir/</code></pre>
 <li>运行ccmake配置安装环境。</li>
 </ol>
 <pre><code>ccmake ../sundials/cvode-5.0.0</code></pre>
-<div class="float">
-<img src="Fig/ccmake/1.png" alt="Screenshot of Step 1 in ccmake" />
-<div class="figcaption">Screenshot of Step 1 in ccmake</div>
+<div class="figure">
+<img src="Fig/ccmake/1.png" alt="" />
+<p class="caption">Screenshot of Step 1 in ccmake</p>
 </div>
 <p>首先出现的是空白配置页面。按c开始配置。</p>
-<div class="float">
-<img src="Fig/ccmake/2.png" alt="Screen short of Step 2 in ccmake" />
-<div class="figcaption">Screen short of Step 2 in ccmake</div>
+<div class="figure">
+<img src="Fig/ccmake/2.png" alt="" />
+<p class="caption">Screen short of Step 2 in ccmake</p>
 </div>
 <p>上图为默认的配置信息图片上的四处配置信息需要注意，值需要改为下面的值。OPENMP值需要您的系统支持OpenMP，因此在确认您的系统支持OpenMP的情况下打开。</p>
 <pre><code>BUILD_CVODE = ON
 CMAKE_INSTALL_PREFIX = ~/sundials
 EXAMPLES_INSTALL_PATH = ~/sundials/examples</code></pre>
 <p>以上值修改完成后，按c确认配置。</p>
-<div class="float">
-<img src="Fig/ccmake/3.png" alt="Screenshot of Step 3 in ccmake" />
-<div class="figcaption">Screenshot of Step 3 in ccmake</div>
+<div class="figure">
+<img src="Fig/ccmake/3.png" alt="" />
+<p class="caption">Screenshot of Step 3 in ccmake</p>
 </div>
 <p>ccmake开始自动配置安装参数。当配置完成后，按g生成配置文件并退出。</p>
 <ol style="list-style-type: decimal">
@@ -703,9 +718,9 @@ Library/Include paths:
 </tr>
 </tbody>
 </table>
-<div class="float">
-<img src="Fig/IO/Inputfiles.png" alt="The screenshot of input files for SHUD" />
-<div class="figcaption">The screenshot of input files for SHUD</div>
+<div class="figure">
+<img src="Fig/IO/Inputfiles.png" alt="" />
+<p class="caption">The screenshot of input files for SHUD</p>
 </div>
 <p>在文件夹 <em>gis</em> 和 <em>fig</em> 中的文件与SHUD模拟无关，然后在数据分析和可视化中有很大作用，因此保留在输入文件当中。</p>
 </div>
@@ -892,9 +907,9 @@ Library/Include paths:
 </div>
 <div id="sp.att文件" class="section level4 hasAnchor" number="3.2.3.2">
 <h4><span class="header-section-number">3.2.3.2</span> .sp.att文件<a href="modeling.html#sp.att文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="float">
-<img src="Fig/IO/sp.att.png" alt="Example of .sp.att file" />
-<div class="figcaption">Example of .sp.att file</div>
+<div class="figure">
+<img src="Fig/IO/sp.att.png" alt="" />
+<p class="caption">Example of .sp.att file</p>
 </div>
 <ul>
 <li>表头</li>
@@ -995,9 +1010,9 @@ Library/Include paths:
 </div>
 <div id="sp.riv文件" class="section level4 hasAnchor" number="3.2.3.3">
 <h4><span class="header-section-number">3.2.3.3</span> .sp.riv文件<a href="modeling.html#sp.riv文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="float">
-<img src="Fig/IO/sp.riv.png" alt="Example of .sp.riv file" />
-<div class="figcaption">Example of .sp.riv file</div>
+<div class="figure">
+<img src="Fig/IO/sp.riv.png" alt="" />
+<p class="caption">Example of .sp.riv file</p>
 </div>
 <ul>
 <li>表头</li>
@@ -1077,9 +1092,9 @@ Library/Include paths:
 </div>
 <div id="sp.rivseg文件" class="section level4 hasAnchor" number="3.2.3.4">
 <h4><span class="header-section-number">3.2.3.4</span> .sp.rivseg文件<a href="modeling.html#sp.rivseg文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="float">
-<img src="Fig/IO/sp.rivchn.png" alt="Example of .sp.rivseg file" />
-<div class="figcaption">Example of .sp.rivseg file</div>
+<div class="figure">
+<img src="Fig/IO/sp.rivchn.png" alt="" />
+<p class="caption">Example of .sp.rivseg file</p>
 </div>
 <ul>
 <li>表头</li>
@@ -1170,9 +1185,9 @@ Library/Include paths:
 <h3><span class="header-section-number">3.2.5</span> 模型配置文件<a href="modeling.html#模型配置文件" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="cfg.para文件" class="section level4 hasAnchor" number="3.2.5.1">
 <h4><span class="header-section-number">3.2.5.1</span> .cfg.para文件<a href="modeling.html#cfg.para文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="float">
-<img src="Fig/IO/cfg.para.png" alt="Example of .cfg.para file" />
-<div class="figcaption">Example of .cfg.para file</div>
+<div class="figure">
+<img src="Fig/IO/cfg.para.png" alt="" />
+<p class="caption">Example of .cfg.para file</p>
 </div>
 <ul>
 <li>Table</li>
@@ -1417,9 +1432,9 @@ Library/Include paths:
 </div>
 <div id="cfg.calib文件" class="section level4 hasAnchor" number="3.2.5.2">
 <h4><span class="header-section-number">3.2.5.2</span> .cfg.calib文件<a href="modeling.html#cfg.calib文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="float">
-<img src="Fig/IO/cfg.calib.png" alt="Example of .cfg.calib file" />
-<div class="figcaption">Example of .cfg.calib file</div>
+<div class="figure">
+<img src="Fig/IO/cfg.calib.png" alt="" />
+<p class="caption">Example of .cfg.calib file</p>
 </div>
 <ul>
 <li>Table</li>
@@ -1692,9 +1707,9 @@ Library/Include paths:
 </div>
 <div id="cfg.ic文件" class="section level4 hasAnchor" number="3.2.5.3">
 <h4><span class="header-section-number">3.2.5.3</span> .cfg.ic文件<a href="modeling.html#cfg.ic文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="float">
-<img src="Fig/IO/cfg.ic.png" alt="Example of .cfg.ic file" />
-<div class="figcaption">Example of .cfg.ic file</div>
+<div class="figure">
+<img src="Fig/IO/cfg.ic.png" alt="" />
+<p class="caption">Example of .cfg.ic file</p>
 </div>
 <ul>
 <li><p><strong>表1 (三角单元初始条件)</strong></p></li>
@@ -1840,18 +1855,18 @@ Library/Include paths:
 <h3><span class="header-section-number">3.2.6</span> 时间序列数据<a href="modeling.html#时间序列数据" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="tsd.forc文件" class="section level4 hasAnchor" number="3.2.6.1">
 <h4><span class="header-section-number">3.2.6.1</span> .tsd.forc文件<a href="modeling.html#tsd.forc文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="float">
-<img src="Fig/IO/tsd.forc.png" alt="Example of .tsd.forc file" />
-<div class="figcaption">Example of .tsd.forc file</div>
+<div class="figure">
+<img src="Fig/IO/tsd.forc.png" alt="" />
+<p class="caption">Example of .tsd.forc file</p>
 </div>
 <ul>
 <li>Line 1: <code>气象站点数量 | 开始日期 (YYYYMMDD)</code></li>
 <li>Line 2: 驱动数据文件所在文件夹</li>
 <li>Line 3~N: 时间序列数据文件名</li>
 </ul>
-<div class="float">
-<img src="Fig/IO/tsd.csv.png" alt="Example of .csv forcing file" />
-<div class="figcaption">Example of .csv forcing file</div>
+<div class="figure">
+<img src="Fig/IO/tsd.csv.png" alt="" />
+<p class="caption">Example of .csv forcing file</p>
 </div>
 <ul>
 <li>表头:</li>
@@ -1938,9 +1953,9 @@ Library/Include paths:
 </div>
 <div id="tsd.lai文件" class="section level4 hasAnchor" number="3.2.6.2">
 <h4><span class="header-section-number">3.2.6.2</span> .tsd.lai文件<a href="modeling.html#tsd.lai文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="float">
-<img src="Fig/IO/tsd.lai.png" alt="Example of .tsd.lai file" />
-<div class="figcaption">Example of .tsd.lai file</div>
+<div class="figure">
+<img src="Fig/IO/tsd.lai.png" alt="" />
+<p class="caption">Example of .tsd.lai file</p>
 </div>
 <ul>
 <li>表头:</li>
@@ -2015,9 +2030,9 @@ Library/Include paths:
 </div>
 <div id="tsd.rl文件" class="section level4 hasAnchor" number="3.2.6.3">
 <h4><span class="header-section-number">3.2.6.3</span> .tsd.rl文件<a href="modeling.html#tsd.rl文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="float">
-<img src="Fig/IO/tsd.rl.png" alt="Example of .tsd.rl file" />
-<div class="figcaption">Example of .tsd.rl file</div>
+<div class="figure">
+<img src="Fig/IO/tsd.rl.png" alt="" />
+<p class="caption">Example of .tsd.rl file</p>
 </div>
 <ul>
 <li>表头:</li>
@@ -2092,9 +2107,9 @@ Library/Include paths:
 </div>
 <div id="tsd.mf文件" class="section level4 hasAnchor" number="3.2.6.4">
 <h4><span class="header-section-number">3.2.6.4</span> .tsd.mf文件<a href="modeling.html#tsd.mf文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="float">
-<img src="Fig/IO/tsd.mf.png" alt="Example of .tsd.mf file" />
-<div class="figcaption">Example of .tsd.mf file</div>
+<div class="figure">
+<img src="Fig/IO/tsd.mf.png" alt="" />
+<p class="caption">Example of .tsd.mf file</p>
 </div>
 <ul>
 <li>表头:</li>
@@ -2169,9 +2184,9 @@ Library/Include paths:
 </div>
 <div id="tsd.obs文件" class="section level4 hasAnchor" number="3.2.6.5">
 <h4><span class="header-section-number">3.2.6.5</span> .tsd.obs文件<a href="modeling.html#tsd.obs文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="float">
-<img src="Fig/IO/tsd.obs.png" alt="Example of .tsd.obs file" />
-<div class="figcaption">Example of .tsd.obs file</div>
+<div class="figure">
+<img src="Fig/IO/tsd.obs.png" alt="" />
+<p class="caption">Example of .tsd.obs file</p>
 </div>
 <ul>
 <li>表头:</li>
@@ -2669,9 +2684,9 @@ StartTime - 开始时间 （YYYYMMDD or YYYYMMDD.hhmmss）</p>
 </tr>
 </tbody>
 </table>
-<div class="float">
-<img src="Fig/outputfile.png" alt="v2.1版本输出文件的逻辑和内存结构" />
-<div class="figcaption">v2.1版本输出文件的逻辑和内存结构</div>
+<div class="figure">
+<img src="Fig/outputfile.png" alt="" />
+<p class="caption">v2.1版本输出文件的逻辑和内存结构</p>
 </div>
 <p><em>注：double为计算机的双精度数据格式，默认长度为8个比特位</em></p>
 <p>数据为<span class="math inline">\(m \times N_x\)</span>的二维矩阵。</p>
@@ -2889,7 +2904,7 @@ StartTime - 开始时间 （YYYYMMDD or YYYYMMDD.hhmmss）</p>
         </div>
       </div>
 <a href="theory.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="calibration.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="autoshud.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -2949,7 +2964,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

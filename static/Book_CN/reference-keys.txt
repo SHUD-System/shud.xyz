@@ -65,6 +65,17 @@ outputfiles
 文件名格式
 文本格式输出文件.csv
 二进制输出文件.dat
+autoshud
+简介
+建模思路-1
+建模步骤
+建模参数
+step1.-数据子集提取与数据规则化
+step2.-水文参数和气象数据生成
+step3.-建模
+step4.-模拟
+step5.-模拟结果后处理
+可移植性
 calibration
 参数敏感性
 手动模型校准
