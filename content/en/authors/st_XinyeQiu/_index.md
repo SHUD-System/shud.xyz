@@ -5,7 +5,7 @@ title: Xinye Qiu
 # Is this the primary user of the site?
 superuser: false
 
-user_groups: ["Students", "Member"]
+user_groups: ["Alumni"]
 
 # Role/position/tagline
 role: Graduate student

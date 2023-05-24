@@ -4,7 +4,7 @@ title: 邱心叶
 # Is this the primary user of the site?
 superuser: false
 
-user_groups: ["学生"]
+user_groups: ["原成员"]
 
 # Role/position/tagline
 role: 本科生
@@ -24,8 +24,6 @@ interests:
 # Education to show in About widget
 education:
   courses:
-  - course: 兰州大学，硕士生
-    year: 2023-
   - course: 南京信息工程大学，学士
     year: 2019-2023
 
