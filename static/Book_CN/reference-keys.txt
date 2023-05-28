@@ -58,7 +58,6 @@ cfg.ic文件
 时间序列数据
 tsd.forc文件
 tsd.lai文件
-tsd.rl文件
 tsd.mf文件
 tsd.obs文件
 outputfiles
@@ -92,3 +91,17 @@ shud-模拟和校准
 休斯顿城市内涝
 南苏丹尼罗河上游
 sourcecode
+faq
+模型理论
+模型安装编译
+linuxmac-os
+windows
+rshud-1
+rshud安装
+数据
+结果分析
+模型校准
+手动校准
+自动化校准
+可视化
+全球水文数据云

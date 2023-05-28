@@ -21,11 +21,11 @@ weight: 999
 
 
 ## 1. 关于SHUD模型
-### 为什么使用非结构域，而不使用规则网格?
+### 为什么使用非结构网格(unstructured mesh)，而不使用规则网格(structured grid)?
 
   水文计算中非结构网格有以下几个优点：
 
-  - 通常，非结构域中的计算单元数量远少于规则域。
+  - 通常，非结构域中的计算单元数量远少于结构域。
   - 由于自然环境中的变量和特征从来不是横平竖直的规则分布，因此非结构域比规则域更易于表达空间异质性特征，包括海拔、地形、土壤、图例利用等等。
   - 非结构域的边界较为灵活，在不显著增加计算单元的情况下，可以详细描述计算域的边界形状。
   - 非结构域的单元大小灵活，可根据模型和研究区域的特征在特定区域加密计算单元，而同时在外围地区保持较粗单元，即保证的计算域的边界影响最小，有能保证在所关心区域内的高精度高分辨率的模拟。
@@ -41,25 +41,25 @@ weight: 999
 
 ### SHUD模型和PIHM的区别?
 
-SHUD模型是PIHM的一个继承者，继承了1996年由Duffy提出的二相耦合概念模型，并且继承了部分PIHM 1.0和2.0当中的成熟经验。之后作者修改了模型中部分过程、计算和实现语言，SHUD模型已经与PIHM模型不再兼容，因此使用新名称对模型进行命名。
+SHUD模型是PIHM的继承者，采用了1996年Duffy提出的二相耦合概念模型并继承了PIHM 1.0和2.0的一些成熟经验。作者对模型的部分过程、计算和实现语言进行了修改。由于SHUD模型不再与PIHM模型兼容，因此使用新名称对其进行命名。
 
 SHUD与PIHM的区别：
 
-1. SHUD使用C++面向对象编程，将计算封装起来，避免内存泄露等PIHM常见问题。
-2. SHUD使用了不同的坡面与河道的交互。PIHM中河道与两个三角形坡面相邻，带来了四个问题：1. 河道的长度极大的影响和模型的计算单元数量，用户不得不在简单河道和计算单元数量之间做权衡。2. 平原地区的河道绵延曲折，导致大量微小三角形单元和非结构三角形，使得模型计算容易突破库容常数而使得模型变慢。3. 容易出现局部积水点（sink），个别积水点就可以极大的拖慢整个流域的求解速度。 4. 为解决以上问题，模型用户需要反复手动对河流形状进行修改，降低了模型的可重复性和效率。SHUD的河道覆盖在三角形单元之上，坡面和河道水量交换给予河道水位和地下水、地表水的坡度计算，整体计算效率显著提升。
-3. SHUD模型中计算入渗、地下水补给和河流交互的公式与PIHM不同。公式的采用基于经验和模型设计时的需求。未来将会就此进行模型对比，展示两个模型的差异。
+1. SHUD使用C++面向对象编程，将计算封装，避免了PIHM常见的内存泄漏等问题。
+2. SHUD使用了不同的坡面与河道的交互方式。PIHM中，河道与两个三角形坡面相邻，存在以下四个问题：(1) 河道的长度对计算单元数量极大影响，用户不得不在简单河道和计算单元数量之间做出取舍。(2) 平原地区的曲折河道导致大量微小三角形单元和非结构三角形，使得模型计算容易突破CFL条件，降低模型计算效率。(3) 容易形成局部积水点和拖慢整个流域的求解速度。(4) 为解决以上问题，模型用户需要反复手动对河流形状进行修改，降低了模型的可重复性和效率。在SHUD模型中，河道覆盖在三角形单元之上，坡面和河道之间的水量交换，计算河道水位和地下水、地表水的坡度，从而提高了整体计算效率。
+3. SHUD模型中的公式计算入渗、地下水补给和河流交互不同于PIHM。采用的公式基于经验和模型设计需求。未来将进行模型对比，展示两个模型的差异。
 4. SHUD模型确保了计算中的水量平衡。
 
 在技术层面SHUD模型：
 
-- 支持CVODE 5.0及以上版本
-- 支持OpenMP并行计算
-- 采用和与PIHM不同的数据结构和算法
-- 支持可读性强的输入和输出文件
-- 统一的时间序列数据操作
-- 指定步长输出模型状态，作为后续模型运行的初始条件。
-- 自动检查模型的输入数据和参数的有效性
-- 加入模型调试选项，监控每一步长内的非法值和内存操作。
+- 支持CVODE 5.0及以上版本。
+- 支持OpenMP并行计算。
+- 采用与PIHM不同的数据结构和算法。
+- 支持输出可读性强的输入和输出文件。
+- 实现统一的时间序列数据操作。
+- 可指定步长输出模型状态，作为后续模型运行的初始条件。
+- 实现自动检查模型的输入数据和参数的有效性。
+- 增加模型调试选项，可监控每一步长内的非法值和内存操作。
 
 
 
@@ -81,7 +81,7 @@ SHUD模型作为物理性水文模型，理论上可适用于任何流域和区�
 
 最大应用案例为模拟萨克拉门托河流域40年水资源变化状况，面积700,000 $km^2$。使用 ~$7 km^2$面积的分辨率，每两小时完成一年模拟，计算时间步长小于10分钟。
 
-部分应用案例可从链接 [https://www.shud.xyz/applications/](https://www.shud.xyz/applications/)查看.
+部分应用案例可从链接 [https://www.shud.xyz/book_cn/application.html](https://www.shud.xyz/book_cn/application.html)查看.
 
 
 ## 2. 模型安装与运行
@@ -95,7 +95,7 @@ SHUD模型由C++书写，rSHUD使用了R，因此SHUD模拟环境可以在Window
 
 ###  如何安装SUNDIALS/CVODE?
 
-SUNDIALS (https://computing.llnl.gov/projects/sundials) 是一个强大的数学库，能够高效求解工程物理和科学问题。CVODE是SUNDIALS套件中的一个求解器，用于求解初值问题的常微分方程。SHUD模型需要使用CVODE，因此用户需要编译和安装CVODE保证模型运行。关于SUNDIAL/CVODE安装过程，请参考：https://www.shulele.net/en/post/20191119_sundials/](https://www.shulele.net/en/post/20191119_sundials/)。除了使用SUNDIALS/CVODE的安装器之外，还可以使用源码中的文件 `configure`来安装。
+SUNDIALS (https://computing.llnl.gov/projects/sundials) 是一个强大的数学库，能够高效求解工程物理和科学问题。CVODE是SUNDIALS套件中的一个求解器，用于求解初值问题的常微分方程。SHUD模型需要使用CVODE，因此用户需要编译和安装CVODE保证模型运行。关于SUNDIAL/CVODE安装过程，请参考：[https://www.shud.xyz/book_cn/modeling.html](https://www.shud.xyz/book_cn/modeling.html)。除了使用SUNDIALS/CVODE的安装器之外，还可以使用源码中的文件 `configure`来安装。
 
 ###  SHUD模型计算效率如何？
 
@@ -112,7 +112,7 @@ SUNDIALS (https://computing.llnl.gov/projects/sundials) 是一个强大的数学
 ### 如何开启SHUD并行模式？
 首先，你需要安装OpenMP。然后测试`-fopen`编译选项是否可用。
 
-然后，开启OpenMP的条件下重新编译CVODE，请参考：[https://www.shulele.net/en/post/20191119_sundials/](https://www.shulele.net/en/post/20191119_sundials/)。
+然后，开启OpenMP的条件下重新编译CVODE，请参考：[https://www.shud.xyz/book_cn/modeling.html](https://www.shud.xyz/book_cn/modeling.html)。
 
 最后，编译并行版的SHUD模型：
 
@@ -138,13 +138,6 @@ make shud_omp
 install.packages("devtools")
 devtools::install_github("SHUD-System/rSHUD")
 ```
-除了rSHUD之外，需要安装`RTriagle`。请使用GitHub上的版本，因为CRAN上的版本无法满足要求。
-
-```
-install.packages("devtools")
-devtools::install_github("shulele/RTriangle", subdir="pkg")
-```
-
 ###  rSHUD是否已经提交R CRAN?
 
 尚未提交。 曾经试图提交，但是CRAN的管理员提出需要提交若干详细的案例和引用文献，费时费力，而且rSHUD的用户是模型使用者，应该可以驾驭几行简单的命令行——使用两行命令实现安装。但是未来我们还是会尽力向CRAN提交整个开发包。
