@@ -6,6 +6,7 @@ def:unlabeled-div-2
 def:unlabeled-div-3
 def:unlabeled-div-4
 def:unlabeled-div-5
+def:unlabeled-div-6
 eq:taylor0
 eq:dt
 eq:dt-
@@ -18,12 +19,12 @@ eq:d2
 eq:d2oo
 eq:d2o
 eq:d2o3
-exm:unnamed-chunk-4
+exm:unnamed-chunk-5
 eq:heatge
 eq:heatTSex
 eq:heatTSim
-exm:unnamed-chunk-9
-def:unnamed-chunk-15
+exm:unnamed-chunk-10
+def:unnamed-chunk-16
 modeling
 建模基本思路
 nm

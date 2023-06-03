@@ -23,7 +23,7 @@
 <meta name="author" content="舒乐乐，孟宪红" />
 
 
-<meta name="date" content="2023-03-13" />
+<meta name="date" content="2023-06-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -351,6 +351,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="龙格-库塔方法runge-kutta-method" class="section level3 hasAnchor" number="2.2.3">
 <h3><span class="header-section-number">2.2.3</span> 龙格-库塔方法(Runge-Kutta Method)<a href="nm.html#龙格-库塔方法runge-kutta-method" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>数值分析中，龙格-库塔方法（Runge-Kutta Methods）是用于非线性常微分方程的解的重要的一类隐式或显式迭代法。这些技术由数学家卡尔·龙格和马丁·威尔海姆·库塔于1900年左右发明。</p>
+<p>这里介绍最常见的四阶龙格-库塔方法。</p>
+<hr />
+<div class="definition">
+<p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 2.4  (龙格-库塔方法) </strong></span><span class="math display">\[\frac{dy}{dx} = x^2 + y^2\]</span>
+<span class="math display">\[f&#39; = \frac {dy}{dx}\]</span>
+龙格-库塔方法求解过程为:
+<span class="math display">\[ k_1 &lt;- h * f&#39; (x_i, y_i)\]</span>
+<span class="math display">\[k_2 &lt;- h * f&#39; (x_i + h/2, y_i + k_1/2)\]</span>
+<span class="math display">\[k_3 &lt;- h * f&#39; (x_i + h/2, y_i + k_2/2)\]</span>
+<span class="math display">\[k_4 = h * f&#39; (x_i + h, y_i + k_3)\]</span>
+<span class="math display">\[y_{i+1} = y_i + (k_1 + 2*k_2 + 2*k_3 + k_4) / 6\]</span>
+<span class="math inline">\(h\)</span>即迭代步长，
+<span class="math inline">\(h = x_{i+1} - x_i\)</span>。</p>
+</div>
+<hr />
+<p>实现四阶龙格-库塔算法的R代码：</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="nm.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the derivative function</span></span>
+<span id="cb5-2"><a href="nm.html#cb5-2" aria-hidden="true" tabindex="-1"></a>dydx <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb5-3"><a href="nm.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> y<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb5-4"><a href="nm.html#cb5-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-5"><a href="nm.html#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="nm.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the Runge-Kutta method</span></span>
+<span id="cb5-7"><a href="nm.html#cb5-7" aria-hidden="true" tabindex="-1"></a>rk4 <span class="ot">&lt;-</span> <span class="cf">function</span>(y0, x0, h, n) {</span>
+<span id="cb5-8"><a href="nm.html#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Initialize arrays</span></span>
+<span id="cb5-9"><a href="nm.html#cb5-9" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, n<span class="sc">+</span><span class="dv">1</span>)</span>
+<span id="cb5-10"><a href="nm.html#cb5-10" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, n<span class="sc">+</span><span class="dv">1</span>)</span>
+<span id="cb5-11"><a href="nm.html#cb5-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-12"><a href="nm.html#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Set initial values</span></span>
+<span id="cb5-13"><a href="nm.html#cb5-13" aria-hidden="true" tabindex="-1"></a>  x[<span class="dv">1</span>] <span class="ot">&lt;-</span> x0</span>
+<span id="cb5-14"><a href="nm.html#cb5-14" aria-hidden="true" tabindex="-1"></a>  y[<span class="dv">1</span>] <span class="ot">&lt;-</span> y0</span>
+<span id="cb5-15"><a href="nm.html#cb5-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-16"><a href="nm.html#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Iterate over n steps</span></span>
+<span id="cb5-17"><a href="nm.html#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
+<span id="cb5-18"><a href="nm.html#cb5-18" aria-hidden="true" tabindex="-1"></a>    k1 <span class="ot">&lt;-</span> h <span class="sc">*</span> <span class="fu">dydx</span>(x[i], y[i])</span>
+<span id="cb5-19"><a href="nm.html#cb5-19" aria-hidden="true" tabindex="-1"></a>    k2 <span class="ot">&lt;-</span> h <span class="sc">*</span> <span class="fu">dydx</span>(x[i] <span class="sc">+</span> h<span class="sc">/</span><span class="dv">2</span>, y[i] <span class="sc">+</span> k1<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb5-20"><a href="nm.html#cb5-20" aria-hidden="true" tabindex="-1"></a>    k3 <span class="ot">&lt;-</span> h <span class="sc">*</span> <span class="fu">dydx</span>(x[i] <span class="sc">+</span> h<span class="sc">/</span><span class="dv">2</span>, y[i] <span class="sc">+</span> k2<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb5-21"><a href="nm.html#cb5-21" aria-hidden="true" tabindex="-1"></a>    k4 <span class="ot">&lt;-</span> h <span class="sc">*</span> <span class="fu">dydx</span>(x[i] <span class="sc">+</span> h, y[i] <span class="sc">+</span> k3)</span>
+<span id="cb5-22"><a href="nm.html#cb5-22" aria-hidden="true" tabindex="-1"></a>    y[i<span class="sc">+</span><span class="dv">1</span>] <span class="ot">&lt;-</span> y[i] <span class="sc">+</span> (k1 <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>k2 <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>k3 <span class="sc">+</span> k4) <span class="sc">/</span> <span class="dv">6</span></span>
+<span id="cb5-23"><a href="nm.html#cb5-23" aria-hidden="true" tabindex="-1"></a>    x[i<span class="sc">+</span><span class="dv">1</span>] <span class="ot">&lt;-</span> x[i] <span class="sc">+</span> h</span>
+<span id="cb5-24"><a href="nm.html#cb5-24" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-25"><a href="nm.html#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Return the arrays</span></span>
+<span id="cb5-26"><a href="nm.html#cb5-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">data.frame</span>(<span class="at">x=</span>x, <span class="at">y=</span>y))</span>
+<span id="cb5-27"><a href="nm.html#cb5-27" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-28"><a href="nm.html#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-29"><a href="nm.html#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage</span></span>
+<span id="cb5-30"><a href="nm.html#cb5-30" aria-hidden="true" tabindex="-1"></a>result<span class="ot">=</span><span class="fu">rk4</span>(<span class="at">y0=</span><span class="dv">0</span>, <span class="at">x0=</span><span class="dv">0</span>, <span class="at">h=</span><span class="fl">0.05</span>, <span class="at">n=</span><span class="dv">20</span>)</span>
+<span id="cb5-31"><a href="nm.html#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result<span class="sc">$</span>x, result<span class="sc">$</span>y, <span class="at">type=</span><span class="st">&#39;b&#39;</span>, <span class="at">col=</span><span class="st">&#39;red&#39;</span>, <span class="at">main =</span> <span class="st">&#39;4th-order Runge-Kutta Method&#39;</span>);<span class="fu">grid</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="nm.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(result)</span></code></pre></div>
+<pre><code>##       x            y
+## 1  0.00 0.000000e+00
+## 2  0.05 4.166668e-05
+## 3  0.10 3.333350e-04
+## 4  0.15 1.125027e-03
+## 5  0.20 2.666870e-03
+## 6  0.25 5.209303e-03
+## 7  0.30 9.003475e-03
+## 8  0.35 1.430189e-02
+## 9  0.40 2.135939e-02
+## 10 0.45 3.043447e-02
+## 11 0.50 4.179116e-02
+## 12 0.55 5.570135e-02
+## 13 0.60 7.244788e-02
+## 14 0.65 9.232833e-02
+## 15 0.70 1.156599e-01
+## 16 0.75 1.427853e-01
+## 17 0.80 1.740803e-01
+## 18 0.85 2.099633e-01
+## 19 0.90 2.509068e-01
+## 20 0.95 2.974527e-01
+## 21 1.00 3.502320e-01</code></pre>
 </div>
 <div id="皮卡法picard-method" class="section level3 hasAnchor" number="2.2.4">
 <h3><span class="header-section-number">2.2.4</span> 皮卡法(Picard Method)<a href="nm.html#皮卡法picard-method" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -372,7 +443,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>CFL条件是数值方法求解常/偏微分方程保证其收敛性和稳定性的<strong>必要条件</strong>，但不是充分条件；以Courant， Fredrichs和Lewy共同命名（cite）。CFL条件即数值方法的时间步长要足够小，方能够保证计算精度，否则结果不收敛或者不稳定。</p>
 <p>最简单可以理解为时间推进求解的速度必须大于物理扰动传播的速度，只有这样才能将物理上所有的扰动俘获到。</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 2.4  (CFL条件) </strong></span>CFL条件数学表达形式为：
+<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 2.5  (CFL条件) </strong></span>CFL条件数学表达形式为：
 <span class="math display">\[ \frac {c \Delta t} {\Delta x ^n} &lt; C_{max}\]</span>
 其中<span class="math inline">\(c\)</span>即为系统中变量的变化速率。<span class="math inline">\(C_{max}\)</span>是保持求解系统稳定和收敛的最大值，常见值为0.5。有的系统中<span class="math inline">\(n=1\)</span>，但有的科学问题中<span class="math inline">\(n&gt;1\)</span>。</p>
 </div>
@@ -415,7 +486,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="初始条件" class="section level2 hasAnchor" number="2.6">
 <h2><span class="header-section-number">2.6</span> 初始条件<a href="nm.html#初始条件" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 2.5  (初始条件) </strong></span>初始条件定义为
+<p><span id="def:unlabeled-div-4" class="definition"><strong>Definition 2.6  (初始条件) </strong></span>初始条件定义为
 <span class="math display">\[y(t_0) = y_0\]</span>
 其中<span class="math inline">\(t_0\)</span>为问题的初始时刻，<span class="math inline">\(y_0\)</span>为初始时刻包含目标变量值的向量。</p>
 </div>
@@ -425,10 +496,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.7</span> 边界条件<a href="nm.html#边界条件" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>数值方法的边界条件通常分为Dirichlet和Neumann两类。</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-4" class="definition"><strong>Definition 2.6  (第一类边界条件) </strong></span>Dirichlet边界条件(Dirichlet Boundary Condition, DBC)是常/偏微分方程的第一类边界条件，也称为固定边界条件，其指定了空间某点的固定值，比如在地下水中，Dirichlet边界条件限定固定地下水水头高度。</p>
+<p><span id="def:unlabeled-div-5" class="definition"><strong>Definition 2.7  (第一类边界条件) </strong></span>Dirichlet边界条件(Dirichlet Boundary Condition, DBC)是常/偏微分方程的第一类边界条件，也称为固定边界条件，其指定了空间某点的固定值，比如在地下水中，Dirichlet边界条件限定固定地下水水头高度。</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-5" class="definition"><strong>Definition 2.7  (第二类边界条件) </strong></span>诺伊曼边界条件（Neumann boundary condition, NBC) 也被称为常/偏微分方程的“第二类边界条件”，其给定空间特定位置上目标变量的一阶导数，在地下水问题中，通常某一点处固定的流量，如注水或者取水量。</p>
+<p><span id="def:unlabeled-div-6" class="definition"><strong>Definition 2.8  (第二类边界条件) </strong></span>诺伊曼边界条件（Neumann boundary condition, NBC) 也被称为常/偏微分方程的“第二类边界条件”，其给定空间特定位置上目标变量的一阶导数，在地下水问题中，通常某一点处固定的流量，如注水或者取水量。</p>
 </div>
 <p>作为三维的数值模型，两类边界条件都可以施加在空间任意位置的任意方向上。</p>
 
