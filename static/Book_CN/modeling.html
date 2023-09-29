@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 SHUD模型软件与数据 | SHUD水文模型 (ver 2.0)</title>
   <meta name="description" content="SHUD Book" />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 SHUD模型软件与数据 | SHUD水文模型 (ver 2.0)" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Lele Shu (shulele@lzb.ac.cn)" />
 
 
-<meta name="date" content="2023-05-25" />
+<meta name="date" content="2023-09-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -98,7 +98,7 @@ div.csl-indent {
 <li class="chapter" data-level="1" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i><b>1</b> 绪论</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="overview.html"><a href="overview.html#水文模型"><i class="fa fa-check"></i><b>1.1</b> 水文模型</a></li>
-<li class="chapter" data-level="1.2" data-path="overview.html"><a href="overview.html#数值方法水文模型"><i class="fa fa-check"></i><b>1.2</b> 数值方法水文模型</a>
+<li class="chapter" data-level="1.2" data-path="overview.html"><a href="overview.html#数值水文模型"><i class="fa fa-check"></i><b>1.2</b> 数值水文模型</a>
 <ul>
 <li class="chapter" data-level="1.2.1" data-path="overview.html"><a href="overview.html#数学模型"><i class="fa fa-check"></i><b>1.2.1</b> 数学模型</a></li>
 <li class="chapter" data-level="1.2.2" data-path="overview.html"><a href="overview.html#数值方法求解"><i class="fa fa-check"></i><b>1.2.2</b> 数值方法求解</a></li>
@@ -280,23 +280,23 @@ cd builddir/</code></pre>
 <li>运行ccmake配置安装环境。</li>
 </ol>
 <pre><code>ccmake ../sundials/cvode-5.0.0</code></pre>
-<div class="figure">
-<img src="Fig/ccmake/1.png" alt="" />
-<p class="caption">Screenshot of Step 1 in ccmake</p>
+<div class="float">
+<img src="Fig/ccmake/1.png" alt="Screenshot of Step 1 in ccmake" />
+<div class="figcaption">Screenshot of Step 1 in ccmake</div>
 </div>
 <p>首先出现的是空白配置页面。按c开始配置。</p>
-<div class="figure">
-<img src="Fig/ccmake/2.png" alt="" />
-<p class="caption">Screen short of Step 2 in ccmake</p>
+<div class="float">
+<img src="Fig/ccmake/2.png" alt="Screen short of Step 2 in ccmake" />
+<div class="figcaption">Screen short of Step 2 in ccmake</div>
 </div>
 <p>上图为默认的配置信息图片上的四处配置信息需要注意，值需要改为下面的值。OPENMP值需要您的系统支持OpenMP，因此在确认您的系统支持OpenMP的情况下打开。</p>
 <pre><code>BUILD_CVODE = ON
 CMAKE_INSTALL_PREFIX = ~/sundials
 EXAMPLES_INSTALL_PATH = ~/sundials/examples</code></pre>
 <p>以上值修改完成后，按c确认配置。</p>
-<div class="figure">
-<img src="Fig/ccmake/3.png" alt="" />
-<p class="caption">Screenshot of Step 3 in ccmake</p>
+<div class="float">
+<img src="Fig/ccmake/3.png" alt="Screenshot of Step 3 in ccmake" />
+<div class="figcaption">Screenshot of Step 3 in ccmake</div>
 </div>
 <p>ccmake开始自动配置安装参数。当配置完成后，按g生成配置文件并退出。</p>
 <ol style="list-style-type: decimal">
@@ -740,9 +740,9 @@ Library/Include paths:
 </tr>
 </tbody>
 </table>
-<div class="figure">
-<img src="Fig/IO/Inputfiles.png" alt="" />
-<p class="caption">The screenshot of input files for SHUD</p>
+<div class="float">
+<img src="Fig/IO/Inputfiles.png" alt="The screenshot of input files for SHUD" />
+<div class="figcaption">The screenshot of input files for SHUD</div>
 </div>
 <p>在文件夹 <em>gis</em> 和 <em>fig</em> 中的文件与SHUD模拟无关，然后在数据分析和可视化中有很大作用，因此保留在输入文件当中。</p>
 </div>
@@ -929,9 +929,9 @@ Library/Include paths:
 </div>
 <div id="sp.att文件" class="section level4 hasAnchor" number="3.2.3.2">
 <h4><span class="header-section-number">3.2.3.2</span> .sp.att文件<a href="modeling.html#sp.att文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/sp.att.png" alt="" />
-<p class="caption">Example of .sp.att file</p>
+<div class="float">
+<img src="Fig/IO/sp.att.png" alt="Example of .sp.att file" />
+<div class="figcaption">Example of .sp.att file</div>
 </div>
 <ul>
 <li>表头</li>
@@ -1032,9 +1032,9 @@ Library/Include paths:
 </div>
 <div id="sp.riv文件" class="section level4 hasAnchor" number="3.2.3.3">
 <h4><span class="header-section-number">3.2.3.3</span> .sp.riv文件<a href="modeling.html#sp.riv文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/sp.riv.png" alt="" />
-<p class="caption">Example of .sp.riv file</p>
+<div class="float">
+<img src="Fig/IO/sp.riv.png" alt="Example of .sp.riv file" />
+<div class="figcaption">Example of .sp.riv file</div>
 </div>
 <ul>
 <li>表头</li>
@@ -1114,9 +1114,9 @@ Library/Include paths:
 </div>
 <div id="sp.rivseg文件" class="section level4 hasAnchor" number="3.2.3.4">
 <h4><span class="header-section-number">3.2.3.4</span> .sp.rivseg文件<a href="modeling.html#sp.rivseg文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/sp.rivchn.png" alt="" />
-<p class="caption">Example of .sp.rivseg file</p>
+<div class="float">
+<img src="Fig/IO/sp.rivchn.png" alt="Example of .sp.rivseg file" />
+<div class="figcaption">Example of .sp.rivseg file</div>
 </div>
 <ul>
 <li>表头</li>
@@ -1207,9 +1207,9 @@ Library/Include paths:
 <h3><span class="header-section-number">3.2.5</span> 模型配置文件<a href="modeling.html#模型配置文件" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="cfg.para文件" class="section level4 hasAnchor" number="3.2.5.1">
 <h4><span class="header-section-number">3.2.5.1</span> .cfg.para文件<a href="modeling.html#cfg.para文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/cfg.para.png" alt="" />
-<p class="caption">Example of .cfg.para file</p>
+<div class="float">
+<img src="Fig/IO/cfg.para.png" alt="Example of .cfg.para file" />
+<div class="figcaption">Example of .cfg.para file</div>
 </div>
 <ul>
 <li>Table</li>
@@ -1478,9 +1478,9 @@ Library/Include paths:
 </div>
 <div id="cfg.calib文件" class="section level4 hasAnchor" number="3.2.5.2">
 <h4><span class="header-section-number">3.2.5.2</span> .cfg.calib文件<a href="modeling.html#cfg.calib文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/cfg.calib.png" alt="" />
-<p class="caption">Example of .cfg.calib file</p>
+<div class="float">
+<img src="Fig/IO/cfg.calib.png" alt="Example of .cfg.calib file" />
+<div class="figcaption">Example of .cfg.calib file</div>
 </div>
 <ul>
 <li>Table</li>
@@ -1758,9 +1758,9 @@ Library/Include paths:
 </div>
 <div id="cfg.ic文件" class="section level4 hasAnchor" number="3.2.5.3">
 <h4><span class="header-section-number">3.2.5.3</span> .cfg.ic文件<a href="modeling.html#cfg.ic文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/cfg.ic.png" alt="" />
-<p class="caption">Example of .cfg.ic file</p>
+<div class="float">
+<img src="Fig/IO/cfg.ic.png" alt="Example of .cfg.ic file" />
+<div class="figcaption">Example of .cfg.ic file</div>
 </div>
 <ul>
 <li><p><strong>表1 (三角单元初始条件)</strong></p></li>
@@ -1961,18 +1961,18 @@ Library/Include paths:
 <h3><span class="header-section-number">3.2.6</span> 时间序列数据<a href="modeling.html#时间序列数据" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="tsd.forc文件" class="section level4 hasAnchor" number="3.2.6.1">
 <h4><span class="header-section-number">3.2.6.1</span> .tsd.forc文件<a href="modeling.html#tsd.forc文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/tsd.forc.png" alt="" />
-<p class="caption">Example of .tsd.forc file</p>
+<div class="float">
+<img src="Fig/IO/tsd.forc.png" alt="Example of .tsd.forc file" />
+<div class="figcaption">Example of .tsd.forc file</div>
 </div>
 <ul>
 <li>Line 1: <code>气象站点数量 | 开始日期 (YYYYMMDD)</code></li>
 <li>Line 2: 驱动数据文件所在文件夹</li>
 <li>Line 3~N: 时间序列数据文件名</li>
 </ul>
-<div class="figure">
-<img src="Fig/IO/tsd.csv.png" alt="" />
-<p class="caption">Example of .csv forcing file</p>
+<div class="float">
+<img src="Fig/IO/tsd.csv.png" alt="Example of .csv forcing file" />
+<div class="figcaption">Example of .csv forcing file</div>
 </div>
 <ul>
 <li>表头:</li>
@@ -2066,9 +2066,9 @@ Library/Include paths:
 </div>
 <div id="tsd.lai文件" class="section level4 hasAnchor" number="3.2.6.2">
 <h4><span class="header-section-number">3.2.6.2</span> .tsd.lai文件<a href="modeling.html#tsd.lai文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/tsd.lai.png" alt="" />
-<p class="caption">Example of .tsd.lai file</p>
+<div class="float">
+<img src="Fig/IO/tsd.lai.png" alt="Example of .tsd.lai file" />
+<div class="figcaption">Example of .tsd.lai file</div>
 </div>
 <ul>
 <li>表头:</li>
@@ -2143,9 +2143,9 @@ Library/Include paths:
 </div>
 <div id="tsd.mf文件" class="section level4 hasAnchor" number="3.2.6.3">
 <h4><span class="header-section-number">3.2.6.3</span> .tsd.mf文件<a href="modeling.html#tsd.mf文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/tsd.mf.png" alt="" />
-<p class="caption">Example of .tsd.mf file</p>
+<div class="float">
+<img src="Fig/IO/tsd.mf.png" alt="Example of .tsd.mf file" />
+<div class="figcaption">Example of .tsd.mf file</div>
 </div>
 <p>融雪度日模型(Degree-Day Model)的系数。</p>
 <ul>
@@ -2221,9 +2221,9 @@ Library/Include paths:
 </div>
 <div id="tsd.obs文件" class="section level4 hasAnchor" number="3.2.6.4">
 <h4><span class="header-section-number">3.2.6.4</span> .tsd.obs文件<a href="modeling.html#tsd.obs文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure">
-<img src="Fig/IO/tsd.obs.png" alt="" />
-<p class="caption">Example of .tsd.obs file</p>
+<div class="float">
+<img src="Fig/IO/tsd.obs.png" alt="Example of .tsd.obs file" />
+<div class="figcaption">Example of .tsd.obs file</div>
 </div>
 <ul>
 <li>表头:</li>
@@ -2721,9 +2721,9 @@ StartTime - 开始时间 （YYYYMMDD or YYYYMMDD.hhmmss）</p>
 </tr>
 </tbody>
 </table>
-<div class="figure">
-<img src="Fig/outputfile.png" alt="" />
-<p class="caption">v2.1版本输出文件的逻辑和内存结构</p>
+<div class="float">
+<img src="Fig/outputfile.png" alt="v2.1版本输出文件的逻辑和内存结构" />
+<div class="figcaption">v2.1版本输出文件的逻辑和内存结构</div>
 </div>
 <p><em>注：double为计算机的双精度数据格式，默认长度为8个比特位</em></p>
 <p>数据为<span class="math inline">\(m \times N_x\)</span>的二维矩阵。</p>
@@ -3001,7 +3001,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

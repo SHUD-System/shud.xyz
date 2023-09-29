@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>SHUD水文模型 (ver 2.0)</title>
   <meta name="description" content="SHUD Book" />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="SHUD水文模型 (ver 2.0)" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Lele Shu (shulele@lzb.ac.cn)" />
 
 
-<meta name="date" content="2023-05-25" />
+<meta name="date" content="2023-09-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -98,7 +98,7 @@ div.csl-indent {
 <li class="chapter" data-level="1" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i><b>1</b> 绪论</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="overview.html"><a href="overview.html#水文模型"><i class="fa fa-check"></i><b>1.1</b> 水文模型</a></li>
-<li class="chapter" data-level="1.2" data-path="overview.html"><a href="overview.html#数值方法水文模型"><i class="fa fa-check"></i><b>1.2</b> 数值方法水文模型</a>
+<li class="chapter" data-level="1.2" data-path="overview.html"><a href="overview.html#数值水文模型"><i class="fa fa-check"></i><b>1.2</b> 数值水文模型</a>
 <ul>
 <li class="chapter" data-level="1.2.1" data-path="overview.html"><a href="overview.html#数学模型"><i class="fa fa-check"></i><b>1.2.1</b> 数学模型</a></li>
 <li class="chapter" data-level="1.2.2" data-path="overview.html"><a href="overview.html#数值方法求解"><i class="fa fa-check"></i><b>1.2.2</b> 数值方法求解</a></li>
@@ -250,16 +250,16 @@ div.csl-indent {
 <h1 class="title">SHUD水文模型 (ver 2.0)</h1>
 <h2 class="subtitle"><em>理论、方法和案例</em></h2>
 <p class="author"><em>Lele Shu (<a href="mailto:shulele@lzb.ac.cn" class="email">shulele@lzb.ac.cn</a>)</em></p>
-<p class="date"><em>2023-05-25</em></p>
+<p class="date"><em>2023-09-29</em></p>
 </div>
 <div id="index" class="section level1 unnumbered hasAnchor">
 <h1>前言<a href="index.html#index" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>本书涵盖了SHUD模型的发展、基本理论、技术细节、应用案例。
 在介绍模型本身的同时，本书还旨在将以水为媒介的自然过程在水文和地球工作中展示。</p>
 <p><strong>本书描述内容根据SHUD模型版本迭代，当前版本为v2.0 2023版。 更新周期约6个月。</strong></p>
-<div class="figure">
-<img src="Fig/modelcover.png" alt="" />
-<p class="caption">SHUD模型</p>
+<div class="float">
+<img src="Fig/modelcover.png" alt="SHUD模型" />
+<div class="figcaption">SHUD模型</div>
 </div>
 <hr />
 <blockquote>
@@ -342,7 +342,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

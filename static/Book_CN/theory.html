@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 理论与公式 | SHUD水文模型 (ver 2.0)</title>
   <meta name="description" content="SHUD Book" />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 理论与公式 | SHUD水文模型 (ver 2.0)" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Lele Shu (shulele@lzb.ac.cn)" />
 
 
-<meta name="date" content="2023-05-25" />
+<meta name="date" content="2023-09-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -98,7 +98,7 @@ div.csl-indent {
 <li class="chapter" data-level="1" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i><b>1</b> 绪论</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="overview.html"><a href="overview.html#水文模型"><i class="fa fa-check"></i><b>1.1</b> 水文模型</a></li>
-<li class="chapter" data-level="1.2" data-path="overview.html"><a href="overview.html#数值方法水文模型"><i class="fa fa-check"></i><b>1.2</b> 数值方法水文模型</a>
+<li class="chapter" data-level="1.2" data-path="overview.html"><a href="overview.html#数值水文模型"><i class="fa fa-check"></i><b>1.2</b> 数值水文模型</a>
 <ul>
 <li class="chapter" data-level="1.2.1" data-path="overview.html"><a href="overview.html#数学模型"><i class="fa fa-check"></i><b>1.2.1</b> 数学模型</a></li>
 <li class="chapter" data-level="1.2.2" data-path="overview.html"><a href="overview.html#数值方法求解"><i class="fa fa-check"></i><b>1.2.2</b> 数值方法求解</a></li>
@@ -250,6 +250,10 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 2</span> 理论与公式<a href="theory.html#theory" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="流域水循环" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> 流域水循环<a href="theory.html#流域水循环" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="float">
+<img src="Fig/overview/hydroCycle.png" alt="流域中水文循环基本框架，包含了高寒冰冻圈要素、地表水、地下水以及河流水文过程。" />
+<div class="figcaption"><strong>流域中水文循环基本框架，包含了高寒冰冻圈要素、地表水、地下水以及河流水文过程。</strong></div>
+</div>
 </div>
 <div id="建模思路" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> 建模思路<a href="theory.html#建模思路" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -269,7 +273,7 @@ div.csl-indent {
 <h3><span class="header-section-number">2.3.2</span> 蒸散发<a href="theory.html#蒸散发" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="风廓线-wind-profile" class="section level4 hasAnchor" number="2.3.2.1">
 <h4><span class="header-section-number">2.3.2.1</span> 风廓线 (Wind profile)<a href="theory.html#风廓线-wind-profile" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Equation 2.3 in <span class="citation">(<a href="#ref-abtew2012evaporation" role="doc-biblioref">Abtew and Melesse 2012</a>)</span></p>
+<p>Equation 2.3 in <span class="citation">(<a href="#ref-abtew2012evaporation">Abtew and Melesse 2012</a>)</span></p>
 <p><span class="math display">\[\begin{equation}
 \boldsymbol{u}_{x}=\boldsymbol{u}_{m} \frac{\ln \frac{z_{x}-d}{z_{0}}}{\ln \frac{z_{m}-d}{z_{0}}}
 \end{equation}\]</span></p>
@@ -400,7 +404,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
