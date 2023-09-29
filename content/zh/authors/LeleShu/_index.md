@@ -7,7 +7,7 @@ superuser: true
 user_groups: ["团队负责人"]
 
 # Role/position/tagline
-role: 水文学博士、副研究员
+role: 水文学博士、副研究员、硕士生导师
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -17,7 +17,7 @@ organizations:
   url: http://lpcc.careeri.cas.cn
 
 # Short bio (displayed in user profile at end of posts)
-bio: 中国科学院西北生态环境资源研究院副研究员，SHUD模型作者； 专注于数值方法的分布式水文模型、水文大数据的机器学习、气候/人类活动对水循环的影响和集成模型耦合研究
+bio: 中国科学院西北生态环境资源研究院副研究员，SHUD模型作者； 从事数值水文模型研发、“大气-陆面-水文”模型耦合、气候/人类活动对水循环的影响研究
 
 # Interests to show in About widget
 interests:
@@ -82,4 +82,4 @@ email: ""
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 ---
-水文学博士，现中国科学院西北生态环境资源研究院副研究员，中国科学院率先行动“百人计划”(2020-2022)。2017年毕业于美国宾夕法尼亚州立大学(Pennsylvania State University)土木工程系水资源工程专业，副修学位计算科学(Computational Science)，2017-2020加州大学戴维斯分校(Department of Land, Air and Water Resources, UC Davis)博士后研究员。分别于兰州大学和中科院寒旱所获得学士和硕士学位。开发了SHUD(Simulator for Hydrologic Unstructured Domains)数值方法水文模型([https://www.shud.xyz](https://www.shud.xyz))。专注于数值方法的分布式水文模型、“大气-陆面-水文”模型耦合、气候/人类活动对水循环的影响和集成模型耦合研究。
+水文学博士，中国科学院西北生态环境资源研究院副研究员，中国科学院率先行动引才计划获得者(2020-2023)。2017年毕业于美国宾夕法尼亚州立大学(Pennsylvania State University)土木工程系水资源工程专业，副修学位计算科学(Computational Science)，2017-2020加州大学戴维斯分校(Department of Land, Air and Water Resources, UC Davis)博士后研究员。原创了SHUD(Simulator for Hydrologic Unstructured Domains)数值方法水文模型([https://www.shud.xyz](https://www.shud.xyz))。长期从事数值水文模型、“大气-陆面-水文”模型耦合、气候/人类活动对水循环的影响等研究工作。担任EGU模型发展领域期刊Geoscientific Model Development主题编辑，负责水文学、数值方法和气候与地球系统模式三个方向。

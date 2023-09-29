@@ -26,7 +26,7 @@ weight: 900
 - **用户手册**: [https://www.shud.xyz/Book_CN<i class="fas fa-external-link-alt"></i>](/Book_CN)
 - **用户手册(英文)**: [https://www.shud.xyz/Book_EN<i class="fas fa-external-link-alt"></i>](/Book_EN)
 - **支持工具集**: rSHUD in R [https://github.com/SHUD-System/rSHUD](https://github.com/SHUD-System/rSHUD)
-- **全球水文数据云**: GHDC [https://shuddata.com](https://shuddata.com)
+- **全球水文数据云**: GHDC [https://ghdc.ac.cn](https://ghdc.ac.cn)
 
 ## 软件基本信息
 
