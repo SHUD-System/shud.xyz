@@ -1,18 +1,18 @@
 ---
 # Display name
-title: 赵晨
+title: 赖吉
 # Is this the primary user of the site?
 superuser: false
 
 user_groups: ["学生"]
 
 # Role/position/tagline
-role: 免试推荐硕士生
+role: 联合培养硕士生
 
 # Organizations/Affiliations to show in About widget
 organizations:
-- name: 中国科学院大学
-  url: https://www.ucas.ac.cn
+- name: 兰州大学
+  url: https://www.lzu.edu.cn
 - name: 中国科学院西北生态环境资源研究院
   url: http://www.nieer.cas.cn
   
@@ -21,14 +21,14 @@ bio: 硕士研究生
 
 # Interests to show in About widget
 interests:
-- 洪水模拟
-- 灾害评价
+- 古气候与湖泊
+- 大尺度水文模型
 # Education to show in About widget
 education:
   courses:
-  - course: 中国科学院大学，硕士生
+  - course: 兰州大，硕士生
     year: 2023-
-  - course: 兰州理工大学，土木工程，学士
+  - course: 兰州大学，GIS，学士
     year: 2019-2023
 
 # Social/Academic Networking
@@ -53,4 +53,4 @@ email: "1016138286@qq.com"
 # Highlight the author in author lists? (true/false)
 highlight_name: false
 ---
-免试推荐硕士研究生。主要研究方向为洪水预报。
+与兰州大学联合培养硕士研究生。主要研究方向为古气候与水文模型。

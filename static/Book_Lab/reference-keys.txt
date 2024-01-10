@@ -47,6 +47,7 @@ ubuntu服务器
 ssh登录
 vnc远程桌面
 shudhpc高性能计算集群
+登录
 服务器硬件配置
 shudhpc-ip地址配置
 操作系统与软件-2
