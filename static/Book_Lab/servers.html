@@ -23,7 +23,7 @@
 <meta name="author" content="舒乐乐和他的学生们、同事们、朋友们" />
 
 
-<meta name="date" content="2024-01-09" />
+<meta name="date" content="2024-01-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -273,6 +273,7 @@
 </tr>
 </tbody>
 </table>
+<p><strong>注意</strong>：ssh登录端口统一为32099</p>
 <p><strong>SHUDHPC与uDesk通过NIS共享同一套账户系统，因此，在SHUDHPC和uDesk上面的登录账户和用户主目录完全相同；uDesk上支持Linux图形桌面，方便用户进行可视化操作。</strong></p>
 <div class="float">
 <img src="Fig/ch5/machine.jpeg" alt="所有主机照片" />
@@ -572,7 +573,7 @@
 <ul>
 <li>登录IP： 210.77.77.23</li>
 <li>软件：ssh (命令行);</li>
-<li>端口: 22</li>
+<li>端口: 32099</li>
 </ul>
 <p>示例：</p>
 <pre><code>ssh zhangsan@210.77.77.23</code></pre>
@@ -601,7 +602,7 @@
 </tbody>
 </table>
 <p>示例：</p>
-<pre><code>ssh -p 32022 zhangsan@210.77.77.30 </code></pre>
+<pre><code>ssh -p 32022 zhangsan@210.77.77.22</code></pre>
 </div>
 <div id="vnc远程桌面" class="section level3 hasAnchor" number="5.3.3">
 <h3><span class="header-section-number">5.3.3</span> VNC远程桌面<a href="servers.html#vnc远程桌面" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -682,6 +683,7 @@ vncserver -geometry 2560x1440
 <li>访问地址： <strong>shud.vip</strong></li>
 <li>网页SSH访问：<strong>ssh.shud.vip</strong></li>
 <li>RStudio Server访问： <strong>rstudio.shud.vip</strong></li>
+<li>ssh端口：32099</li>
 </ul>
 </div>
 <div id="服务器硬件配置" class="section level3 hasAnchor" number="5.4.2">
