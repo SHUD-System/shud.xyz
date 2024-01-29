@@ -1,32 +1,32 @@
 ---
 # Display name
-title: 赖吉
+title: Ji Lai
 # Is this the primary user of the site?
 superuser: false
 
-user_groups: ["学生"]
+user_groups: ["Students", "Member"]
 
 # Role/position/tagline
-role: 联合培养硕士生
+role: Graduate student
 
 # Organizations/Affiliations to show in About widget
 organizations:
-- name: 兰州大学
+- name: Lanzhou University
   url: https://www.lzu.edu.cn
   
 # Short bio (displayed in user profile at end of posts)
-bio: 硕士研究生
+bio: Graduate student, co-advised
 
 # Interests to show in About widget
 interests:
-- 古气候与湖泊
-- 大尺度水文模型
+- Paleoclimate and lakes
+- Large-scale hydrological modeling
 # Education to show in About widget
 education:
   courses:
-  - course: 兰州大学，硕士生
+  - course: Lanzhou Univeristy，Graduate student
     year: 2023-
-  - course: 兰州大学，GIS，学士
+  - course: Lanzhou Univeristy，GIS，B.S.
     year: 2019-2023
 
 # Social/Academic Networking
@@ -51,4 +51,4 @@ email: "220220949381@lzu.edu.cn"
 # Highlight the author in author lists? (true/false)
 highlight_name: false
 ---
-与兰州大学联合培养硕士研究生。主要研究方向为古气候与水文模型。
+Co-advised graduate student from Lanzhou University. His  research interests are paleoclimate and hydrological modeling.
