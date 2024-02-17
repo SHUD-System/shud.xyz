@@ -7,6 +7,7 @@ sec:resinst
 科研助理
 博士生
 硕士生
+客座研究生
 rules
 愉快科研的一些建议
 advisor
@@ -67,10 +68,10 @@ skill
 researchtool
 空间制图qgis
 绘图xmind
-mendeley-desktop
-consensus.app
-researcher-app
-publish-or-perish-pop
+文献mendeley-desktop
+文献consensus.app
+文献researcher-app
+文献publish-or-perish-pop
 ai及chatgpt
 chatgpt
 基于api的私有chat-gpt3.5-和gpt-4
