@@ -9,11 +9,15 @@ sec:resinst
 硕士生
 客座研究生
 rules
-愉快科研的一些建议
+科研规则
 advisor
 学术导师adacemic-advisor
 学术导师的行为准则
 生活导师mentor
+科研经费
+源基金
+项目福利
+项目申请
 组会制度
 给学生的建议
 学生培养计划
@@ -21,6 +25,7 @@ advisor
 时间表
 课程推荐
 必读书籍
+必读文献入组必读
 allowance
 基本待遇
 住宿
