@@ -10,6 +10,7 @@ sec:resinst
 客座研究生
 rules
 科研规则
+细节规则
 advisor
 学术导师adacemic-advisor
 学术导师的行为准则
