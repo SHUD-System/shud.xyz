@@ -240,11 +240,11 @@
 <p>各服务器访问IP分别为：</p>
 <table>
 <colgroup>
-<col width="21%" />
 <col width="14%" />
-<col width="19%" />
-<col width="19%" />
+<col width="9%" />
 <col width="26%" />
+<col width="19%" />
+<col width="29%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -258,8 +258,8 @@
 <tbody>
 <tr class="odd">
 <td align="center">计算集群</td>
-<td align="center">SHUDHPC</td>
-<td align="center">shud.vip(210.77.77.22)</td>
+<td align="center">xnode</td>
+<td align="center">shud.vip (210.77.77.22)</td>
 <td align="center">10.0.1.100</td>
 <td align="center">210.77.77.25:318xx</td>
 </tr>
@@ -287,7 +287,7 @@
 <tr class="odd">
 <td align="center">NAS共享网盘</td>
 <td align="center">shudxyz</td>
-<td align="center">nas.shud.vip(210.77.77.36)</td>
+<td align="center">nas.shud.vip (210.77.77.36)</td>
 <td align="center">10.0.1.26</td>
 <td align="center">无</td>
 </tr>
@@ -674,8 +674,8 @@ vim ~/.vnc/xstartup</code></pre>
 unset SESSION_MANAGER
 unset DBUS_SESSION_BUS_ADDRESS
 startxfce4 &amp;</code></pre>
-<p>登录远程桌面：
-<img src="Fig/ch5/udesk_RD.png" /></p>
+<p>登录远程桌面：</p>
+<p><img src="Fig/ch5/udesk_RD.png" /></p>
 <ol style="list-style-type: decimal">
 <li><p>在服务器端启动vncserver。 <code>-geometry</code>参数可以设置远程桌面的分辨率。以下命令三选一</p>
 <pre><code>vncserver -geometry 1440x900
@@ -832,10 +832,10 @@ vncserver -geometry 2560x1440
 <p>假设用户名为<strong>zhangsan</strong></p>
 <table>
 <colgroup>
+<col width="28%" />
 <col width="15%" />
 <col width="15%" />
-<col width="15%" />
-<col width="54%" />
+<col width="40%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -929,8 +929,11 @@ done
 wait</code></pre>
 <p>开启交互模式</p>
 <pre><code>srun --nodes=1 --ntasks-per-node=1 --time=01:00:00 --pty bash -i</code></pre>
-<p><strong>最简单的SHUD模型slurm任务案例：</strong>
-<img src="Fig/ch5/slurm_example.png" alt="slurm任务案例" /></p>
+<p><strong>最简单的SHUD模型slurm任务案例：</strong></p>
+<div class="float">
+<img src="Fig/ch5/slurm_example.png" alt="slurm任务案例" />
+<div class="figcaption">slurm任务案例</div>
+</div>
 <p>slurm教程参考</p>
 <ul>
 <li>上海交大： <a href="https://docs.hpc.sjtu.edu.cn/job/slurm.html">https://docs.hpc.sjtu.edu.cn/job/slurm.html</a></li>
