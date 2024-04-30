@@ -23,7 +23,7 @@
 <meta name="author" content="舒乐乐和他的学生们、同事们、朋友们" />
 
 
-<meta name="date" content="2024-04-16" />
+<meta name="date" content="2024-04-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -416,24 +416,30 @@
 <div id="nas-作为网络磁盘" class="section level3 hasAnchor" number="5.1.4">
 <h3><span class="header-section-number">5.1.4</span> NAS 作为网络磁盘<a href="servers.html#nas-作为网络磁盘" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li>Mac OS
+<li><p>Mac OS</p>
 <ul>
 <li>打开Finder（访达），然后使用键盘CMD+k，访问网络地址。</li>
 <li>在打开的窗口中输入：<code>afp://nas.shud.vip</code>或者<code>afp://210.77.77.36</code>。然后点击<code>连接（Connect）</code></li>
 <li>然后提示框要求输入<code>用户名和密码</code>。</li>
 <li>选择你需要加载的磁盘。</li>
 </ul></li>
-<li>Windows
+<li><p>Windows</p>
 <ol style="list-style-type: decimal">
-<li><p>打开文件管理器，找到<code>映射网络磁盘(Map network driver)</code>，
-<img src="Fig/ch5/win_mapdisk-1.png" /></p></li>
-<li><p>在打开的窗口中输入需要加载的<code>磁盘IP和路径</code>，例如<code>\\nas.shud.vip\home</code>或者<code>\\nas.shud.vip\ForcingData</code>。点击<code>完成</code>
-<img src="Fig/ch5/win_mapdisk-2.png" /></p></li>
-<li><p>根据提示框输入登录NAS使用的<code>用户名与密码</code>。点击<code>OK</code>
-<img src="Fig/ch5/win_mapdisk-3.png" /></p></li>
-<li><p>然后系统会加载指定的网络磁盘，映射其为本地磁盘。此后该网络磁盘将可以像一般本地磁盘一样操作。
-<img src="Fig/ch5/win_mapdisk-4.png" /></p></li>
-</ol></li>
+<li>打开文件管理器，找到<code>映射网络磁盘(Map network driver)</code>，</li>
+</ol>
+<p><img src="Fig/ch5/win_mapdisk-1.png" /></p>
+<ol style="list-style-type: decimal">
+<li>在打开的窗口中输入需要加载的<code>磁盘IP和路径</code>，例如<code>\\nas.shud.vip\home</code>或者<code>\\nas.shud.vip\ForcingData</code>。点击<code>完成</code></li>
+</ol>
+<p><img src="Fig/ch5/win_mapdisk-2.png" /></p>
+<ol style="list-style-type: decimal">
+<li>根据提示框输入登录NAS使用的<code>用户名与密码</code>。点击<code>OK</code></li>
+</ol>
+<p><img src="Fig/ch5/win_mapdisk-3.png" /></p>
+<ol style="list-style-type: decimal">
+<li>然后系统会加载指定的网络磁盘，映射其为本地磁盘。此后该网络磁盘将可以像一般本地磁盘一样操作。</li>
+</ol>
+<p><img src="Fig/ch5/win_mapdisk-4.png" /></p></li>
 </ul>
 <p><strong>注</strong>：如果在Windows远程桌面(Win-Desk)上加载NAS，使用本地IP(<code>10.0.1.x</code>段)，可以显著提高网络磁盘的读写速度。</p>
 </div>
@@ -980,8 +986,8 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/06-servers.Rmd",
-"text": "Edit"
+"link": null,
+"text": null
 },
 "history": {
 "link": null,
