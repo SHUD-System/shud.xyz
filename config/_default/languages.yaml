@@ -31,6 +31,9 @@ en:
       - name: Course
         url: 'course/'
         weight: 70
+      - name: Open Funding
+        url: 'openfunding/'
+        weight: 75
       - name: Global Hydro Cloud
         url: 'https://ghdc.ac.cn'
         weight: 80
@@ -69,6 +72,9 @@ zh:
       - name: 书籍/课程
         url: 'course/'
         weight: 70
+      - name: 开放基金
+        url: 'openfunding/'
+        weight: 75
       - name: 全球水文数据云
         url: 'https://ghdc.ac.cn'
         weight: 80
