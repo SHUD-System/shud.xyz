@@ -46,5 +46,5 @@ weight: 10
 
 
 ### 申请表
-最新申请表情下载：[https://shud.xyz/openfund.doc](https://shud.xyz/openfund.doc)
+最新申请表情下载：[https://shud.xyz/openfund.docx](https://shud.xyz/openfund.docx)
 
