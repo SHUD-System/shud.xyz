@@ -37,7 +37,7 @@ weight: 10
 ## 1.2 申请流程
 
 1. 申请方式：申请书+申请人个人简历，发送至PI邮箱：[shulele@lzb.ac.cn](mailto:shulele@lzb.ac.cn)
-1. 2024年度项目申请截止时间2024年8月5日。
+1. 2024年度项目申请截止时间2024年8月15日。
 1. 2024年9月1日之前组织视频答辩。答辩后，本研究组对申请书给出回复意见，请根据回复意见对申请书进行修改。
 1. 视频答辩后30天给出明确是否资助的结果。
 1. 项目受资助之后，立即开始执行。
@@ -46,5 +46,7 @@ weight: 10
 
 ## 1.3 申请表
 
-最新申请表情下载：[https://shud.xyz/openfund.docx](https://shud.xyz/openfund.docx)
+最新申请表下载：[https://shud.xyz/openfund.docx](https://shud.xyz/openfund.docx)
+
+个人简历可参考：[https://shud.xyz/CV_template.docx](https://shud.xyz/CV_template.docx)
 
