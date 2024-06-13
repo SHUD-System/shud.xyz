@@ -1,6 +1,6 @@
 ---
 # Page title
-title: 申请流程和注意事项
+title: 1. 申请流程和注意事项
 # Title for the menu link if you wish to use a shorter link title, otherwise remove this option.
 
 linktitle: 1. 申请流程
@@ -19,8 +19,7 @@ weight: 10
 
 ---
 
-
-### 申请材料
+## 1.1 材料
 
 1. 项目选题可直接申请已有的指南任务，或者自由选题。
 1. 自由选题仅限**大气、水文、地理、遥感、生态方向**，以及与**以上方向有交叉**的计算机、高性能计算、人工智能、软硬件设备等。恕能力限制，其他方向无法提供学术指导和经费支持。
@@ -35,7 +34,8 @@ weight: 10
      - 其他：其他表现个人能力和性格的内容。
 1. 项目经费的可支出额度比例不高于项目执行进度比例。
 
-### 申请流程
+## 1.2 申请流程
+
 1. 申请方式：申请书+申请人个人简历，发送至PI邮箱：[shulele@lzb.ac.cn](mailto:shulele@lzb.ac.cn)
 1. 2024年度项目申请截止时间2024年8月5日。
 1. 2024年9月1日之前组织视频答辩。答辩后，本研究组对申请书给出回复意见，请根据回复意见对申请书进行修改。
@@ -44,7 +44,7 @@ weight: 10
 
 
 
+## 1.3 申请表
 
-### 申请表
-最新申请表情下载：[https://shud.xyz/openfund.doc](https://shud.xyz/openfund.doc)
+最新申请表情下载：[https://shud.xyz/openfund.docx](https://shud.xyz/openfund.docx)
 
