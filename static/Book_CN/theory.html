@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 理论与公式 | SHUD水文模型 (ver 2.0)</title>
   <meta name="description" content="SHUD Book" />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 理论与公式 | SHUD水文模型 (ver 2.0)" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Lele Shu (shulele@lzb.ac.cn)" />
 
 
-<meta name="date" content="2024-07-26" />
+<meta name="date" content="2023-09-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,10 +55,6 @@
 
 
 
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -132,11 +128,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="theory.html"><a href="theory.html#地表过程-surface"><i class="fa fa-check"></i><b>2.4</b> 地表过程 (Surface)</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="theory.html"><a href="theory.html#辐射"><i class="fa fa-check"></i><b>2.4.1</b> 辐射</a></li>
-<li class="chapter" data-level="2.4.2" data-path="theory.html"><a href="theory.html#地表能量平衡"><i class="fa fa-check"></i><b>2.4.2</b> 地表能量平衡</a></li>
-<li class="chapter" data-level="2.4.3" data-path="theory.html"><a href="theory.html#土壤水热耦合"><i class="fa fa-check"></i><b>2.4.3</b> 土壤水热耦合</a></li>
-<li class="chapter" data-level="2.4.4" data-path="theory.html"><a href="theory.html#地表径流-surface-runoff"><i class="fa fa-check"></i><b>2.4.4</b> 地表径流 (Surface Runoff)</a></li>
-<li class="chapter" data-level="2.4.5" data-path="theory.html"><a href="theory.html#入渗与出渗-infiltration-exfiltration"><i class="fa fa-check"></i><b>2.4.5</b> 入渗与出渗 (Infiltration &amp; Exfiltration)</a></li>
+<li class="chapter" data-level="2.4.1" data-path="theory.html"><a href="theory.html#地表径流-surface-runoff"><i class="fa fa-check"></i><b>2.4.1</b> 地表径流 (Surface Runoff)</a></li>
+<li class="chapter" data-level="2.4.2" data-path="theory.html"><a href="theory.html#入渗与出渗-infiltration-exfiltration"><i class="fa fa-check"></i><b>2.4.2</b> 入渗与出渗 (Infiltration &amp; Exfiltration)</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="theory.html"><a href="theory.html#地下过程-subsurface"><i class="fa fa-check"></i><b>2.5</b> 地下过程 (Subsurface)</a>
 <ul>
@@ -309,36 +302,11 @@ div.csl-indent {
 </div>
 <div id="地表过程-surface" class="section level2 hasAnchor" number="2.4">
 <h2><span class="header-section-number">2.4</span> 地表过程 (Surface)<a href="theory.html#地表过程-surface" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="辐射" class="section level3 hasAnchor" number="2.4.1">
-<h3><span class="header-section-number">2.4.1</span> 辐射<a href="theory.html#辐射" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><span class="math inline">\(\vec{L}=L \uparrow-L_{a t m} \downarrow\)</span></p>
-<p><span class="math inline">\(T_{r a d}=\left(\frac{L \uparrow}{\sigma}\right)^{1 / 4}\)</span></p>
-<p><span class="math inline">\(L \uparrow=\left(1-\varepsilon_g\right) L_{a t m} \downarrow+\varepsilon_g \sigma\left(T_g^n\right)^4+4 \varepsilon_g \sigma\left(T_g^n\right)^3\left(T_g^{n+1}-T_g^n\right)\)</span></p>
+<div id="地表径流-surface-runoff" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> 地表径流 (Surface Runoff)<a href="theory.html#地表径流-surface-runoff" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="地表能量平衡" class="section level3 hasAnchor" number="2.4.2">
-<h3><span class="header-section-number">2.4.2</span> 地表能量平衡<a href="theory.html#地表能量平衡" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>$ R_n + L_w = H_l + H_s + G$</p>
-<ul>
-<li><span class="math inline">\(R_n\)</span>： 短波辐射(input)</li>
-<li><span class="math inline">\(L_w\)</span>： 长波辐射(input)</li>
-<li><span class="math inline">\(H_l\)</span>： 潜热</li>
-<li><span class="math inline">\(H_s\)</span>： 感热</li>
-<li><span class="math inline">\(G\)</span>： 土壤热通量</li>
-</ul>
-<p><span class="math inline">\(H=-\rho_{a t m} C_p \frac{\left(\theta_{a t m}-\theta_s\right)}{r_{a h}}\)</span></p>
-<p>$H=-_{a t m} C_p $</p>
-<p>$e_{a t m}= $</p>
-<p>$ e_{a t m}= $</p>
-<p>$ _{}=$</p>
-</div>
-<div id="土壤水热耦合" class="section level3 hasAnchor" number="2.4.3">
-<h3><span class="header-section-number">2.4.3</span> 土壤水热耦合<a href="theory.html#土壤水热耦合" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
-<div id="地表径流-surface-runoff" class="section level3 hasAnchor" number="2.4.4">
-<h3><span class="header-section-number">2.4.4</span> 地表径流 (Surface Runoff)<a href="theory.html#地表径流-surface-runoff" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
-<div id="入渗与出渗-infiltration-exfiltration" class="section level3 hasAnchor" number="2.4.5">
-<h3><span class="header-section-number">2.4.5</span> 入渗与出渗 (Infiltration &amp; Exfiltration)<a href="theory.html#入渗与出渗-infiltration-exfiltration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="入渗与出渗-infiltration-exfiltration" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> 入渗与出渗 (Infiltration &amp; Exfiltration)<a href="theory.html#入渗与出渗-infiltration-exfiltration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
 </div>
 <div id="地下过程-subsurface" class="section level2 hasAnchor" number="2.5">
